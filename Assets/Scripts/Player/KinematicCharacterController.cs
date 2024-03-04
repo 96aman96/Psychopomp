@@ -12,9 +12,11 @@ public class KinematicCharacterController : MonoBehaviour{
     // ===== MOVEMENT ACCELERATION =====\
     [Header("Movement Acceleration")]
     public float maxSpeed = 100f;
+    public float maxPassiveSpeed = 40f;
     public float minSpeed = 10f;
     public float acceleration = 10f;
     public float deceleration = 40f;
+    public float passiveAcceleration = 10f;
     public float passiveDeceleration = 10f;
     private Vector3 currentVelocity = Vector3.zero;
     private float velMagnitude = 0;
@@ -55,10 +57,12 @@ public class KinematicCharacterController : MonoBehaviour{
     }
 
     void Update(){
-        // Get input from WASD and calculate velocity from it (using acceleration and shit)
-        Vector2 input = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        // Get input from WASD and mouse and calculate velocity from it (using acceleration and shit) 
+        // Axis acceleration is considered passive while mouse is active. Axis deceleration is active, while pressing nothing is passive.
+        Vector2 input = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).normalized;
+        bool isAccelerating = Input.GetMouseButton(0);
         transform.Rotate(Vector3.up * input.x * rotationStrength);
-        velMagnitude = CalculateCurrentVelocityMagnitude(input.y);
+        velMagnitude = CalculateCurrentVelocityMagnitude(input.y, isAccelerating);
         Vector3 newVelocity = transform.forward * velMagnitude;
 
         // Check if grounded, and keeping track of coyote time timer to allow for delayed jumps
@@ -69,7 +73,8 @@ public class KinematicCharacterController : MonoBehaviour{
         } else currentCoyote -= Time.deltaTime;
 
         // Check for jump to buffer inputs. Allows for antecipated jumps, buffering a jump before the player actually hits the floor
-        if(Input.GetKeyDown("space")){
+        // if(Input.GetKeyDown("space")){
+        if(Input.GetMouseButtonUp(0)){
             currentJumpBuffer = jumpBufferTime;
         } else currentJumpBuffer -= Time.deltaTime;
 
@@ -88,7 +93,7 @@ public class KinematicCharacterController : MonoBehaviour{
         }
 
         // Set state, for animation/visual purposes
-        SetState(input.y);
+        SetState(isAccelerating);
 
         // Check for Collision and Sliding on XZ plane and on the Y axis
         Vector3 attemptedMovement = ((newVelocity+currentVelocity)/2) * Time.deltaTime;
@@ -101,13 +106,18 @@ public class KinematicCharacterController : MonoBehaviour{
         currentVelocity =  newMovement/Time.deltaTime;
     }
 
-    private float CalculateCurrentVelocityMagnitude(float input){
+    private float CalculateCurrentVelocityMagnitude(float input, bool isAccelerating){
         float acc = -passiveDeceleration;
-        if(input > 0){
+        float max = maxPassiveSpeed;
+
+        if(isAccelerating){
+            max = maxSpeed;
             acc = acceleration;
+        } else if(input > 0){
+            acc = passiveAcceleration;
         } else if(input<0) acc = -deceleration;
 
-        float vel = Mathf.Clamp(velMagnitude+(acc*Time.deltaTime), minSpeed, maxSpeed);
+        float vel = Mathf.Clamp(velMagnitude+(acc*Time.deltaTime), minSpeed, max);
 
         return vel;
     }
@@ -133,10 +143,10 @@ public class KinematicCharacterController : MonoBehaviour{
         return colUtil.IsGroundedCast(transform.position);
     }
 
-    private void SetState(float input){
+    private void SetState(bool isAccelerating){
         if(isJumping){
             state.ChangeState(State.Jump);
-        } else if(input>0){
+        } else if(isAccelerating){
             state.ChangeState(State.Accelerated);
         } else {
             state.ChangeState(State.Idle);

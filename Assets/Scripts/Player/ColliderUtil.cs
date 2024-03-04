@@ -32,9 +32,9 @@ public class ColliderUtil : MonoBehaviour{
 
             if(velPostCollision.magnitude <= ySkinWidth) velPostCollision = Vector3.zero;
 
-            float leftoverMagnitude = leftover.magnitude;
-            leftover = Vector3.ProjectOnPlane(leftover, hit.normal).normalized;
-            leftover *= leftoverMagnitude;
+            // float leftoverMagnitude = leftover.magnitude;
+            // leftover = Vector3.ProjectOnPlane(leftover, hit.normal).normalized;
+            // leftover *= leftoverMagnitude;
 
             return velPostCollision;
         }
