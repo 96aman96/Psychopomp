@@ -17,14 +17,16 @@ public class KinematicCharacterController : MonoBehaviour{
     public float acceleration = 10f;
     public float deceleration = 40f;
     public float passiveAcceleration = 10f;
+    public float passiveAirAcceleration = 10f;
     public float passiveDeceleration = 10f;
-    private Vector3 currentVelocity = Vector3.zero;
+    public Vector3 currentVelocity = Vector3.zero;
     private float velMagnitude = 0;
     private const float stasisTreshold = 0.01f;
 
     // ===== FALLING =====
     [Header("Falling")]
-    public float fallAcceleration = 10f;
+    public float gravity = 10f;
+    public float fallGravityMultiplier = 1.5f; 
     public float maxFallSpeed = 100f;
     private bool isGrounded = false;
 
@@ -38,9 +40,11 @@ public class KinematicCharacterController : MonoBehaviour{
     private float currentJumpBuffer = 0;
 
     // ===== GLIDING =====
+    [Header("Gliding")]
     public float updraftForce = 5f;
     [Range(0f,1f)] public float percentageUpdraftUpwards = .6f;
     public float glideGravityFactor = 0.1f;
+    public float glideMaxFallSpeed = 10f;
     private bool isGliding = false;
 
     // ===== COMPONENT REFERENCES =====
@@ -71,7 +75,6 @@ public class KinematicCharacterController : MonoBehaviour{
         } else currentCoyote -= Time.deltaTime;
 
         // Check for jump to buffer inputs. Allows for antecipated jumps, buffering a jump before the player actually hits the floor
-        // if(Input.GetKeyDown("space")){
         if(Input.GetMouseButtonUp(0)){
             currentJumpBuffer = jumpBufferTime;
         } else currentJumpBuffer -= Time.deltaTime;
@@ -101,30 +104,36 @@ public class KinematicCharacterController : MonoBehaviour{
         // Set state, for animation/visual purposes
         SetState(isAccelerating);
 
-        // Check for Collision and Sliding on XZ plane and on the Y axis
+        // Check for collision and slides across the collided surface if it happens
         Vector3 attemptedMovement = ((newVelocity+currentVelocity)/2) * Time.deltaTime;
-        Vector3 newMovement = colUtil.XZCollideAndSlide(new Vector3(attemptedMovement.x,0,attemptedMovement.z), transform.position, 1);
-        newMovement += colUtil.XZCollideAndSlide(new Vector3(0,attemptedMovement.y,0), transform.position, 1);
+        Vector3 newMovement = colUtil.CollideAndSlide(attemptedMovement, transform.position, 1);
 
         // Doing the character translation
         transform.position += newMovement;
-        // currentVelocity = newVelocity;
         currentVelocity =  newMovement/Time.deltaTime;
     }
 
     private float CalculateCurrentVelocityMagnitude(float input, bool isAccelerating){
+        float mag = new Vector3(currentVelocity.x,0,currentVelocity.z).magnitude;
         float acc = -passiveDeceleration;
         float max = maxPassiveSpeed;
 
-        if(isAccelerating){
+        if(!isGrounded){
+            max = maxSpeed;
+            acc = 0;
+        } else if(isAccelerating && isGrounded){
             max = maxSpeed;
             acc = acceleration;
-        } else if(input > 0){
+        } else if(input>0){
             acc = passiveAcceleration;
         } else if(input<0) acc = -deceleration;
 
-        float cap = Mathf.Clamp(velMagnitude+(acc*Time.deltaTime), minSpeed, max);
-        float vel = Mathf.Max(cap, velMagnitude);
+        // float cap = Mathf.Clamp(velMagnitude+(acc*Time.deltaTime), minSpeed, max);
+        // float vel = Mathf.Max(cap, velMagnitude);
+        // float cap = Mathf.Clamp(mag+(acc*Time.deltaTime), minSpeed, max);
+        // float vel = Mathf.Max(cap, mag);
+
+        float vel = Mathf.Clamp(velMagnitude+(acc*Time.deltaTime), minSpeed, max);
 
         return vel;
     }
@@ -132,9 +141,15 @@ public class KinematicCharacterController : MonoBehaviour{
     private Vector3 CalculateFallingVelocity(){
         Vector3 verticalVelocity = Vector3.zero;
         float gravFactor = 1;
-        if(isGliding) gravFactor = glideGravityFactor;
+        float max = maxFallSpeed;
+
+        if(currentVelocity.y<0) gravFactor *= fallGravityMultiplier;
+        if(isGliding){
+            gravFactor = glideGravityFactor;
+            max = glideMaxFallSpeed;
+        }
         
-        verticalVelocity.y = Mathf.Clamp(currentVelocity.y - (fallAcceleration * gravFactor * Time.deltaTime), -maxFallSpeed, Mathf.Infinity);
+        verticalVelocity.y = Mathf.Clamp(currentVelocity.y - (gravity * gravFactor * Time.deltaTime), -max, Mathf.Infinity);
         
         return verticalVelocity;
     }

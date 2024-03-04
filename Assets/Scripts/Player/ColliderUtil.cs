@@ -42,7 +42,7 @@ public class ColliderUtil : MonoBehaviour{
         return vel;
     }
 
-    public Vector3 XZCollideAndSlide(Vector3 vel, Vector3 pos, int depth){
+    public Vector3 CollideAndSlide(Vector3 vel, Vector3 pos, int depth){
         if(depth >= maxBounces) return Vector3.zero;
 
         float mag = vel.magnitude;
@@ -60,7 +60,7 @@ public class ColliderUtil : MonoBehaviour{
             leftover = Vector3.ProjectOnPlane(leftover, hit.normal).normalized;
             leftover *= leftoverMagnitude;
 
-            return velPostCollision + XZCollideAndSlide(leftover, pos + velPostCollision, depth+1);
+            return velPostCollision + CollideAndSlide(leftover, pos + velPostCollision, depth+1);
         }
 
         return vel;
