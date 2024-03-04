@@ -1087,12 +1087,24 @@ PrefabInstance:
       value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 1378026357466639658, guid: 59ee02f8cda53c246ae9809130f60ab2, type: 3}
+      propertyPath: updraftForce
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1378026357466639658, guid: 59ee02f8cda53c246ae9809130f60ab2, type: 3}
       propertyPath: rotationStrength
       value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 1378026357466639658, guid: 59ee02f8cda53c246ae9809130f60ab2, type: 3}
+      propertyPath: glideGravityFactor
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1378026357466639658, guid: 59ee02f8cda53c246ae9809130f60ab2, type: 3}
       propertyPath: passiveDeceleration
       value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 1378026357466639658, guid: 59ee02f8cda53c246ae9809130f60ab2, type: 3}
+      propertyPath: percentageUpdraftUpwards
+      value: 0.486
       objectReference: {fileID: 0}
     - target: {fileID: 8325929631847113387, guid: 59ee02f8cda53c246ae9809130f60ab2, type: 3}
       propertyPath: capsule

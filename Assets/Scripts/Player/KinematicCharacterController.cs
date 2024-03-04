@@ -4,7 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 
 public class KinematicCharacterController : MonoBehaviour{
-    // ===== MOVEMENT DIRECTION =====
+    // ===== MOVEMENT ROTATION =====
     [Header("Movement Rotation")]
     public float rotationStrength = 1f;
     private Vector3 movementVector = Vector3.zero;
@@ -26,7 +26,6 @@ public class KinematicCharacterController : MonoBehaviour{
     [Header("Falling")]
     public float fallAcceleration = 10f;
     public float maxFallSpeed = 100f;
-    public float glideFactor = 0.5f;
     private bool isGrounded = false;
 
     // ===== JUMPING =====
@@ -38,16 +37,14 @@ public class KinematicCharacterController : MonoBehaviour{
     private float currentCoyote = 0;
     private float currentJumpBuffer = 0;
 
-    // ===== MOVEMENT ROTATION =====
-    [Header("Rotation")]
-    public float lookRotationSpeed = 1f;
+    // ===== GLIDING =====
+    public float updraftForce = 5f;
+    [Range(0f,1f)] public float percentageUpdraftUpwards = .6f;
+    public float glideGravityFactor = 0.1f;
+    private bool isGliding = false;
 
-    // ===== COLLIDER VARIABLES =====
-    [Header("Collider")]
+    // ===== COMPONENT REFERENCES =====
     private ColliderUtil colUtil;
-    public float floorDistance = 0.1f;
-
-    // ===== STATE CONTROLLER =====
     private CharacterState state;
 
     void Start(){
@@ -69,6 +66,7 @@ public class KinematicCharacterController : MonoBehaviour{
         isGrounded = CheckGrounded();
         if(isGrounded){
             isJumping=false;
+            isGliding=false;
             currentCoyote = coyoteTime;
         } else currentCoyote -= Time.deltaTime;
 
@@ -86,6 +84,14 @@ public class KinematicCharacterController : MonoBehaviour{
             newVelocity += CalculateJumpVelocity();
         }
 
+        // Check for gliding, apply updraft force
+        if(!isGrounded && !isGliding && Input.GetKey("left shift")){
+            isGliding = true;
+            newVelocity += CalculateUpdraftVelocity();
+        } else if(Input.GetKeyUp("left shift")){
+            isGliding = false;
+        }
+
         // Check to see if is grounded. If not, fall
         if(!isGrounded){
             Vector3 newFallVelocity = CalculateFallingVelocity();
@@ -98,7 +104,7 @@ public class KinematicCharacterController : MonoBehaviour{
         // Check for Collision and Sliding on XZ plane and on the Y axis
         Vector3 attemptedMovement = ((newVelocity+currentVelocity)/2) * Time.deltaTime;
         Vector3 newMovement = colUtil.XZCollideAndSlide(new Vector3(attemptedMovement.x,0,attemptedMovement.z), transform.position, 1);
-        newMovement += colUtil.YCollideAndSlide(new Vector3(0,attemptedMovement.y,0), transform.position);
+        newMovement += colUtil.XZCollideAndSlide(new Vector3(0,attemptedMovement.y,0), transform.position, 1);
 
         // Doing the character translation
         transform.position += newMovement;
@@ -117,17 +123,19 @@ public class KinematicCharacterController : MonoBehaviour{
             acc = passiveAcceleration;
         } else if(input<0) acc = -deceleration;
 
-        float vel = Mathf.Clamp(velMagnitude+(acc*Time.deltaTime), minSpeed, max);
+        float cap = Mathf.Clamp(velMagnitude+(acc*Time.deltaTime), minSpeed, max);
+        float vel = Mathf.Max(cap, velMagnitude);
 
         return vel;
     }
 
     private Vector3 CalculateFallingVelocity(){
         Vector3 verticalVelocity = Vector3.zero;
-        verticalVelocity.y = Mathf.Clamp(currentVelocity.y - (fallAcceleration * Time.deltaTime), -maxFallSpeed, Mathf.Infinity);
+        float gravFactor = 1;
+        if(isGliding) gravFactor = glideGravityFactor;
         
-        // if(Input.GetKey("left shift")) verticalVelocity *= glideFactor;
-
+        verticalVelocity.y = Mathf.Clamp(currentVelocity.y - (fallAcceleration * gravFactor * Time.deltaTime), -maxFallSpeed, Mathf.Infinity);
+        
         return verticalVelocity;
     }
 
@@ -139,12 +147,21 @@ public class KinematicCharacterController : MonoBehaviour{
         return verticalVelocity;
     }
 
+    private Vector3 CalculateUpdraftVelocity(){
+        Vector3 vel = Vector3.zero;
+        vel.y = updraftForce * percentageUpdraftUpwards;
+        vel += (1-percentageUpdraftUpwards) * updraftForce * transform.forward;
+        return vel;
+    }
+
     private bool CheckGrounded(){
         return colUtil.IsGroundedCast(transform.position);
     }
 
     private void SetState(bool isAccelerating){
-        if(isJumping){
+        if(isGliding){
+            state.ChangeState(State.Glide);
+        } else if(isJumping){
             state.ChangeState(State.Jump);
         } else if(isAccelerating){
             state.ChangeState(State.Accelerated);
