@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
+  - Track
+  - ObjectiveTrigger
   layers:
   - Default
   - TransparentFX
