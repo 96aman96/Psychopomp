@@ -20,29 +20,33 @@ public class KinematicCharacterController : MonoBehaviour{
     public float passiveAirAcceleration = 10f;
     public float passiveDeceleration = 10f;
     public Vector3 currentVelocity = Vector3.zero;
-    private float velMagnitude = 0;
+    public float velMagnitude = 0;
     private const float stasisTreshold = 0.01f;
 
     // ===== FALLING =====
     [Header("Falling")]
     public float gravity = 10f;
     public float fallGravityMultiplier = 1.5f; 
+    public float acceleratedFallMultiplier = 5f;
     public float maxFallSpeed = 100f;
     private bool isGrounded = false;
 
     // ===== JUMPING =====
     [Header("Jumping")]
     public float jumpVelocity = 1f;
+    public int maxJumpCount = 2;
     public float coyoteTime = 0.2f;
     public float jumpBufferTime = 0.1f;
     private bool isJumping = false;
     private float currentCoyote = 0;
     private float currentJumpBuffer = 0;
+    private int currentJumpCount = 0;
 
     // ===== GLIDING =====
     [Header("Gliding")]
     public float updraftForce = 5f;
-    [Range(0f,1f)] public float percentageUpdraftUpwards = .6f;
+    public float updraftThreshold = 120f;
+    [Range(0f,1f)] public float percentageMomentumMaintained = .6f;
     public float glideGravityFactor = 0.1f;
     public float glideMaxFallSpeed = 10f;
     private bool isGliding = false;
@@ -71,11 +75,19 @@ public class KinematicCharacterController : MonoBehaviour{
         if(isGrounded){
             isJumping=false;
             isGliding=false;
+            currentJumpCount = 0;
             currentCoyote = coyoteTime;
         } else currentCoyote -= Time.deltaTime;
 
+        // Jumping from air
+        if(isJumping && currentJumpCount < maxJumpCount && Input.GetKeyDown("space")){
+            newVelocity += CalculateJumpVelocity();
+            currentJumpBuffer = 0;
+            currentJumpCount++;
+        }
+
         // Check for jump to buffer inputs. Allows for antecipated jumps, buffering a jump before the player actually hits the floor
-        if(Input.GetMouseButtonUp(0)){
+        if(Input.GetKeyDown("space")){
             currentJumpBuffer = jumpBufferTime;
         } else currentJumpBuffer -= Time.deltaTime;
 
@@ -84,21 +96,23 @@ public class KinematicCharacterController : MonoBehaviour{
             isJumping = true;
             currentCoyote = 0;
             currentJumpBuffer = 0;
+            currentJumpCount = 1;
             newVelocity += CalculateJumpVelocity();
-        }
-
-        // Check for gliding, apply updraft force
-        if(!isGrounded && !isGliding && Input.GetKey("left shift")){
-            isGliding = true;
-            newVelocity += CalculateUpdraftVelocity();
-        } else if(Input.GetKeyUp("left shift")){
-            isGliding = false;
         }
 
         // Check to see if is grounded. If not, fall
         if(!isGrounded){
-            Vector3 newFallVelocity = CalculateFallingVelocity();
+            Vector3 newFallVelocity = CalculateFallingVelocity(isAccelerating);
             newVelocity += newFallVelocity;
+        }
+
+        // Check for gliding, apply updraft force
+        if(!isGrounded && !isGliding && Input.GetKeyDown("left shift")){
+            isGliding = true;
+            velMagnitude += CalculateGlidingMomentumChange(newVelocity);
+            newVelocity = CalculateUpdraftVelocity(newVelocity);
+        } else if(Input.GetKeyUp("left shift")){
+            isGliding = false;
         }
 
         // Set state, for animation/visual purposes
@@ -114,8 +128,8 @@ public class KinematicCharacterController : MonoBehaviour{
     }
 
     private float CalculateCurrentVelocityMagnitude(float input, bool isAccelerating){
-        float mag = new Vector3(currentVelocity.x,0,currentVelocity.z).magnitude;
-        float acc = -passiveDeceleration;
+        float acc = 0;
+        float dec = 0;
         float max = maxPassiveSpeed;
 
         if(!isGrounded){
@@ -126,25 +140,27 @@ public class KinematicCharacterController : MonoBehaviour{
             acc = acceleration;
         } else if(input>0){
             acc = passiveAcceleration;
-        } else if(input<0) acc = -deceleration;
-
-        // float cap = Mathf.Clamp(velMagnitude+(acc*Time.deltaTime), minSpeed, max);
-        // float vel = Mathf.Max(cap, velMagnitude);
-        // float cap = Mathf.Clamp(mag+(acc*Time.deltaTime), minSpeed, max);
-        // float vel = Mathf.Max(cap, mag);
-
-        float vel = Mathf.Clamp(velMagnitude+(acc*Time.deltaTime), minSpeed, max);
+        } else if(input<0){
+            dec = deceleration;
+        } else dec = passiveDeceleration;
+    
+        float baseVel = Mathf.Clamp(velMagnitude+(acc*Time.deltaTime), minSpeed, max);
+        float vel = Mathf.Max(baseVel, velMagnitude);
+        vel -= (dec*Time.deltaTime);
 
         return vel;
     }
 
-    private Vector3 CalculateFallingVelocity(){
+    private Vector3 CalculateFallingVelocity(bool isAccelerating){
         Vector3 verticalVelocity = Vector3.zero;
         float gravFactor = 1;
         float max = maxFallSpeed;
 
-        if(currentVelocity.y<0) gravFactor *= fallGravityMultiplier;
-        if(isGliding){
+        if(currentVelocity.y<0) gravFactor = fallGravityMultiplier;
+        
+        if(isAccelerating){
+            gravFactor = acceleratedFallMultiplier;
+        } else if(isGliding){
             gravFactor = glideGravityFactor;
             max = glideMaxFallSpeed;
         }
@@ -162,15 +178,33 @@ public class KinematicCharacterController : MonoBehaviour{
         return verticalVelocity;
     }
 
-    private Vector3 CalculateUpdraftVelocity(){
-        Vector3 vel = Vector3.zero;
-        vel.y = updraftForce * percentageUpdraftUpwards;
-        vel += (1-percentageUpdraftUpwards) * updraftForce * transform.forward;
+    private Vector3 CalculateUpdraftVelocity(Vector3 _vel){
+        Vector3 vel = _vel;
+        if(vel.y <= -updraftThreshold){
+            vel.y = updraftForce;
+        } else if (vel.y >= updraftThreshold){
+            vel.y = -updraftForce;
+        } else vel.y = 0;
+
         return vel;
     }
 
+    private float CalculateGlidingMomentumChange(Vector3 _vel){
+        float mag = Mathf.Abs(_vel.y);
+        
+        return mag * percentageMomentumMaintained;
+    }
+
     private bool CheckGrounded(){
-        return colUtil.IsGroundedCast(transform.position);
+        Vector3 normal = Vector3.zero;
+        bool grd = colUtil.IsGroundedCast(transform.position, out normal);
+        AlignToSurface(normal);
+
+        return grd;
+    }
+
+    private void AlignToSurface(Vector3 normal){
+
     }
 
     private void SetState(bool isAccelerating){
