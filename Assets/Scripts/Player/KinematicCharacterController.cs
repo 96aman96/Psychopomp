@@ -66,7 +66,7 @@ public class KinematicCharacterController : MonoBehaviour{
         // Axis acceleration is considered passive while mouse is active. Axis deceleration is active, while pressing nothing is passive.
         Vector2 input = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).normalized;
         bool isAccelerating = Input.GetMouseButton(0);
-        transform.Rotate(Vector3.up * input.x * rotationStrength);
+        transform.Rotate(Vector3.up * input.x * rotationStrength * Time.deltaTime);
         velMagnitude = CalculateCurrentVelocityMagnitude(input.y, isAccelerating);
         Vector3 newVelocity = transform.forward * velMagnitude;
 
