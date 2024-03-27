@@ -116,7 +116,7 @@ public class KinematicCharacterController : MonoBehaviour{
         }
 
         // Set state, for animation/visual purposes
-        SetState(isAccelerating);
+        //SetState(isAccelerating);
 
         // Check for collision and slides across the collided surface if it happens
         Vector3 attemptedMovement = ((newVelocity+currentVelocity)/2) * Time.deltaTime;
@@ -207,6 +207,7 @@ public class KinematicCharacterController : MonoBehaviour{
 
     }
 
+    /*
     private void SetState(bool isAccelerating){
         if(isGliding){
             state.ChangeState(State.Glide);
@@ -218,6 +219,7 @@ public class KinematicCharacterController : MonoBehaviour{
             state.ChangeState(State.Idle);
         }
     }
+    */
 
     private Vector3 CalculateDirection(Vector3 input){
         if(input == Vector3.zero) return input;
