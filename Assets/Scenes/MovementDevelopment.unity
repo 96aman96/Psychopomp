@@ -2294,6 +2294,10 @@ PrefabInstance:
       value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 1378026357466639658, guid: 59ee02f8cda53c246ae9809130f60ab2, type: 3}
+      propertyPath: rotationStrength
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1378026357466639658, guid: 59ee02f8cda53c246ae9809130f60ab2, type: 3}
       propertyPath: updraftThreshold
       value: 120
       objectReference: {fileID: 0}
@@ -2303,11 +2307,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8325929631847113387, guid: 59ee02f8cda53c246ae9809130f60ab2, type: 3}
       propertyPath: skinWidth
-      value: 0.05
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8325929631847113387, guid: 59ee02f8cda53c246ae9809130f60ab2, type: 3}
       propertyPath: groundDistance
-      value: 0.05
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8325929631847113387, guid: 59ee02f8cda53c246ae9809130f60ab2, type: 3}
       propertyPath: groundMask.m_Bits
@@ -2825,8 +2829,8 @@ Transform:
   m_GameObject: {fileID: 1492168061}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.1, z: 0}
-  m_LocalScale: {x: 1000, y: 0.1, z: 1000}
+  m_LocalPosition: {x: 0, y: -2.5, z: 0}
+  m_LocalScale: {x: 1000, y: 5, z: 1000}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1253770564}
