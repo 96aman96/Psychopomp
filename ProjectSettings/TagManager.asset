@@ -7,6 +7,8 @@ TagManager:
   - Ground
   - Track
   - ObjectiveTrigger
+  - Pickup
+  - Drop Zone
   layers:
   - Default
   - TransparentFX
