@@ -45,9 +45,9 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Depth: 2.42
+    - _Depth: 2.67
     - _Displacement: 0
-    - _Normal_Strength: 1
+    - _Normal_Strength: 0.75
     - _QueueControl: 0
     - _QueueOffset: 0
     - _Reflection_Displacement_Strength: 0.04
@@ -55,9 +55,9 @@ Material:
     - _Refraction_Scale: 1
     - _Refraction_Speed: 0.5
     - _Refraction_Strength: 0.1
-    - _Smoothness: 1
+    - _Smoothness: 0.85
     - _Strength: 2
-    - _Wind_Speed: 2
+    - _Wind_Speed: 3
     m_Colors:
     - _Deep_Water_Color: {r: 0, g: 0, b: 0, a: 1}
     - _Shallow_Water_Color: {r: 0.12486649, g: 0.39897037, b: 0.4339623, a: 0.54509807}
