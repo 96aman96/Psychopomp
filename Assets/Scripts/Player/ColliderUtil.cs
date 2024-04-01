@@ -46,12 +46,12 @@ public class ColliderUtil : MonoBehaviour{
     public bool IsGroundedCast(Vector3 pos, out Vector3 normal){
         List<Vector3> points = GetPointsFromPosition(pos);
         RaycastHit hit;
-        if(Physics.CapsuleCast(points[0], points[1], radius, -capsule.transform.up, out hit, groundDistance, groundMask)){
+        if(Physics.CapsuleCast(points[0], points[1], radius, Vector3.down, out hit, groundDistance, groundMask)){
             normal = hit.normal;
             return true;
         }
 
-        normal = Vector3.zero;
+        normal = Vector3.up;
         return false;
     }
 

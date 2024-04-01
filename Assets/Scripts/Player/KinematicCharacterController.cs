@@ -7,6 +7,7 @@ public class KinematicCharacterController : MonoBehaviour{
     // ===== MOVEMENT ROTATION =====
     [Header("Movement Rotation")]
     public float rotationStrength = 1f;
+    public float alignmentSpeed = 10f;
     private Vector3 movementVector = Vector3.zero;
 
     // ===== MOVEMENT ACCELERATION =====\
@@ -30,6 +31,8 @@ public class KinematicCharacterController : MonoBehaviour{
     public float acceleratedFallMultiplier = 5f;
     public float maxFallSpeed = 100f;
     private bool isGrounded = false;
+    private Vector3 currentNormal = Vector3.zero;
+    private float fallingVelocity = 0;
 
     // ===== JUMPING =====
     [Header("Jumping")]
@@ -125,6 +128,10 @@ public class KinematicCharacterController : MonoBehaviour{
         Vector3 attemptedMovement = ((newVelocity+currentVelocity)/2) * Time.deltaTime;
         Vector3 newMovement = colUtil.CollideAndSlide(attemptedMovement, transform.position, 1);
 
+        // Extra check to avoid falling through ground
+        // TODO: Remove -normal actualy !!!!
+        if(isGrounded) newMovement = SnapToGround(newMovement);
+
         // Doing the character translation
         transform.position += newMovement;
         currentVelocity =  newMovement/Time.deltaTime;
@@ -199,18 +206,38 @@ public class KinematicCharacterController : MonoBehaviour{
     }
 
     private bool CheckGrounded(){
-        Vector3 normal = Vector3.zero;
+        Vector3 normal;
         bool grd = colUtil.IsGroundedCast(transform.position, out normal);
-        AlignToSurface(normal);
+        currentNormal = normal;
+        // AlignToSurface();
 
         return grd;
     }
 
-    private void AlignToSurface(Vector3 normal){
+    private void AlignToSurface(){
+        Quaternion rot = Quaternion.FromToRotation(transform.up, currentNormal) * transform.rotation;
+        transform.rotation = Quaternion.Lerp(transform.rotation, rot, alignmentSpeed * Time.deltaTime); 
 
+        // Quaternion rot = Quaternion.FromToRotation(transform.up, currentNormal);
+        // rot = Quaternion.Lerp(transform.rotation, rot, alignmentSpeed * Time.deltaTime);
+        // transform.rotation = Quaternion.Euler(rot.eulerAngles.x, transform.eulerAngles.y, rot.eulerAngles.x);
+
+        // Vector3 proj = Vector3.ProjectOnPlane(transform.forward, currentNormal);
+        // Quaternion rot = Quaternion.LookRotation(proj, currentNormal);
+        // transform.rotation = rot;
     }
 
-    /*
+    private Vector3 SnapToGround(Vector3 _mov){
+        Vector3 mov = _mov;
+
+        // Vector3 antiNormal = Vector3.Project(mov, currentNormal);
+        // mov -= antiNormal;
+
+        mov.y = Mathf.Max(0, mov.y);
+
+        return mov;
+    }
+
     private void SetState(bool isAccelerating){
         if(isGliding){
             state.ChangeState(State.Glide);
@@ -222,45 +249,9 @@ public class KinematicCharacterController : MonoBehaviour{
             state.ChangeState(State.Idle);
         }
     }
-    */
 
     private void SetAnimatorState(){
         animator.SetBool("TouchingGround", isGrounded);
         animator.SetFloat("Speed", velMagnitude);
-    }
-    
-
-    private Vector3 CalculateDirection(Vector3 input){
-        if(input == Vector3.zero) return input;
-
-        movementVector = (movementVector + (input*rotationStrength)).normalized;
-        
-        return movementVector;
-    }
-
-    private Vector3 AbsoluteToCameraDirection(Vector3 dir){
-        Vector3 fwd = Camera.main.transform.forward;
-        Vector3 rgt = Camera.main.transform.right;
-
-        // Project on xz plane
-        fwd.y = 0f;
-        rgt.y = 0f;
-        fwd.Normalize();
-        rgt.Normalize();
-
-        return rgt * dir.x + fwd * dir.z;
-    }
-
-    private Vector3 AbsoluteToPlayerDirection(Vector3 dir){
-        Vector3 fwd = transform.forward;
-        Vector3 rgt = transform.right;
-
-        // Project on xz plane
-        fwd.y = 0f;
-        rgt.y = 0f;
-        fwd.Normalize();
-        rgt.Normalize();
-
-        return rgt * dir.x + fwd * dir.z;
     }
 }
