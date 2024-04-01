@@ -5,11 +5,10 @@ using UnityEngine;
 
 public class ColliderUtil : MonoBehaviour{
     public CapsuleCollider capsule; 
-    public LayerMask[] groundMask;
+    public LayerMask groundMask;
 
-    public float xzSkinWidth = 0.015f;
-    public float ySkinWidth = 0.015f;
-    public float groundDistance = 0.05f;
+    public float skinWidth = 0.005f;
+    public float groundDistance = 0.005f;
     public int maxBounces = 4;
 
     private float radius = 0;
@@ -20,41 +19,19 @@ public class ColliderUtil : MonoBehaviour{
         }
     }
 
-    public Vector3 YCollideAndSlide(Vector3 vel, Vector3 pos){
-        float mag = vel.magnitude;
-        float dist = mag + ySkinWidth;
-        List<Vector3> points = GetPointsFromPosition(pos);
-
-        RaycastHit hit;
-        if(Physics.CapsuleCast(points[0], points[1], radius, vel.normalized, out hit, dist)){
-            Vector3 velPostCollision = vel/mag * (hit.distance - ySkinWidth);
-            Vector3 leftover = vel - velPostCollision;
-
-            if(velPostCollision.magnitude <= ySkinWidth) velPostCollision = Vector3.zero;
-
-            // float leftoverMagnitude = leftover.magnitude;
-            // leftover = Vector3.ProjectOnPlane(leftover, hit.normal).normalized;
-            // leftover *= leftoverMagnitude;
-
-            return velPostCollision;
-        }
-
-        return vel;
-    }
-
     public Vector3 CollideAndSlide(Vector3 vel, Vector3 pos, int depth){
         if(depth >= maxBounces) return Vector3.zero;
 
         float mag = vel.magnitude;
-        float dist = mag + xzSkinWidth;
+        float dist = mag + skinWidth;
         List<Vector3> points = GetPointsFromPosition(pos);
 
         RaycastHit hit;
         if(Physics.CapsuleCast(points[0], points[1], radius, vel.normalized, out hit, dist)){
-            Vector3 velPostCollision = vel/mag * (hit.distance - xzSkinWidth);
+            Vector3 velPostCollision = vel/mag * (hit.distance - skinWidth);
             Vector3 leftover = vel - velPostCollision;
 
-            if(velPostCollision.magnitude <= xzSkinWidth) velPostCollision = Vector3.zero;
+            if(velPostCollision.magnitude <= skinWidth) velPostCollision = Vector3.zero;
 
             float leftoverMagnitude = leftover.magnitude;
             leftover = Vector3.ProjectOnPlane(leftover, hit.normal).normalized;
@@ -66,9 +43,16 @@ public class ColliderUtil : MonoBehaviour{
         return vel;
     }
 
-    public bool IsGroundedCast(Vector3 pos){
+    public bool IsGroundedCast(Vector3 pos, out Vector3 normal){
         List<Vector3> points = GetPointsFromPosition(pos);
-        return Physics.CapsuleCast(points[0], points[1], radius, -capsule.transform.up, groundDistance);
+        RaycastHit hit;
+        if(Physics.CapsuleCast(points[0], points[1], radius, Vector3.down, out hit, groundDistance, groundMask)){
+            normal = hit.normal;
+            return true;
+        }
+
+        normal = Vector3.up;
+        return false;
     }
 
     private List<Vector3> GetPointsFromPosition(Vector3 pos){
