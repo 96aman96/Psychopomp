@@ -15,6 +15,7 @@ public class CharacterVFX : MonoBehaviour{
     private bool isGliding = false;
 
     public ParticleSystem ripple;
+    public ParticleSystem splatter;
     public float baseRippleInterval = 0.5f;
     public float rippleIntervalMultiplier = 1f;
     public float currentRipple = 0;
@@ -80,8 +81,12 @@ public class CharacterVFX : MonoBehaviour{
     }
 
     private void TriggerRipple(){
-        // ripple.SetCustomParticleData()
-
+        var em = splatter.emission;
+        em.SetBursts(new ParticleSystem.Burst[]{
+            new ParticleSystem.Burst(0, rippleBurstPerSpeed.Evaluate(speed/maxSpeed))
+        });
+        var main = splatter.main;
+        main.startSpeed = rippleVelocityPerSpeed.Evaluate(speed/maxSpeed);
 
         float rippleInterval = baseRippleInterval - rippleIntervalMultiplier * speed;
         currentRipple += Time.deltaTime;
