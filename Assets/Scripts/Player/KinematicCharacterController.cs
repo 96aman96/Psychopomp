@@ -10,7 +10,11 @@ public class KinematicCharacterController : MonoBehaviour{
     public float alignmentSpeed = 10f;
     private Vector3 movementVector = Vector3.zero;
 
-    // ===== MOVEMENT ACCELERATION =====\
+    // ==== GENERAL ======
+    private Vector3 currentNormal = Vector3.zero;
+    private string currentGroundTag = null; 
+
+    // ===== MOVEMENT ACCELERATION =====
     [Header("Movement Acceleration")]
     public float maxSpeed = 100f;
     public float maxPassiveSpeed = 40f;
@@ -31,7 +35,6 @@ public class KinematicCharacterController : MonoBehaviour{
     public float acceleratedFallMultiplier = 5f;
     public float maxFallSpeed = 100f;
     private bool isGrounded = false;
-    private Vector3 currentNormal = Vector3.zero;
     private float fallingVelocity = 0;
 
     // ===== JUMPING =====
@@ -52,7 +55,10 @@ public class KinematicCharacterController : MonoBehaviour{
     [Range(0f,1f)] public float percentageMomentumMaintained = .6f;
     public float glideGravityFactor = 0.1f;
     public float glideMaxFallSpeed = 10f;
+    public float freezeFrameDuration = 0.1f;
     private bool isGliding = false;
+    private bool isFrozen = false;
+
 
     // ===== COMPONENT REFERENCES =====
     private ColliderUtil colUtil;
@@ -65,6 +71,8 @@ public class KinematicCharacterController : MonoBehaviour{
     }
 
     void Update(){
+        if(isFrozen) return;
+
         // Get input from WASD and mouse and calculate velocity from it (using acceleration and shit) 
         // Axis acceleration is considered passive while mouse is active. Axis deceleration is active, while pressing nothing is passive.
         Vector2 input = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).normalized;
@@ -115,6 +123,7 @@ public class KinematicCharacterController : MonoBehaviour{
             velMagnitude += CalculateGlidingMomentumChange(newVelocity);
             newVelocity = CalculateUpdraftVelocity(newVelocity);
             vfx.TriggerFeathers();
+            FreezeFrame();
         } else if(Input.GetKeyUp("left shift")){
             isGliding = false;
         }
@@ -202,8 +211,10 @@ public class KinematicCharacterController : MonoBehaviour{
 
     private bool CheckGrounded(){
         Vector3 normal;
-        bool grd = colUtil.IsGroundedCast(transform.position, out normal);
+        string tag;
+        bool grd = colUtil.IsGroundedCast(transform.position, out normal, out tag);
         currentNormal = normal;
+        currentGroundTag = tag;
         // AlignToSurface();
 
         return grd;
@@ -233,6 +244,16 @@ public class KinematicCharacterController : MonoBehaviour{
         return mov;
     }
 
+    private void FreezeFrame(){
+        isFrozen = true;
+        StartCoroutine(UnfreezeFrame());
+    }
+
+    private IEnumerator UnfreezeFrame(){
+        yield return new WaitForSecondsRealtime(freezeFrameDuration);
+        isFrozen = false;
+    }
+
     public bool GetIsGrounded(){
         return isGrounded;
     }
@@ -243,5 +264,10 @@ public class KinematicCharacterController : MonoBehaviour{
 
     public float GetSpeed(){
         return velMagnitude;
+    }
+
+    public bool GetIsOnWater(){
+        if(currentGroundTag == "Water") return true;
+        return false;
     }
 }

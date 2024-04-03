@@ -9,6 +9,7 @@ TagManager:
   - ObjectiveTrigger
   - Pickup
   - Drop Zone
+  - Water
   layers:
   - Default
   - TransparentFX
