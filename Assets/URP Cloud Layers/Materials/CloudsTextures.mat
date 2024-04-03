@@ -55,7 +55,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Contrast: 8
+    - _Contrast: 4
     - _Density: 0.3
     - _Distortion_Size: 60
     - _QueueControl: 0
