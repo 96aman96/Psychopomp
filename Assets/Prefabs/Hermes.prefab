@@ -11225,7 +11225,7 @@ Transform:
   m_GameObject: {fileID: 2521408927352808497}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0.24, y: 1.3, z: 4.98}
+  m_LocalPosition: {x: -0.6, y: 1.3, z: 12.27}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11367,7 +11367,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 20
+      scalar: 40
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -22440,8 +22440,8 @@ TrailRenderer:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.10684935
-        value: 0.39955017
+        time: 0.11646239
+        value: 0.35885498
         inSlope: 4.640755
         outSlope: 4.640755
         tangentMode: 0
@@ -22449,8 +22449,17 @@ TrailRenderer:
         inWeight: 0.33333334
         outWeight: 0.050487533
       - serializedVersion: 3
-        time: 0.7814952
-        value: 0.27907023
+        time: 0.28789747
+        value: 0.68768656
+        inSlope: -2.1343882
+        outSlope: -2.1343882
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.4532287
+        value: 0.31978852
         inSlope: -2.236074
         outSlope: -2.236074
         tangentMode: 0
@@ -23128,6 +23137,7 @@ MonoBehaviour:
   percentageMomentumMaintained: 0.2
   glideGravityFactor: 0.4
   glideMaxFallSpeed: 5
+  freezeFrameDuration: 0.15
 --- !u!114 &6350911102597528593
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23160,20 +23170,66 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 7465285366631077795}
-  maxSpeed: 150
+  maxSpeed: 100
   ripple: {fileID: 6753304957100695196}
+  splatter: {fileID: 5673194029967113172}
   baseRippleInterval: 1
   rippleIntervalMultiplier: 0.05
   currentRipple: 0
   rippleBurstPerSpeed:
     serializedVersion: 2
-    m_Curve: []
+    m_Curve:
+    - serializedVersion: 3
+      time: 0.0053488575
+      value: 5.1315064
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 136
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.72729295
+      value: 9.5063
+      inSlope: 32.094906
+      outSlope: 32.094906
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.059909377
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.9977937
+      value: 39.96107
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 136
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
   rippleVelocityPerSpeed:
     serializedVersion: 2
-    m_Curve: []
+    m_Curve:
+    - serializedVersion: 3
+      time: -0.005163801
+      value: 3.0122926
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 136
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1.0048681
+      value: 10.582356
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 136
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
@@ -23182,7 +23238,8 @@ MonoBehaviour:
   dustIntervalMultiplier: 0.009
   currentDust: 0
   feathers: {fileID: 6222672782891242619}
-  glideTrail: {fileID: 809749834618506045}
+  glideTrailR: {fileID: 588729642314571129}
+  glideTrailL: {fileID: 809749834618506045}
   shockwave: {fileID: 2100000, guid: 6944db47d312ec34981c1bb33e609460, type: 2}
   speedToTriggerShock: 90
   shockDuration: 1.5
@@ -25025,8 +25082,8 @@ TrailRenderer:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.10684935
-        value: 0.39955017
+        time: 0.11646239
+        value: 0.35885498
         inSlope: 4.640755
         outSlope: 4.640755
         tangentMode: 0
@@ -25034,8 +25091,17 @@ TrailRenderer:
         inWeight: 0.33333334
         outWeight: 0.050487533
       - serializedVersion: 3
-        time: 0.7814952
-        value: 0.27907023
+        time: 0.28789747
+        value: 0.68768656
+        inSlope: -2.1343882
+        outSlope: -2.1343882
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.4532287
+        value: 0.31978852
         inSlope: -2.236074
         outSlope: -2.236074
         tangentMode: 0
