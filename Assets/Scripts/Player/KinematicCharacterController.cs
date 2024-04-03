@@ -7,14 +7,9 @@ public class KinematicCharacterController : MonoBehaviour{
     // ===== MOVEMENT ROTATION =====
     [Header("Movement Rotation")]
     public float rotationStrength = 1f;
-    public float alignmentSpeed = 10f;
     private Vector3 movementVector = Vector3.zero;
 
-    // ==== GENERAL ======
-    private Vector3 currentNormal = Vector3.zero;
-    private string currentGroundTag = null; 
-
-    // ===== MOVEMENT ACCELERATION =====
+    // ===== MOVEMENT ACCELERATION =====\
     [Header("Movement Acceleration")]
     public float maxSpeed = 100f;
     public float maxPassiveSpeed = 40f;
@@ -35,7 +30,6 @@ public class KinematicCharacterController : MonoBehaviour{
     public float acceleratedFallMultiplier = 5f;
     public float maxFallSpeed = 100f;
     private bool isGrounded = false;
-    private float fallingVelocity = 0;
 
     // ===== JUMPING =====
     [Header("Jumping")]
@@ -55,24 +49,21 @@ public class KinematicCharacterController : MonoBehaviour{
     [Range(0f,1f)] public float percentageMomentumMaintained = .6f;
     public float glideGravityFactor = 0.1f;
     public float glideMaxFallSpeed = 10f;
-    public float freezeFrameDuration = 0.1f;
     private bool isGliding = false;
-    private bool isFrozen = false;
-
 
     // ===== COMPONENT REFERENCES =====
+    [Header("Animator")]
     private ColliderUtil colUtil;
-    private CharacterVFX vfx;
+    private CharacterState state;
+    public Animator animator;
 
     void Start(){
         colUtil = GetComponent<ColliderUtil>();
-        vfx = GetComponent<CharacterVFX>();
+        state = GetComponent<CharacterState>();
         movementVector = transform.forward;
     }
 
     void Update(){
-        if(isFrozen) return;
-
         // Get input from WASD and mouse and calculate velocity from it (using acceleration and shit) 
         // Axis acceleration is considered passive while mouse is active. Axis deceleration is active, while pressing nothing is passive.
         Vector2 input = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).normalized;
@@ -122,19 +113,17 @@ public class KinematicCharacterController : MonoBehaviour{
             isGliding = true;
             velMagnitude += CalculateGlidingMomentumChange(newVelocity);
             newVelocity = CalculateUpdraftVelocity(newVelocity);
-            vfx.TriggerFeathers();
-            FreezeFrame();
         } else if(Input.GetKeyUp("left shift")){
             isGliding = false;
         }
 
+        // Set state, for animation/visual purposes
+        //SetState(isAccelerating);
+        SetAnimatorState();
+
         // Check for collision and slides across the collided surface if it happens
         Vector3 attemptedMovement = ((newVelocity+currentVelocity)/2) * Time.deltaTime;
         Vector3 newMovement = colUtil.CollideAndSlide(attemptedMovement, transform.position, 1);
-
-        // Extra check to avoid falling through ground
-        // TODO: Remove -normal actualy !!!!
-        if(isGrounded) newMovement = SnapToGround(newMovement);
 
         // Doing the character translation
         transform.position += newMovement;
@@ -210,64 +199,68 @@ public class KinematicCharacterController : MonoBehaviour{
     }
 
     private bool CheckGrounded(){
-        Vector3 normal;
-        string tag;
-        bool grd = colUtil.IsGroundedCast(transform.position, out normal, out tag);
-        currentNormal = normal;
-        currentGroundTag = tag;
-        // AlignToSurface();
+        Vector3 normal = Vector3.zero;
+        bool grd = colUtil.IsGroundedCast(transform.position, out normal);
+        AlignToSurface(normal);
 
         return grd;
     }
 
-    private void AlignToSurface(){
-        Quaternion rot = Quaternion.FromToRotation(transform.up, currentNormal) * transform.rotation;
-        transform.rotation = Quaternion.Lerp(transform.rotation, rot, alignmentSpeed * Time.deltaTime); 
+    private void AlignToSurface(Vector3 normal){
 
-        // Quaternion rot = Quaternion.FromToRotation(transform.up, currentNormal);
-        // rot = Quaternion.Lerp(transform.rotation, rot, alignmentSpeed * Time.deltaTime);
-        // transform.rotation = Quaternion.Euler(rot.eulerAngles.x, transform.eulerAngles.y, rot.eulerAngles.x);
-
-        // Vector3 proj = Vector3.ProjectOnPlane(transform.forward, currentNormal);
-        // Quaternion rot = Quaternion.LookRotation(proj, currentNormal);
-        // transform.rotation = rot;
     }
 
-    private Vector3 SnapToGround(Vector3 _mov){
-        Vector3 mov = _mov;
+    /*
+    private void SetState(bool isAccelerating){
+        if(isGliding){
+            state.ChangeState(State.Glide);
+        } else if(isJumping){
+            state.ChangeState(State.Jump);
+        } else if(isAccelerating){
+            state.ChangeState(State.Accelerated);
+        } else {
+            state.ChangeState(State.Idle);
+        }
+    }
+    */
 
-        // Vector3 antiNormal = Vector3.Project(mov, currentNormal);
-        // mov -= antiNormal;
+    private void SetAnimatorState(){
+        animator.SetBool("TouchingGround", isGrounded);
+        animator.SetFloat("Speed", velMagnitude);
+    }
+    
 
-        mov.y = Mathf.Max(0, mov.y);
+    private Vector3 CalculateDirection(Vector3 input){
+        if(input == Vector3.zero) return input;
 
-        return mov;
+        movementVector = (movementVector + (input*rotationStrength)).normalized;
+        
+        return movementVector;
     }
 
-    private void FreezeFrame(){
-        isFrozen = true;
-        StartCoroutine(UnfreezeFrame());
+    private Vector3 AbsoluteToCameraDirection(Vector3 dir){
+        Vector3 fwd = Camera.main.transform.forward;
+        Vector3 rgt = Camera.main.transform.right;
+
+        // Project on xz plane
+        fwd.y = 0f;
+        rgt.y = 0f;
+        fwd.Normalize();
+        rgt.Normalize();
+
+        return rgt * dir.x + fwd * dir.z;
     }
 
-    private IEnumerator UnfreezeFrame(){
-        yield return new WaitForSecondsRealtime(freezeFrameDuration);
-        isFrozen = false;
-    }
+    private Vector3 AbsoluteToPlayerDirection(Vector3 dir){
+        Vector3 fwd = transform.forward;
+        Vector3 rgt = transform.right;
 
-    public bool GetIsGrounded(){
-        return isGrounded;
-    }
+        // Project on xz plane
+        fwd.y = 0f;
+        rgt.y = 0f;
+        fwd.Normalize();
+        rgt.Normalize();
 
-    public bool GetIsGliding(){
-        return isGliding;
-    }
-
-    public float GetSpeed(){
-        return velMagnitude;
-    }
-
-    public bool GetIsOnWater(){
-        if(currentGroundTag == "Water") return true;
-        return false;
+        return rgt * dir.x + fwd * dir.z;
     }
 }

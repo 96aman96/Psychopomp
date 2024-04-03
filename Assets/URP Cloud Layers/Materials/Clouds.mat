@@ -55,8 +55,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Contrast: 1.53
-    - _Density: 0.31
+    - _Contrast: 2
+    - _Density: 0.5
     - _Distortion_Size: 10
     - _QueueControl: 0
     - _QueueOffset: 0
@@ -68,6 +68,6 @@ Material:
     - _Distortion: {r: 0.01, g: 0.01, b: 0, a: 0}
     - _Emmision: {r: 1, g: 1, b: 1, a: 0}
     - _Scaling: {r: 0.5, g: 0.5, b: 0, a: 0}
-    - _Speed: {r: 0.003, g: 0.0015, b: 0, a: 0}
+    - _Speed: {r: 0.006, g: 0.003, b: 0, a: 0}
     - _Vector2: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
