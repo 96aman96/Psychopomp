@@ -55,14 +55,12 @@ public class KinematicCharacterController : MonoBehaviour{
     private bool isGliding = false;
 
     // ===== COMPONENT REFERENCES =====
-    [Header("Animator")]
     private ColliderUtil colUtil;
-    private CharacterState state;
-    public Animator animator;
+    private CharacterVFX vfx;
 
     void Start(){
         colUtil = GetComponent<ColliderUtil>();
-        state = GetComponent<CharacterState>();
+        vfx = GetComponent<CharacterVFX>();
         movementVector = transform.forward;
     }
 
@@ -116,13 +114,10 @@ public class KinematicCharacterController : MonoBehaviour{
             isGliding = true;
             velMagnitude += CalculateGlidingMomentumChange(newVelocity);
             newVelocity = CalculateUpdraftVelocity(newVelocity);
+            vfx.TriggerFeathers();
         } else if(Input.GetKeyUp("left shift")){
             isGliding = false;
         }
-
-        // Set state, for animation/visual purposes
-        //SetState(isAccelerating);
-        SetAnimatorState();
 
         // Check for collision and slides across the collided surface if it happens
         Vector3 attemptedMovement = ((newVelocity+currentVelocity)/2) * Time.deltaTime;
@@ -238,20 +233,15 @@ public class KinematicCharacterController : MonoBehaviour{
         return mov;
     }
 
-    private void SetState(bool isAccelerating){
-        if(isGliding){
-            state.ChangeState(State.Glide);
-        } else if(isJumping){
-            state.ChangeState(State.Jump);
-        } else if(isAccelerating){
-            state.ChangeState(State.Accelerated);
-        } else {
-            state.ChangeState(State.Idle);
-        }
+    public bool GetIsGrounded(){
+        return isGrounded;
     }
 
-    private void SetAnimatorState(){
-        animator.SetBool("TouchingGround", isGrounded);
-        animator.SetFloat("Speed", velMagnitude);
+    public bool GetIsGliding(){
+        return isGliding;
+    }
+
+    public float GetSpeed(){
+        return velMagnitude;
     }
 }
