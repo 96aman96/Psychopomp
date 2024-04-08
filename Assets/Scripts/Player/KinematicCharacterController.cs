@@ -35,7 +35,7 @@ public class KinematicCharacterController : MonoBehaviour{
     public float acceleratedFallMultiplier = 5f;
     public float maxFallSpeed = 100f;
     private bool isGrounded = false;
-    private float fallingVelocity = 0;
+    public float fallingVelocity = 0;
 
     // ===== JUMPING =====
     [Header("Jumping")]
@@ -88,11 +88,12 @@ public class KinematicCharacterController : MonoBehaviour{
             isGliding=false;
             currentJumpCount = 0;
             currentCoyote = coyoteTime;
+            // fallingVelocity = 0;
         } else currentCoyote -= Time.deltaTime;
 
         // Jumping from air
         if(isJumping && currentJumpCount < maxJumpCount && Input.GetKeyDown("space")){
-            newVelocity += CalculateJumpVelocity();
+            fallingVelocity += CalculateJumpVelocity();
             currentJumpBuffer = 0;
             currentJumpCount++;
         }
@@ -108,14 +109,14 @@ public class KinematicCharacterController : MonoBehaviour{
             currentCoyote = 0;
             currentJumpBuffer = 0;
             currentJumpCount = 1;
-            newVelocity += CalculateJumpVelocity();
+            fallingVelocity += CalculateJumpVelocity();
         }
 
         // Check to see if is grounded. If not, fall
         if(!isGrounded){
-            Vector3 newFallVelocity = CalculateFallingVelocity(isAccelerating);
-            newVelocity += newFallVelocity;
+            fallingVelocity = CalculateFallingVelocity(isAccelerating);
         }
+        newVelocity.y += fallingVelocity;
 
         // Check for gliding, apply updraft force
         if(!isGrounded && !isGliding && Input.GetKeyDown("left shift")){
@@ -135,6 +136,7 @@ public class KinematicCharacterController : MonoBehaviour{
         // Extra check to avoid falling through ground
         // TODO: Remove -normal actualy !!!!
         if(isGrounded) newMovement = SnapToGround(newMovement);
+        if(isGrounded && fallingVelocity <= 0) fallingVelocity = 0;
 
         // Doing the character translation
         transform.position += newMovement;
@@ -165,12 +167,12 @@ public class KinematicCharacterController : MonoBehaviour{
         return vel;
     }
 
-    private Vector3 CalculateFallingVelocity(bool isAccelerating){
-        Vector3 verticalVelocity = Vector3.zero;
+    private float CalculateFallingVelocity(bool isAccelerating){
+        float verticalVelocity = 0;
         float gravFactor = 1;
         float max = maxFallSpeed;
 
-        if(currentVelocity.y<0) gravFactor = fallGravityMultiplier;
+        if(fallingVelocity<0) gravFactor = fallGravityMultiplier;
         
         if(isAccelerating){
             gravFactor = acceleratedFallMultiplier;
@@ -179,14 +181,14 @@ public class KinematicCharacterController : MonoBehaviour{
             max = glideMaxFallSpeed;
         }
         
-        verticalVelocity.y = Mathf.Clamp(currentVelocity.y - (gravity * gravFactor * Time.deltaTime), -max, Mathf.Infinity);
+        verticalVelocity = Mathf.Max(fallingVelocity - (gravity * gravFactor * Time.deltaTime), -max);
         
         return verticalVelocity;
     }
 
-    private Vector3 CalculateJumpVelocity(){
-        Vector3 verticalVelocity = Vector3.zero;
-        verticalVelocity.y = jumpVelocity;
+    private float CalculateJumpVelocity(){
+        float verticalVelocity = 0f;
+        verticalVelocity = jumpVelocity;
         // the bigger the y velocity the higher the jump
 
         return verticalVelocity;
@@ -215,14 +217,14 @@ public class KinematicCharacterController : MonoBehaviour{
         bool grd = colUtil.IsGroundedCast(transform.position, out normal, out tag);
         currentNormal = normal;
         currentGroundTag = tag;
-        // AlignToSurface();
+        AlignToSurface();
 
         return grd;
     }
 
     private void AlignToSurface(){
-        Quaternion rot = Quaternion.FromToRotation(transform.up, currentNormal) * transform.rotation;
-        transform.rotation = Quaternion.Lerp(transform.rotation, rot, alignmentSpeed * Time.deltaTime); 
+        // Quaternion rot = Quaternion.FromToRotation(transform.up, currentNormal) * transform.rotation;
+        // transform.rotation = Quaternion.Lerp(transform.rotation, rot, alignmentSpeed * Time.deltaTime); 
 
         // Quaternion rot = Quaternion.FromToRotation(transform.up, currentNormal);
         // rot = Quaternion.Lerp(transform.rotation, rot, alignmentSpeed * Time.deltaTime);
