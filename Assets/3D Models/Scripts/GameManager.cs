@@ -16,7 +16,8 @@ enum TargetType
 public class GameManager : MonoBehaviour
 {
     public bool canMusic, canFX;
-
+    public UIManager _UIManager;
+    public AudioManager _AudioManager;
     private void Awake()
     {
         Application.targetFrameRate = 60;

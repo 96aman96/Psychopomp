@@ -7,7 +7,7 @@ public class CharacterVFX : MonoBehaviour{
     private KinematicCharacterController kcc;
 
     public float maxSpeed = 150;
-
+    public GameManager gameManager;
     private bool onWater = true;
     private bool isGrounded = false;
     private float speed = 0;
@@ -43,6 +43,7 @@ public class CharacterVFX : MonoBehaviour{
 
     private void Start(){
         kcc = GetComponent<KinematicCharacterController>();
+        gameManager = GameObject.FindWithTag("Game Manager").GetComponent<GameManager>();
     }
 
     private void LateUpdate(){
@@ -121,6 +122,7 @@ public class CharacterVFX : MonoBehaviour{
 
     private void TriggerShock(){
         if(!isShocking && previousSpeed < speedToTriggerShock && speed > speedToTriggerShock){
+            gameManager._AudioManager.PlayShockAudio();
             isShocking = true;
             shockElapsed = 0;
         }

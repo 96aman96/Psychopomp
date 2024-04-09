@@ -10,6 +10,7 @@ TagManager:
   - Pickup
   - Drop Zone
   - Water
+  - Game Manager
   layers:
   - Default
   - TransparentFX

@@ -66,6 +66,7 @@ public class KinematicCharacterController : MonoBehaviour{
 
     // ===== COMPONENT REFERENCES =====
     private ColliderUtil colUtil;
+    [SerializeField]
     private CharacterVFX vfx;
 
     void Start(){
