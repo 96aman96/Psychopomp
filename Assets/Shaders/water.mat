@@ -28,7 +28,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Second_Normal:
-        m_Texture: {fileID: 2800000, guid: 38107e9d25f96764482e8b855146b46e, type: 3}
+        m_Texture: {fileID: 2800000, guid: 206600efcffa436499fa6bfb371537bf, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -47,7 +47,7 @@ Material:
     m_Floats:
     - _Depth: 2.67
     - _Displacement: 0
-    - _Normal_Strength: 0.75
+    - _Normal_Strength: 1
     - _QueueControl: 0
     - _QueueOffset: 0
     - _Reflection_Displacement_Strength: 0.04

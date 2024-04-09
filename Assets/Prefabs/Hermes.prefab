@@ -23128,6 +23128,7 @@ MonoBehaviour:
   percentageMomentumMaintained: 0.2
   glideGravityFactor: 0.4
   glideMaxFallSpeed: 5
+  freezeFrameDuration: 0.1
 --- !u!114 &6350911102597528593
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23162,6 +23163,7 @@ MonoBehaviour:
   animator: {fileID: 7465285366631077795}
   maxSpeed: 150
   ripple: {fileID: 6753304957100695196}
+  splatter: {fileID: 0}
   baseRippleInterval: 1
   rippleIntervalMultiplier: 0.05
   currentRipple: 0
@@ -23182,7 +23184,8 @@ MonoBehaviour:
   dustIntervalMultiplier: 0.009
   currentDust: 0
   feathers: {fileID: 6222672782891242619}
-  glideTrail: {fileID: 809749834618506045}
+  glideTrailR: {fileID: 0}
+  glideTrailL: {fileID: 0}
   shockwave: {fileID: 2100000, guid: 6944db47d312ec34981c1bb33e609460, type: 2}
   speedToTriggerShock: 90
   shockDuration: 1.5
