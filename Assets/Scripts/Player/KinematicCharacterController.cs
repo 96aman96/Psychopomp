@@ -24,9 +24,13 @@ public class KinematicCharacterController : MonoBehaviour{
     public float passiveAcceleration = 10f;
     public float passiveAirAcceleration = 10f;
     public float passiveDeceleration = 10f;
+    public float rampMagnitudeMultiplier = 1.05f;
+    private const float stasisTreshold = 0.01f;
+
+    // ===== MOVEMENT VELOCITY VARIABLES =====
+    [Header("Current Velocity")]
     public Vector3 currentVelocity = Vector3.zero;
     public float velMagnitude = 0;
-    private const float stasisTreshold = 0.01f;
 
     // ===== FALLING =====
     [Header("Falling")]
@@ -174,11 +178,12 @@ public class KinematicCharacterController : MonoBehaviour{
 
         if(fallingVelocity<0) gravFactor = fallGravityMultiplier;
         
-        if(isAccelerating){
-            gravFactor = acceleratedFallMultiplier;
-        } else if(isGliding){
+        if(isGliding){
             gravFactor = glideGravityFactor;
             max = glideMaxFallSpeed;
+            gravFactor = acceleratedFallMultiplier;
+        } else if(isAccelerating){
+            gravFactor = acceleratedFallMultiplier;
         }
         
         verticalVelocity = Mathf.Max(fallingVelocity - (gravity * gravFactor * Time.deltaTime), -max);
@@ -225,8 +230,8 @@ public class KinematicCharacterController : MonoBehaviour{
     private float GetRampMultiplier(){
         float dot = Vector3.Dot(Vector3.up, currentNormal);
         
-        if(dot < .8f && dot > .2f){
-            return 2f;
+        if(dot < .95f && dot > .05f){
+            return rampMagnitudeMultiplier;
         }
 
         return 1;
