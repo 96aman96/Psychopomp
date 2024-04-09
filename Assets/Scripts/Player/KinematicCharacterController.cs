@@ -130,7 +130,7 @@ public class KinematicCharacterController : MonoBehaviour{
 
         // Check for collision and slides across the collided surface if it happens
         Vector3 attemptedMovement = ((newVelocity+currentVelocity)/2) * Time.deltaTime;
-        Vector3 newMovement = colUtil.CollideAndSlide(attemptedMovement, transform.position, 1);
+        Vector3 newMovement = colUtil.CollideAndSlide(attemptedMovement, transform.position, 1, GetRampMultiplier());
 
         // Extra check to avoid falling through ground
         // TODO: Remove -normal actualy !!!!
@@ -218,6 +218,16 @@ public class KinematicCharacterController : MonoBehaviour{
         // AlignToSurface();
 
         return grd;
+    }
+
+    private float GetRampMultiplier(){
+        float dot = Vector3.Dot(Vector3.up, currentNormal);
+        
+        if(dot < .8f && dot > .2f){
+            return 2f;
+        }
+
+        return 1;
     }
 
     private void AlignToSurface(){

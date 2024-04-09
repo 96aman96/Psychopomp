@@ -19,7 +19,7 @@ public class ColliderUtil : MonoBehaviour{
         }
     }
 
-    public Vector3 CollideAndSlide(Vector3 vel, Vector3 pos, int depth){
+    public Vector3 CollideAndSlide(Vector3 vel, Vector3 pos, int depth, float magnitudeMult = 1){
         if(depth >= maxBounces) return Vector3.zero;
 
         float mag = vel.magnitude;
@@ -33,11 +33,11 @@ public class ColliderUtil : MonoBehaviour{
 
             if(velPostCollision.magnitude <= skinWidth) velPostCollision = Vector3.zero;
 
-            float leftoverMagnitude = leftover.magnitude;
+            float leftoverMagnitude = leftover.magnitude * magnitudeMult;
             leftover = Vector3.ProjectOnPlane(leftover, hit.normal).normalized;
             leftover *= leftoverMagnitude;
 
-            return velPostCollision + CollideAndSlide(leftover, pos + velPostCollision, depth+1);
+            return velPostCollision + CollideAndSlide(leftover, pos + velPostCollision, depth+1, magnitudeMult);
         }
 
         return vel;
