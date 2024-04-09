@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using NaughtyAttributes;
 using TMPro;
 using UnityEngine;
-using NaughtyAttributes.Editor;
+using NaughtyAttributes;
 public class LetterManager : MonoBehaviour
 {
     // Start is called before the first frame update
