@@ -9,7 +9,6 @@ public class KinematicCharacterController : MonoBehaviour{
     [Header("Movement Rotation")]
     public float rotationStrength = 1f;
     public float alignmentSpeed = 10f;
-    private Vector3 movementVector = Vector3.zero;
 
     // ==== GENERAL ======
     private Vector2 input = Vector2.zero;
@@ -20,6 +19,7 @@ public class KinematicCharacterController : MonoBehaviour{
     [Header("Movement Acceleration")]
     public float maxSpeed = 100f;
     public float maxPassiveSpeed = 40f;
+    public float absoluteMaxSpeed = 250f;
     public float minSpeed = 10f;
     public float acceleration = 10f;
     public float deceleration = 40f;
@@ -58,6 +58,7 @@ public class KinematicCharacterController : MonoBehaviour{
     [Header("Gliding")]
     public float updraftForce = 5f;
     public float updraftThreshold = 120f;
+    public float momentumChangeThreshold = 60f;
     [Range(0f,1f)] public float percentageMomentumMaintained = .6f;
     public float glideGravityFactor = 0.1f;
     public float glideMaxFallSpeed = 10f;
@@ -73,7 +74,6 @@ public class KinematicCharacterController : MonoBehaviour{
     void Start(){
         colUtil = GetComponent<ColliderUtil>();
         vfx = GetComponent<CharacterVFX>();
-        movementVector = transform.forward;
     }
 
     void Update(){
@@ -95,7 +95,6 @@ public class KinematicCharacterController : MonoBehaviour{
             isGliding=false;
             currentJumpCount = 0;
             currentCoyote = coyoteTime;
-            // fallingVelocity = 0;
         } else currentCoyote -= Time.deltaTime;
 
         // Jumping from air
@@ -123,18 +122,20 @@ public class KinematicCharacterController : MonoBehaviour{
         if(!isGrounded){
             fallingVelocity = CalculateFallingVelocity(isDiving);
         }
-        newVelocity.y += fallingVelocity;
 
         // Check for gliding, apply updraft force
         if(!isGrounded && !isGliding && Input.GetButtonDown("Glide")){
             isGliding = true;
-            velMagnitude += CalculateGlidingMomentumChange(newVelocity);
-            newVelocity = CalculateUpdraftVelocity(newVelocity);
+            velMagnitude += CalculateGlidingMomentumChange(fallingVelocity);
+            fallingVelocity = CalculateUpdraftVelocity(fallingVelocity);
             vfx.StartGlide();
             FreezeFrame();
         } else if(!Input.GetButton("Glide")){
             isGliding = false;
         }
+
+        // Updating and clamping velocity
+        newVelocity.y += fallingVelocity;
 
         // Check for collision and slides across the collided surface if it happens
         Vector3 attemptedMovement = ((newVelocity+currentVelocity)/2) * Time.deltaTime;
@@ -171,6 +172,7 @@ public class KinematicCharacterController : MonoBehaviour{
         float vel = Mathf.Max(baseVel, velMagnitude);
         vel -= (dec*Time.deltaTime);
 
+        vel = Mathf.Min(vel, absoluteMaxSpeed);
         return vel;
     }
 
@@ -184,7 +186,6 @@ public class KinematicCharacterController : MonoBehaviour{
         if(isGliding){
             gravFactor = glideGravityFactor;
             max = glideMaxFallSpeed;
-            gravFactor = acceleratedFallMultiplier;
         } else if(isAccelerating){
             gravFactor = acceleratedFallMultiplier;
         }
@@ -202,21 +203,23 @@ public class KinematicCharacterController : MonoBehaviour{
         return verticalVelocity;
     }
 
-    private Vector3 CalculateUpdraftVelocity(Vector3 _vel){
-        Vector3 vel = _vel;
-        if(vel.y <= -updraftThreshold){
-            vel.y = updraftForce;
-        } else if (vel.y >= updraftThreshold){
-            vel.y = -updraftForce;
-        } else vel.y = 0;
+    private float CalculateUpdraftVelocity(float _fallMag){
+        float vel = _fallMag;
+        if(vel <= -updraftThreshold){
+            vel = updraftForce;
+        } else if (vel >= updraftThreshold){
+            vel = -updraftForce;
+        } else vel = 0;
 
         return vel;
     }
 
-    private float CalculateGlidingMomentumChange(Vector3 _vel){
-        float mag = Mathf.Abs(_vel.y);
+    private float CalculateGlidingMomentumChange(float _fallMag){
+        if(_fallMag < -momentumChangeThreshold){
+            return -_fallMag * percentageMomentumMaintained;
+        }
         
-        return mag * percentageMomentumMaintained;
+        return 0;
     }
 
     private bool CheckGrounded(){

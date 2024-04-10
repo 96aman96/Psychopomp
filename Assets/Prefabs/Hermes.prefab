@@ -22425,6 +22425,7 @@ MonoBehaviour:
   alignmentSpeed: 10
   maxSpeed: 100
   maxPassiveSpeed: 40
+  absoluteMaxSpeed: 250
   minSpeed: 10
   acceleration: 50
   deceleration: 70
@@ -22443,12 +22444,13 @@ MonoBehaviour:
   maxJumpCount: 2
   coyoteTime: 0.6
   jumpBufferTime: 0.3
-  updraftForce: 30
-  updraftThreshold: 120
-  percentageMomentumMaintained: 0.2
+  updraftForce: 50
+  updraftThreshold: 100
+  momentumChangeThreshold: 120
+  percentageMomentumMaintained: 0.1
   glideGravityFactor: 0.4
-  glideMaxFallSpeed: 5
-  freezeFrameDuration: 0.1
+  glideMaxFallSpeed: 10
+  freezeFrameDuration: 0.05
   audioManager: {fileID: 0}
 --- !u!114 &6350911102597528593
 MonoBehaviour:
@@ -22482,7 +22484,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 7465285366631077795}
-  model: {fileID: 7031842402886515920}
+  model: {fileID: 713714904986952095}
   maxSpeed: 100
   ripple: {fileID: 6753304957100695196}
   splatter: {fileID: 5673194029967113172}
@@ -22557,6 +22559,7 @@ MonoBehaviour:
   speedToTriggerShock: 90
   shockDuration: 1.5
   shockElapsed: 0
+  maxTilt: 30
   tiltIntensity: 1
   tiltVelocityMultiplier: 1
 --- !u!114 &551687765701708746
