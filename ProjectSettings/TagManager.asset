@@ -11,6 +11,7 @@ TagManager:
   - Drop Zone
   - Water
   - Game Manager
+  - Delivery Booster
   layers:
   - Default
   - TransparentFX

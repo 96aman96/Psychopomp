@@ -1,9 +1,12 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Resources;
 using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
+
 public class Audio_Distance_Controller : MonoBehaviour
 {
     public AudioSource radioStatic, targetMusic;
@@ -14,8 +17,19 @@ public class Audio_Distance_Controller : MonoBehaviour
     public float noiseVol,sigVol,proximity;
     public bool canUpdateDistance;
     public Transform TargetStub;
+    public GameObject deliveryIndicator;
+    public Image deliveryFill;
+    
+    #region events
+
+    public delegate void OnLetterInteract();
+
+    public static event OnLetterInteract letterDelivered;
+
+    #endregion
     void Start()
     {
+        deliveryFill.fillAmount = 0;
         radioStatic.volume = 0;
         targetMusic.volume = 0;
         radioStatic.Play();
@@ -63,6 +77,27 @@ public class Audio_Distance_Controller : MonoBehaviour
         if (destinationPin!=null && canUpdateDistance)
         {
             DistanceToTarget = Vector3.Distance(transform.position, destinationPin.transform.position);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {   
+
+        if (other.tag == "Delivery Booster")
+        {
+            deliveryIndicator.gameObject.SetActive(true);
+        }
+    }
+    private void OnTriggerStay(Collider other)
+    {
+        Debug.Log(" im here");
+        if (other.tag == "Delivery Booster")
+        {
+            deliveryFill.fillAmount += 0.2f * Time.deltaTime;
+            if (deliveryFill.fillAmount >= 1)
+            {
+                letterDelivered();
+            }
         }
     }
 
@@ -124,5 +159,6 @@ public class Audio_Distance_Controller : MonoBehaviour
         Gizmos.color = Color.blue; // Set the color of the gizmo
         Gizmos.DrawWireSphere(transform.position, detectionRadius); // Draw the wire sphere
     }
+    
 }
 
