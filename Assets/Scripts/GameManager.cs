@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 #region ENUMS
 
@@ -23,6 +24,10 @@ public class GameManager : MonoBehaviour
         Application.targetFrameRate = 60;
     }
 
+    void ReloadGame()
+    {
+        SceneManager.LoadScene(0);
+    }
     // Update is called once per frame
     void Update()
     {

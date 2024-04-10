@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,9 +8,21 @@ public class UIManager : MonoBehaviour
     // Start is called before the first frame update
     public GameObject StartPanel, PausePanel,LetterPanel, InGamePanel;
     public bool isPaused;
-    void Start()
+    public GameObject DeliveryText;
+
+    private void OnEnable()
     {
-        
+        Audio_Distance_Controller.letterDelivered += LetterDeliveredToTrain;
+    }
+
+    private void OnDisable()
+    {
+        Audio_Distance_Controller.letterDelivered -= LetterDeliveredToTrain;
+    }
+
+    private void LetterDeliveredToTrain()
+    {
+        DeliveryText.gameObject.SetActive(true);
     }
 
     // Update is called once per frame
