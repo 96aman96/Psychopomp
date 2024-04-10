@@ -90,17 +90,24 @@ public class Audio_Distance_Controller : MonoBehaviour
     }
     private void OnTriggerStay(Collider other)
     {
-        Debug.Log(" im here");
         if (other.tag == "Delivery Booster")
         {
             deliveryFill.fillAmount += 0.2f * Time.deltaTime;
             if (deliveryFill.fillAmount >= 1)
             {
+                Destroy(deliveryIndicator.gameObject);
                 letterDelivered();
             }
         }
     }
+        private void OnTriggerExit(Collider other)
+    {   
 
+        if (other.tag == "Delivery Booster")
+        {
+            deliveryIndicator.gameObject.SetActive(false);
+        }
+    }
     void LookForSphereTarget(TargetType type)
     {
         if (type == TargetType.PickupTrain)

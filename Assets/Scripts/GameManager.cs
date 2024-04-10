@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -22,16 +23,6 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         Application.targetFrameRate = 60;
-    }
-
-    void ReloadGame()
-    {
-        SceneManager.LoadScene(0);
-    }
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
 

@@ -22,9 +22,16 @@ public class UIManager : MonoBehaviour
 
     private void LetterDeliveredToTrain()
     {
+        if(InGamePanel!=null)
+        {
+        InGamePanel.gameObject.SetActive(true);
         DeliveryText.gameObject.SetActive(true);
-    }
+        Destroy(DeliveryText,4);
+                Destroy(InGamePanel,4);
+        }
 
+    }
+ 
     // Update is called once per frame
     void Update()
     {
