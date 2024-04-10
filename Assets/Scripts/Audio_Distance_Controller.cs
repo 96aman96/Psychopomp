@@ -60,7 +60,7 @@ public class Audio_Distance_Controller : MonoBehaviour
 
     private void UpdateDistanceToTarget()
     {
-        if (canUpdateDistance)
+        if (destinationPin!=null && canUpdateDistance)
         {
             DistanceToTarget = Vector3.Distance(transform.position, destinationPin.transform.position);
         }
@@ -93,9 +93,9 @@ public class Audio_Distance_Controller : MonoBehaviour
 
     void CheckTargetAngle()
     {
-            if (DistanceToTarget > 20 || detectionRadius == 0)
-            {
-                canUpdateDistance = true;
+        if (destinationPin != null && (DistanceToTarget > 20 || detectionRadius == 0))
+        {
+            canUpdateDistance = true;
             Vector3 directionToSphere = destinationPin.transform.position - transform.position;
             float angle = Vector3.Angle(transform.forward, directionToSphere);
             float noiseVolume = angle / 180.0f;
