@@ -4,16 +4,20 @@ using UnityEngine;
 
 public class CharacterVFX : MonoBehaviour{
     public Animator animator;
+    public Transform model;
+    private GameManager gameManager;
     private KinematicCharacterController kcc;
 
     public float maxSpeed = 150;
-    public GameManager gameManager;
     private bool onWater = true;
     private bool isGrounded = false;
     private float speed = 0;
     private float previousSpeed = 0;
     private bool isGliding = false;
+    private Vector2 input = Vector2.zero;
 
+    // WATER RIPPLE AND SPLATTER
+    [Header("Water Ripple and Splatter")]
     public ParticleSystem ripple;
     public ParticleSystem splatter;
     public float baseRippleInterval = 0.5f;
@@ -22,16 +26,24 @@ public class CharacterVFX : MonoBehaviour{
     public AnimationCurve rippleBurstPerSpeed;
     public AnimationCurve rippleVelocityPerSpeed;
 
+    // GROUND DUST
+    [Header("Ground Dust")]
     public ParticleSystem dust;
     public float baseDustInterval = 0.5f;
     public float dustIntervalMultiplier = 1f;
     public float currentDust = 0;
 
+    // GLIDE FEATHER
+    [Header("Gliding")]
     public ParticleSystem feathers;
+    private bool isFlyingMusicOn = false;
 
+    // GLIDE TRAIL
     public TrailRenderer glideTrailR;
     public TrailRenderer glideTrailL;
 
+    // SHOCKWAVE SOUND BARRIER THING
+    [Header("Shockwave")]
     public Material shockwave;
     public float speedToTriggerShock = 90f;
     public float shockDuration = 1f;
@@ -39,7 +51,13 @@ public class CharacterVFX : MonoBehaviour{
     private float shockStart = -5f;
     private float shockEnd = 1.5f;
     public float shockElapsed = 0;
+    private bool shockSFXPlayed = true;
 
+    // CHARACTER MODEL TILT
+    [Header("Model Tilt")]
+    public float maxTilt = 30f;
+    public float tiltIntensity = 1f;
+    public float tiltVelocityMultiplier = 1f;
 
     private void Start(){
         kcc = GetComponent<KinematicCharacterController>();
@@ -49,6 +67,7 @@ public class CharacterVFX : MonoBehaviour{
     private void LateUpdate(){
         UpdateVariables();
         SetAnimatorState();
+        // UpdateModelRotation();
         TriggerParticles();
         UpdateShock();
     }
@@ -59,12 +78,22 @@ public class CharacterVFX : MonoBehaviour{
         speed = kcc.GetSpeed();
         isGliding = kcc.GetIsGliding();
         onWater = kcc.GetIsOnWater();
+        input = kcc.GetInput();
     }
 
     private void SetAnimatorState(){
         animator.SetBool("TouchingGround", isGrounded);
         animator.SetFloat("Speed", speed);
         animator.SetBool("IsGliding", isGliding);
+    }
+
+    private void UpdateModelRotation(){
+        float target = -input.x * maxTilt;
+        float speed = tiltIntensity * Time.deltaTime;
+        float lerp = Mathf.Lerp(model.eulerAngles.z, target, speed);
+        Debug.Log(target);
+
+        model.localEulerAngles=new Vector3(0,0,lerp);
     }
 
     private void TriggerParticles(){
@@ -76,7 +105,10 @@ public class CharacterVFX : MonoBehaviour{
         
         if (isGliding){
             TriggerGlideTrail();
-        } else StopGlideTrail();
+        } else {
+            StopGlideTrail();
+            StopFlyingMusic();
+        }
 
         TriggerShock();
     }
@@ -106,7 +138,12 @@ public class CharacterVFX : MonoBehaviour{
         }
     }
 
-    public void TriggerFeathers(){
+    public void StartGlide(){
+        TriggerFeathers();
+        TriggerFlyingMusic();
+    }
+
+    private void TriggerFeathers(){
         feathers.Play();
     }
 
@@ -124,6 +161,7 @@ public class CharacterVFX : MonoBehaviour{
         if(!isShocking && previousSpeed < speedToTriggerShock && speed > speedToTriggerShock){
             gameManager._AudioManager.PlayShockAudio();
             isShocking = true;
+            shockSFXPlayed = false;
             shockElapsed = 0;
         }
     }
@@ -133,6 +171,25 @@ public class CharacterVFX : MonoBehaviour{
         shockElapsed += Time.deltaTime;
         shockwave.SetFloat("_Progress", Mathf.Lerp(shockStart, shockEnd, shockElapsed/shockDuration));
         
-        if(shockElapsed > shockDuration) isShocking = false;
+        if(!shockSFXPlayed && (shockElapsed/shockDuration)>0.7f){
+            shockSFXPlayed = true;
+            gameManager._AudioManager.PlaySoundBarrier();
+        }
+
+        if(shockElapsed > shockDuration)isShocking = false;
+    }
+
+    private void TriggerFlyingMusic(){
+        if(isFlyingMusicOn) return;
+
+        isFlyingMusicOn = true;
+        gameManager._AudioManager.SwitchToFlyingMusic();
+    }
+
+    private void StopFlyingMusic(){
+        if(!isFlyingMusicOn) return;
+
+        isFlyingMusicOn = false;
+        gameManager._AudioManager.SwitchToAmbientMusic();
     }
 }

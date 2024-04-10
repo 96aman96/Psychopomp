@@ -12,6 +12,7 @@ public class KinematicCharacterController : MonoBehaviour{
     private Vector3 movementVector = Vector3.zero;
 
     // ==== GENERAL ======
+    private Vector2 input = Vector2.zero;
     private Vector3 currentNormal = Vector3.zero;
     private string currentGroundTag = null; 
 
@@ -65,8 +66,8 @@ public class KinematicCharacterController : MonoBehaviour{
     private bool isFrozen = false;
 
     // ===== COMPONENT REFERENCES =====
+    public AudioManager audioManager;
     private ColliderUtil colUtil;
-    [SerializeField]
     private CharacterVFX vfx;
 
     void Start(){
@@ -80,7 +81,7 @@ public class KinematicCharacterController : MonoBehaviour{
 
         // Get input from WASD and mouse and calculate velocity from it (using acceleration and shit) 
         // Axis acceleration is considered passive while mouse is active. Axis deceleration is active, while pressing nothing is passive.
-        Vector2 input = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).normalized;
+        input = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).normalized;
         bool isAccelerating = GetAccelerationInput();
         bool isDiving = GetDivingInput();
         transform.Rotate(Vector3.up * input.x * rotationStrength * Time.deltaTime);
@@ -129,9 +130,9 @@ public class KinematicCharacterController : MonoBehaviour{
             isGliding = true;
             velMagnitude += CalculateGlidingMomentumChange(newVelocity);
             newVelocity = CalculateUpdraftVelocity(newVelocity);
-            vfx.TriggerFeathers();
+            vfx.StartGlide();
             FreezeFrame();
-        } else if(Input.GetButtonUp("Glide")){
+        } else if(!Input.GetButton("Glide")){
             isGliding = false;
         }
 
@@ -290,6 +291,10 @@ public class KinematicCharacterController : MonoBehaviour{
         isFrozen = false;
     }
 
+    public Vector2 GetInput(){
+        return input;
+    }
+    
     public bool GetIsGrounded(){
         return isGrounded;
     }
@@ -305,5 +310,13 @@ public class KinematicCharacterController : MonoBehaviour{
     public bool GetIsOnWater(){
         if(currentGroundTag == "Water") return true;
         return false;
+    }
+
+    public void Pause(){
+        isFrozen = true;
+    }
+
+    public void Unpause(){
+        isFrozen = false;
     }
 }
