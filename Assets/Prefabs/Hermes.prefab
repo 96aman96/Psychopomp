@@ -22559,8 +22559,8 @@ MonoBehaviour:
   speedToTriggerShock: 90
   shockDuration: 1.5
   shockElapsed: 0
-  maxTilt: 30
-  tiltIntensity: 1
+  maxTilt: 40
+  tiltIntensity: 5
   tiltVelocityMultiplier: 1
 --- !u!114 &551687765701708746
 MonoBehaviour:

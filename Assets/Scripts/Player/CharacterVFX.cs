@@ -67,7 +67,7 @@ public class CharacterVFX : MonoBehaviour{
     private void LateUpdate(){
         UpdateVariables();
         SetAnimatorState();
-        // UpdateModelRotation();
+        UpdateModelRotation();
         TriggerParticles();
         UpdateShock();
     }
@@ -88,12 +88,15 @@ public class CharacterVFX : MonoBehaviour{
     }
 
     private void UpdateModelRotation(){
-        float target = -input.x * maxTilt;
-        float speed = tiltIntensity * Time.deltaTime;
-        float lerp = Mathf.Lerp(model.eulerAngles.z, target, speed);
-        Debug.Log(target);
+        float target = 0;
+        if(speed>80){
+            target = -input.x * maxTilt;
+        }
 
-        model.localEulerAngles=new Vector3(0,0,lerp);
+        float lerpSpeed = tiltIntensity * Time.deltaTime;
+
+        Quaternion tgt = Quaternion.Euler(model.localEulerAngles.x, model.localEulerAngles.y, target);
+        model.localRotation = Quaternion.Lerp(model.localRotation, tgt, lerpSpeed);
     }
 
     private void TriggerParticles(){
