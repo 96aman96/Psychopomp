@@ -31,6 +31,8 @@ public class UIManager : MonoBehaviour
     public void StartGame()
     {
         StartPanel.gameObject.SetActive(false);
+        LetterPanel.gameObject.SetActive(true);
+        LetterPanel.GetComponent<LetterManager>().ShowLetter();
     }
     public void PauseGame()
     {
