@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ProjectInfo>
+	<Project Name="Psychopomp_WwiseProject" GUID="{454E24C6-0300-427F-84B0-21DEAFC904DB}" Generator="2023.1.1.8417"/>
+	<CacheRoot>../../../../Psychopomp_WwiseProject/.cache</CacheRoot>
+	<Platforms>
+		<Platform Name="Mac" GUID="{18AB7A5B-526D-4217-8273-799D20E5F4AA}" BasePlatform="Mac" BasePlatformGUID="{9C6217D5-DD11-4795-87C1-6CE02853C540}" Path="../../../../Psychopomp_WwiseProject/GeneratedSoundBanks/Mac"/>
+		<Platform Name="Windows" GUID="{CF0F84BE-E11D-4CFF-A8E0-93C282AB6FAE}" BasePlatform="Windows" BasePlatformGUID="{6E0CB257-C6C8-4C5C-8366-2740DFC441EB}" Path="../../../../Psychopomp_WwiseProject/GeneratedSoundBanks/Windows"/>
+	</Platforms>
+	<Languages>
+		<Language Name="English(US)" Id="684519430" GUID="{D25DD1CA-DB0A-44AA-BBCF-BDE4E58839E0}" Default="true" UseAsStandIn="true"/>
+	</Languages>
+	<FileHash>{F3CBCCB9-4D2B-008B-DD58-07056FD50B6C}</FileHash>
+</ProjectInfo>

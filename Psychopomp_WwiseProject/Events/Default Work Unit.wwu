@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{F200B06E-8FAE-423D-B158-38EC56AAF073}" SchemaVersion="119">
+	<Events>
+		<WorkUnit Name="Default Work Unit" ID="{F200B06E-8FAE-423D-B158-38EC56AAF073}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="Play_Psychopomp_s_Theme_Loop" ID="{6780E3DB-8718-437A-81B4-45C0E1813CC7}">
+					<ChildrenList>
+						<Action Name="" ID="{3724A686-7CBB-4DBA-BB5C-B124166374FF}" ShortID="308372415">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Psychopomp's Theme Loop" ID="{7DF57EC5-46B0-490B-9CA2-947FE2C958ED}" WorkUnitID="{BA33B5DD-835F-4CC3-9F04-5665BAB2EEB6}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

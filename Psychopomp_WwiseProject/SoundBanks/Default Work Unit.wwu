@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{402BDDD2-1AF3-4E70-BF1F-7ED4D32A8B25}" SchemaVersion="119">
+	<SoundBanks>
+		<WorkUnit Name="Default Work Unit" ID="{402BDDD2-1AF3-4E70-BF1F-7ED4D32A8B25}" PersistMode="Standalone">
+			<ChildrenList>
+				<SoundBank Name="GameSound" ID="{C11907C3-FBC5-45ED-846A-C681E351710D}">
+					<ObjectInclusionList>
+						<ObjectRef Name="Play_Psychopomp_s_Theme_Loop" ID="{6780E3DB-8718-437A-81B4-45C0E1813CC7}" WorkUnitID="{F200B06E-8FAE-423D-B158-38EC56AAF073}" Origin="Manual" Filter="7"/>
+					</ObjectInclusionList>
+					<ObjectExclusionList/>
+					<GameSyncExclusionList/>
+				</SoundBank>
+			</ChildrenList>
+		</WorkUnit>
+	</SoundBanks>
+</WwiseDocument>

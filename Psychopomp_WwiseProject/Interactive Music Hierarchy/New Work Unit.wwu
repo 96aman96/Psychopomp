@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{BA33B5DD-835F-4CC3-9F04-5665BAB2EEB6}" SchemaVersion="119" RootDocumentID="{B794E027-1625-4CE7-9A26-524DADD166A6}" ParentDocumentID="{B794E027-1625-4CE7-9A26-524DADD166A6}">
+	<InteractiveMusic>
+		<WorkUnit Name="New Work Unit" ID="{BA33B5DD-835F-4CC3-9F04-5665BAB2EEB6}" OwnerID="{B794E027-1625-4CE7-9A26-524DADD166A6}" PersistMode="Nested">
+			<ChildrenList>
+				<MusicSegment Name="Psychopomp's Theme Loop" ID="{7DF57EC5-46B0-490B-9CA2-947FE2C958ED}" ShortID="631646270">
+					<PropertyList>
+						<Property Name="EndPosition" Type="Real64" Value="189767.46031746"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2B7CC0FB-0949-49C5-8228-DCFA38A80237}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FAC89FD8-6922-4802-BE46-2764330B2318}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<MusicTrack Name="Psychopomp's Theme Loop" ID="{56C5B757-72DC-47AB-B48E-DDBE52F713BD}" ShortID="441603668">
+							<ReferenceList>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FAC89FD8-6922-4802-BE46-2764330B2318}"/>
+								</Reference>
+								<Reference Name="TransitionRoot">
+									<Custom>
+										<MusicTransition Name="Root" ID="{BA51AFE1-777F-483B-91C4-E66CA6B81BAA}">
+											<PropertyList>
+												<Property Name="IsFolder" Type="bool" Value="True"/>
+											</PropertyList>
+											<TransitionInfo/>
+										</MusicTransition>
+									</Custom>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Psychopomp's Theme Loop" ID="{CCBD74C6-C9B4-48EB-B679-E3FAA6A7DC9D}">
+									<Language>English(US)</Language>
+									<AudioFile>Psychopomp's Theme Loop.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="293747722"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists>
+								<ObjectList Name="Sequences">
+									<Reference>
+										<Local>
+											<MusicTrackSequence Name="" ID="{7A4506FE-197D-49C5-845B-48BA82539C4C}">
+												<ObjectLists>
+													<ObjectList Name="Clips">
+														<Reference>
+															<Local>
+																<MusicClip Name="Psychopomp's Theme Loop" ID="{13009B3B-F871-4A35-8E95-F64C4230B024}">
+																	<PropertyList>
+																		<Property Name="EndTrimOffset" Type="Real64" Value="189767.46031746"/>
+																		<Property Name="FadeInMode" Type="int16" Value="0"/>
+																		<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																	</PropertyList>
+																	<AudioSourceRef Name="Psychopomp's Theme Loop" ID="{CCBD74C6-C9B4-48EB-B679-E3FAA6A7DC9D}"/>
+																</MusicClip>
+															</Local>
+														</Reference>
+													</ObjectList>
+												</ObjectLists>
+											</MusicTrackSequence>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</MusicTrack>
+					</ChildrenList>
+					<ObjectLists>
+						<ObjectList Name="Cues">
+							<Reference>
+								<Local>
+									<MusicCue Name="Entry Cue" ID="{255DABA1-9E01-42AF-9270-0C1BF10AE2B1}"/>
+								</Local>
+							</Reference>
+							<Reference>
+								<Local>
+									<MusicCue Name="Exit Cue" ID="{6351D844-2497-4310-8A7D-6AD62C39848C}">
+										<PropertyList>
+											<Property Name="CueType" Type="int16" Value="1"/>
+											<Property Name="TimeMs" Type="Real64" Value="189767.46031746"/>
+										</PropertyList>
+									</MusicCue>
+								</Local>
+							</Reference>
+						</ObjectList>
+					</ObjectLists>
+				</MusicSegment>
+			</ChildrenList>
+		</WorkUnit>
+	</InteractiveMusic>
+</WwiseDocument>
