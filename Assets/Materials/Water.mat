@@ -47,10 +47,11 @@ Material:
     m_Floats:
     - _Depth: 2.67
     - _Displacement: 0
+    - _IsPaused: 0
     - _Normal_Strength: 1
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Reflection_Displacement_Strength: 0.04
+    - _Reflection_Displacement_Strength: 0.2
     - _Reflection_Strength: 0
     - _Refraction_Scale: 1
     - _Refraction_Speed: 0.5
