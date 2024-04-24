@@ -52,7 +52,7 @@ public class UIManager : MonoBehaviour
     {
         StartPanel.gameObject.SetActive(false);
         LetterPanel.gameObject.SetActive(true);
-        LetterPanel.GetComponent<LetterManager>().ShowLetter();
+        LetterPanel.GetComponent<LetterReader>().ShowLetter();
     }
     public void PauseGame()
     {

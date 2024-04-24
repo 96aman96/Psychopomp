@@ -65,7 +65,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Letter
+    path: Pickup Letter
   m_PositionCurves: []
   m_ScaleCurves: []
   m_FloatCurves:
@@ -75,9 +75,9 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.5019608
+        value: 0.45
         inSlope: 0
-        outSlope: 0.1490196
+        outSlope: 0.20098042
         tangentMode: 69
         weightedMode: 0
         inWeight: 0.33333334
@@ -85,16 +85,16 @@ AnimationClip:
       - serializedVersion: 3
         time: 1
         value: 0.6509804
-        inSlope: 0.1490196
-        outSlope: -0.1490196
+        inSlope: 0.20098042
+        outSlope: -0.20098042
         tangentMode: 69
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 2
-        value: 0.5019608
-        inSlope: -0.1490196
+        value: 0.45
+        inSlope: -0.20098042
         outSlope: 0.24705881
         tangentMode: 69
         weightedMode: 0
@@ -125,8 +125,29 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_AnchoredPosition.y
-    path: Letter
+    path: Pickup Letter
     classID: 224
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_IsActive
+    path: Inventory UI
+    classID: 1
     script: {fileID: 0}
     flags: 0
   m_PPtrCurves: []
@@ -138,7 +159,7 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 2309942076
+      path: 2994818269
       attribute: 4
       script: {fileID: 0}
       typeID: 4
@@ -156,7 +177,16 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 2309942076
+      path: 2019456582
+      attribute: 2086281974
+      script: {fileID: 0}
+      typeID: 1
+      customType: 0
+      isPPtrCurve: 0
+      isIntCurve: 0
+      isSerializeReferenceCurve: 0
+    - serializedVersion: 2
+      path: 2994818269
       attribute: 538195251
       script: {fileID: 0}
       typeID: 224
@@ -192,9 +222,9 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.5019608
+        value: 0.45
         inSlope: 0
-        outSlope: 0.1490196
+        outSlope: 0.20098042
         tangentMode: 69
         weightedMode: 0
         inWeight: 0.33333334
@@ -202,16 +232,16 @@ AnimationClip:
       - serializedVersion: 3
         time: 1
         value: 0.6509804
-        inSlope: 0.1490196
-        outSlope: -0.1490196
+        inSlope: 0.20098042
+        outSlope: -0.20098042
         tangentMode: 69
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 2
-        value: 0.5019608
-        inSlope: -0.1490196
+        value: 0.45
+        inSlope: -0.20098042
         outSlope: 0.24705881
         tangentMode: 69
         weightedMode: 0
@@ -278,10 +308,10 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.x
-    path: Letter
+    path: Pickup Letter
     classID: 224
     script: {fileID: 0}
-    flags: 16
+    flags: 0
   - serializedVersion: 2
     curve:
       serializedVersion: 2
@@ -335,10 +365,10 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.y
-    path: Letter
+    path: Pickup Letter
     classID: 224
     script: {fileID: 0}
-    flags: 16
+    flags: 0
   - serializedVersion: 2
     curve:
       serializedVersion: 2
@@ -392,10 +422,10 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.z
-    path: Letter
+    path: Pickup Letter
     classID: 224
     script: {fileID: 0}
-    flags: 16
+    flags: 0
   - serializedVersion: 2
     curve:
       serializedVersion: 2
@@ -413,8 +443,29 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_AnchoredPosition.y
-    path: Letter
+    path: Pickup Letter
     classID: 224
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_IsActive
+    path: Inventory UI
+    classID: 1
     script: {fileID: 0}
     flags: 0
   m_EulerEditorCurves:
@@ -426,7 +477,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: Letter
+    path: Pickup Letter
     classID: 224
     script: {fileID: 0}
     flags: 0
@@ -438,7 +489,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: Letter
+    path: Pickup Letter
     classID: 224
     script: {fileID: 0}
     flags: 0
@@ -450,7 +501,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Letter
+    path: Pickup Letter
     classID: 224
     script: {fileID: 0}
     flags: 0
