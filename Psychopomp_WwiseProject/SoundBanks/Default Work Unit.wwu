@@ -3,9 +3,15 @@
 	<SoundBanks>
 		<WorkUnit Name="Default Work Unit" ID="{402BDDD2-1AF3-4E70-BF1F-7ED4D32A8B25}" PersistMode="Standalone">
 			<ChildrenList>
-				<SoundBank Name="GameSound" ID="{C11907C3-FBC5-45ED-846A-C681E351710D}">
+				<SoundBank Name="Music" ID="{C11907C3-FBC5-45ED-846A-C681E351710D}">
 					<ObjectInclusionList>
-						<ObjectRef Name="Play_Psychopomp_s_Theme_Loop" ID="{6780E3DB-8718-437A-81B4-45C0E1813CC7}" WorkUnitID="{F200B06E-8FAE-423D-B158-38EC56AAF073}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_Theme" ID="{BA2838EC-18F5-41CF-90A9-64446403F104}" WorkUnitID="{F200B06E-8FAE-423D-B158-38EC56AAF073}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Pause_FlightMusic" ID="{38BB987F-0F38-441D-99AF-03B10B9925D3}" WorkUnitID="{F200B06E-8FAE-423D-B158-38EC56AAF073}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_FlightMusic" ID="{EE3C3859-1FCB-45E9-A1F7-DD20991926C1}" WorkUnitID="{F200B06E-8FAE-423D-B158-38EC56AAF073}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Resume_FlightMusic" ID="{13538A7E-2BCB-4A4F-9013-3923FD88A3DB}" WorkUnitID="{F200B06E-8FAE-423D-B158-38EC56AAF073}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Stop_Theme" ID="{356293D6-762F-4A8A-8BE3-31AEBA08AD0C}" WorkUnitID="{F200B06E-8FAE-423D-B158-38EC56AAF073}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Pause_Theme" ID="{E4123B31-E77F-4ABF-B9A8-FE5D0ECA12C9}" WorkUnitID="{F200B06E-8FAE-423D-B158-38EC56AAF073}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Resume_Theme" ID="{953CDCB9-F157-4B41-A537-EEE6C6F675F2}" WorkUnitID="{F200B06E-8FAE-423D-B158-38EC56AAF073}" Origin="Manual" Filter="7"/>
 					</ObjectInclusionList>
 					<ObjectExclusionList/>
 					<GameSyncExclusionList/>

@@ -22,23 +22,37 @@
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 			</Busses>
 		</SoundBank>
-		<SoundBank Id="3321029388" Type="User" Language="SFX" Hash="{66B5D80B-5A1B-1542-A574-349A81107367}">
-			<ShortName>GameSound</ShortName>
-			<Path>GameSound.bnk</Path>
+		<SoundBank Id="3991942870" Type="User" Language="SFX" Hash="{A06ACF36-CD42-F2F0-12E6-0A6B290B85D7}">
+			<ShortName>Music</ShortName>
+			<Path>Music.bnk</Path>
 			<Media>
-				<File Id="293747722" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Psychopomp's Theme Loop.wav</ShortName>
-					<CachePath>Voices/English(US)/Psychopomp's Theme Loop_FBC78EF0.wem</CachePath>
+				<File Id="75906182" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Theme.wav</ShortName>
+					<CachePath>Voices/English(US)/Theme_FBC78EF0.wem</CachePath>
+				</File>
+				<File Id="976240000" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>FlyMusic.wav</ShortName>
+					<CachePath>Voices/English(US)/FlyMusic_FBC78EF0.wem</CachePath>
 				</File>
 			</Media>
 			<Events>
-				<Event Id="3439090979" Name="Play_Psychopomp_s_Theme_Loop" DurationType="OneShot" DurationMin="189.76746" DurationMax="189.76746">
+				<Event Id="2091666015" Name="Pause_FlightMusic" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="1553341287" Name="Pause_Theme" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="2676862885" Name="Play_FlightMusic" DurationType="OneShot" DurationMin="136.45349" DurationMax="136.45349">
 					<MediaRefs>
-						<MediaRef Id="293747722"/>
+						<MediaRef Id="976240000"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="2479442773" Name="Play_Theme" DurationType="OneShot" DurationMin="190.76746" DurationMax="190.76746">
+					<MediaRefs>
+						<MediaRef Id="75906182"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="75661766" Name="Resume_FlightMusic" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="4138142034" Name="Resume_Theme" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="560299279" Name="Stop_Theme" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{08B12799-919D-0866-3209-1D3746A11BD4}</FileHash>
+	<FileHash>{59A7B0F2-147C-B9FC-815F-16CA125B0A58}</FileHash>
 </SoundBanksInfo>

@@ -1,6 +1,0 @@
-Event	ID	Name			Wwise Object Path	Notes
-	3439090979	Play_Psychopomp_s_Theme_Loop			\Default Work Unit\Play_Psychopomp_s_Theme_Loop	
-
-In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
-	293747722	Psychopomp's Theme Loop	C:\Users\zymay\OneDrive\Documents\GitHub\Psychopomp\Psychopomp_WwiseProject\.cache\Windows\Voices\English(US)\Psychopomp's Theme Loop_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\New Work Unit\Psychopomp's Theme Loop\Psychopomp's Theme Loop		33475076
-

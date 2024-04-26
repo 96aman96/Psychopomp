@@ -7,6 +7,8 @@ public class CharacterVFX : MonoBehaviour{
     public Transform model;
     private GameManager gameManager;
     private KinematicCharacterController kcc;
+    
+    private WwiseSoundManager wwiseSoundManager;
 
     public float maxSpeed = 150;
     private bool onWater = true;
@@ -62,6 +64,7 @@ public class CharacterVFX : MonoBehaviour{
     private void Start(){
         kcc = GetComponent<KinematicCharacterController>();
         gameManager = GameObject.FindWithTag("Game Manager").GetComponent<GameManager>();
+        wwiseSoundManager = GameObject.FindObjectOfType<WwiseSoundManager>();
     }
 
     private void LateUpdate(){
@@ -110,7 +113,7 @@ public class CharacterVFX : MonoBehaviour{
             TriggerGlideTrail();
         } else {
             StopGlideTrail();
-            StopFlyingMusic();
+            wwiseSoundManager.MusicStopGliding();
         }
 
         TriggerShock();
@@ -143,7 +146,9 @@ public class CharacterVFX : MonoBehaviour{
 
     public void StartGlide(){
         TriggerFeathers();
-        TriggerFlyingMusic();
+        //TriggerFlyingMusic();
+        //call the gliding music in Wwise (with built-in fade in-out effect)
+        wwiseSoundManager.MusicStartGliding();
     }
 
     private void TriggerFeathers(){

@@ -1,0 +1,13 @@
+Event	ID	Name			Wwise Object Path	Notes
+	75661766	Resume_FlightMusic			\Default Work Unit\Resume_FlightMusic	
+	560299279	Stop_Theme			\Default Work Unit\Stop_Theme	
+	1553341287	Pause_Theme			\Default Work Unit\Pause_Theme	
+	2091666015	Pause_FlightMusic			\Default Work Unit\Pause_FlightMusic	
+	2479442773	Play_Theme			\Default Work Unit\Play_Theme	
+	2676862885	Play_FlightMusic			\Default Work Unit\Play_FlightMusic	
+	4138142034	Resume_Theme			\Default Work Unit\Resume_Theme	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	75906182	Theme	C:\Users\zymay\OneDrive\Documents\GitHub\Psychopomp\Psychopomp_WwiseProject\.cache\Mac\Voices\English(US)\Theme_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\New Work Unit\Theme\Theme		33475076
+	976240000	FlightMusic	C:\Users\zymay\OneDrive\Documents\GitHub\Psychopomp\Psychopomp_WwiseProject\.cache\Mac\Voices\English(US)\FlyMusic_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\New Work Unit\FlightMusic\FlightMusic		23629492
+

@@ -13,13 +13,19 @@ namespace AK
 {
     namespace EVENTS
     {
-        static const AkUniqueID PLAY_PSYCHOPOMP_S_THEME_LOOP = 3439090979U;
+        static const AkUniqueID PAUSE_FLIGHTMUSIC = 2091666015U;
+        static const AkUniqueID PAUSE_THEME = 1553341287U;
+        static const AkUniqueID PLAY_FLIGHTMUSIC = 2676862885U;
+        static const AkUniqueID PLAY_THEME = 2479442773U;
+        static const AkUniqueID RESUME_FLIGHTMUSIC = 75661766U;
+        static const AkUniqueID RESUME_THEME = 4138142034U;
+        static const AkUniqueID STOP_THEME = 560299279U;
     } // namespace EVENTS
 
     namespace BANKS
     {
         static const AkUniqueID INIT = 1355168291U;
-        static const AkUniqueID GAMESOUND = 3321029388U;
+        static const AkUniqueID MUSIC = 3991942870U;
     } // namespace BANKS
 
     namespace BUSSES
