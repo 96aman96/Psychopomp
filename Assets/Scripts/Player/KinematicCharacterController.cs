@@ -18,12 +18,10 @@ public class KinematicCharacterController : MonoBehaviour{
     // ===== MOVEMENT ACCELERATION =====
     [Header("Movement Acceleration")]
     public float maxSpeed = 100f;
-    public float maxPassiveSpeed = 40f;
     public float absoluteMaxSpeed = 250f;
     public float minSpeed = 10f;
     public float acceleration = 10f;
     public float deceleration = 40f;
-    public float passiveAcceleration = 10f;
     public float passiveAirAcceleration = 10f;
     public float passiveDeceleration = 10f;
     public float rampMagnitudeMultiplier = 1.05f;
@@ -85,7 +83,7 @@ public class KinematicCharacterController : MonoBehaviour{
         bool isAccelerating = GetAccelerationInput();
         bool isDiving = GetDivingInput();
         transform.Rotate(Vector3.up * input.x * rotationStrength * Time.deltaTime);
-        velMagnitude = CalculateCurrentVelocityMagnitude(input.y, isAccelerating);
+        velMagnitude = CalculateCurrentVelocityMagnitude(input.y);
         Vector3 newVelocity = transform.forward * velMagnitude;
 
         // Check if grounded, and keeping track of coyote time timer to allow for delayed jumps
@@ -151,24 +149,19 @@ public class KinematicCharacterController : MonoBehaviour{
         currentVelocity =  newMovement/Time.deltaTime;
     }
 
-    private float CalculateCurrentVelocityMagnitude(float input, bool isAccelerating){
+    private float CalculateCurrentVelocityMagnitude(float input){
         float acc = 0;
         float dec = 0;
-        float max = maxPassiveSpeed;
 
         if(!isGrounded){
-            max = maxSpeed;
             acc = 0;
-        } else if(isAccelerating && isGrounded){
-            max = maxSpeed;
-            acc = acceleration;
         } else if(input>0){
-            acc = passiveAcceleration;
+            acc = acceleration;
         } else if(input<0){
             dec = deceleration;
         } else dec = passiveDeceleration;
     
-        float baseVel = Mathf.Clamp(velMagnitude+(acc*Time.deltaTime), minSpeed, max);
+        float baseVel = Mathf.Clamp(velMagnitude+(acc*Time.deltaTime), minSpeed, maxSpeed);
         float vel = Mathf.Max(baseVel, velMagnitude);
         vel -= (dec*Time.deltaTime);
 
