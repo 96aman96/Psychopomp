@@ -17,6 +17,7 @@ public class CharacterVFX : MonoBehaviour{
     private float previousSpeed = 0;
     private bool isGliding = false;
     private Vector2 input = Vector2.zero;
+    private int currentTier = 0;
 
     // WATER RIPPLE AND SPLATTER
     [Header("Water Ripple and Splatter")]
@@ -38,7 +39,6 @@ public class CharacterVFX : MonoBehaviour{
     // GLIDE FEATHER
     [Header("Gliding")]
     public ParticleSystem feathers;
-    private bool isFlyingMusicOn = false;
 
     // GLIDE TRAIL
     public TrailRenderer glideTrailR;
@@ -84,7 +84,7 @@ public class CharacterVFX : MonoBehaviour{
         input = kcc.GetInput();
     }
 
-    private void SetAnimatorState(){
+    private void SetAnimatorState(){ 
         animator.SetBool("TouchingGround", isGrounded);
         animator.SetFloat("Speed", speed);
         animator.SetBool("IsGliding", isGliding);
@@ -102,6 +102,12 @@ public class CharacterVFX : MonoBehaviour{
         model.localRotation = Quaternion.Lerp(model.localRotation, tgt, lerpSpeed);
     }
 
+    public void UpdateTier(int _newTier){
+        if(currentTier < _newTier) TriggerShock();
+        
+        currentTier = _newTier;
+    }
+
     private void TriggerParticles(){
         if(onWater && isGrounded){
             TriggerRipple();
@@ -115,8 +121,6 @@ public class CharacterVFX : MonoBehaviour{
             StopGlideTrail();
             if(wwiseSoundManager) wwiseSoundManager.MusicStopGliding();
         }
-
-        TriggerShock();
     }
 
     private void TriggerRipple(){
@@ -166,7 +170,7 @@ public class CharacterVFX : MonoBehaviour{
     }
 
     private void TriggerShock(){
-        if(!isShocking && previousSpeed < speedToTriggerShock && speed > speedToTriggerShock){
+        if(!isShocking){
             gameManager._AudioManager.PlayShockAudio();
             isShocking = true;
             shockSFXPlayed = false;
@@ -185,19 +189,5 @@ public class CharacterVFX : MonoBehaviour{
         }
 
         if(shockElapsed > shockDuration)isShocking = false;
-    }
-
-    private void TriggerFlyingMusic(){
-        if(isFlyingMusicOn) return;
-
-        isFlyingMusicOn = true;
-        gameManager._AudioManager.SwitchToFlyingMusic();
-    }
-
-    private void StopFlyingMusic(){
-        if(!isFlyingMusicOn) return;
-
-        isFlyingMusicOn = false;
-        gameManager._AudioManager.SwitchToAmbientMusic();
     }
 }

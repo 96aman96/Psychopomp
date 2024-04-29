@@ -3,12 +3,17 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SocialPlatforms;
 
 public class KinematicCharacterController : MonoBehaviour{
     // ===== MOVEMENT ROTATION =====
     [Header("Movement Rotation")]
     public float rotationStrength = 1f;
-    public float alignmentSpeed = 10f;
+    public float yzRotationStrength = 100f;
+    public float yzUpRotationSpeed = 100f;
+    public float yzDownRotationSpeed = 100f;
+    public float yzReturnRotationSpeed = 100f;
+    public float maxYZRotationAngle = 60f;
 
     // ==== GENERAL ======
     private Vector2 input = Vector2.zero;
@@ -18,19 +23,20 @@ public class KinematicCharacterController : MonoBehaviour{
     // ===== MOVEMENT ACCELERATION =====
     [Header("Movement Acceleration")]
     public float maxSpeed = 100f;
+    public float[] speedTiers = new float[4]{50f, 100f, 150f, 200f};
     public float absoluteMaxSpeed = 250f;
     public float minSpeed = 10f;
     public float acceleration = 10f;
     public float deceleration = 40f;
-    public float passiveAirAcceleration = 10f;
     public float passiveDeceleration = 10f;
     public float rampMagnitudeMultiplier = 1.05f;
-    private const float stasisTreshold = 0.01f;
 
     // ===== MOVEMENT VELOCITY VARIABLES =====
     [Header("Current Velocity")]
     public Vector3 currentVelocity = Vector3.zero;
     public float velMagnitude = 0;
+    public float effectiveVelMagnitude = 0;
+    public int currentTier = 0;
 
     // ===== FALLING =====
     [Header("Falling")]
@@ -54,18 +60,17 @@ public class KinematicCharacterController : MonoBehaviour{
 
     // ===== GLIDING =====
     [Header("Gliding")]
-    public float updraftForce = 5f;
-    public float updraftThreshold = 120f;
-    public float momentumChangeThreshold = 60f;
-    [Range(0f,1f)] public float percentageMomentumMaintained = .6f;
     public float glideGravityFactor = 0.1f;
     public float glideMaxFallSpeed = 10f;
     public float freezeFrameDuration = 0.1f;
+    public float glideDeceleration = 20f;
+    public float glideAcceleration = 20f;
     private bool isGliding = false;
     private bool isFrozen = false;
 
     // ===== COMPONENT REFERENCES =====
     public AudioManager audioManager;
+    public CameraController cameraController;
     private ColliderUtil colUtil;
     private CharacterVFX vfx;
 
@@ -75,16 +80,22 @@ public class KinematicCharacterController : MonoBehaviour{
     }
 
     void Update(){
+        // Checks if is paused
         if(isFrozen) return;
 
-        // Get input from WASD and mouse and calculate velocity from it (using acceleration and shit) 
-        // Axis acceleration is considered passive while mouse is active. Axis deceleration is active, while pressing nothing is passive.
+        // Get input from WASD and mouse
         input = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).normalized;
-        bool isAccelerating = GetAccelerationInput();
-        bool isDiving = GetDivingInput();
-        transform.Rotate(Vector3.up * input.x * rotationStrength * Time.deltaTime);
+
+        // Calculate XZ rotation for turning and YZ for gliding
+        transform.Rotate(Vector3.up * input.x * rotationStrength * Time.deltaTime, Space.World);
+        ApplyYZRotation(input);
+
+        // Calculate current speed based on tiered system, applies speed forward
         velMagnitude = CalculateCurrentVelocityMagnitude(input.y);
-        Vector3 newVelocity = transform.forward * velMagnitude;
+        if(isGliding) velMagnitude = CalculateGlidingAcceleration(velMagnitude);
+        currentTier = GetCurrentTier(effectiveVelMagnitude, velMagnitude);
+        effectiveVelMagnitude = CalculateEffectiveVelocityMagnitude(velMagnitude, currentTier);
+        Vector3 newVelocity = GetForwardVector() * effectiveVelMagnitude;
 
         // Check if grounded, and keeping track of coyote time timer to allow for delayed jumps
         isGrounded = CheckGrounded();
@@ -118,14 +129,12 @@ public class KinematicCharacterController : MonoBehaviour{
 
         // Check to see if is grounded. If not, fall
         if(!isGrounded){
-            fallingVelocity = CalculateFallingVelocity(isDiving);
+            fallingVelocity = CalculateFallingVelocity();
         }
 
         // Check for gliding, apply updraft force
         if(!isGrounded && !isGliding && Input.GetButtonDown("Glide")){
             isGliding = true;
-            velMagnitude += CalculateGlidingMomentumChange(fallingVelocity);
-            fallingVelocity = CalculateUpdraftVelocity(fallingVelocity);
             vfx.StartGlide();
             FreezeFrame();
         } else if(!Input.GetButton("Glide")){
@@ -152,6 +161,7 @@ public class KinematicCharacterController : MonoBehaviour{
     private float CalculateCurrentVelocityMagnitude(float input){
         float acc = 0;
         float dec = 0;
+        float max = maxSpeed;
 
         if(!isGrounded){
             acc = 0;
@@ -161,15 +171,87 @@ public class KinematicCharacterController : MonoBehaviour{
             dec = deceleration;
         } else dec = passiveDeceleration;
     
-        float baseVel = Mathf.Clamp(velMagnitude+(acc*Time.deltaTime), minSpeed, maxSpeed);
+        float baseVel = Mathf.Clamp(velMagnitude+(acc*Time.deltaTime), minSpeed, max);
         float vel = Mathf.Max(baseVel, velMagnitude);
         vel -= (dec*Time.deltaTime);
 
         vel = Mathf.Min(vel, absoluteMaxSpeed);
         return vel;
     }
+    
+    private float CalculateEffectiveVelocityMagnitude(float _vel, int _tier){
+        float maxVel = speedTiers[_tier];
 
-    private float CalculateFallingVelocity(bool isAccelerating){
+        // return _vel;
+        return Mathf.Min(maxVel, _vel);
+    }
+
+    private int GetCurrentTier(float lastEffective, float currentVel){
+        if(!isGrounded) return currentTier;
+        
+        int a = 0;
+        int b = 0;
+
+        for(int i=0; i<speedTiers.Length; i++){
+            if(speedTiers[i] < lastEffective) a = i+1;
+            if(speedTiers[i] < currentVel) b = i;  
+        }
+
+        int tier = Mathf.Max(a, b);
+        tier = Mathf.Clamp(tier,0,speedTiers.Length-1);
+
+        if(currentTier != tier){
+            TriggerTierUpdate(tier);
+        }
+
+        return tier;
+    }
+
+    private void TriggerTierUpdate(int _tier){
+        vfx.UpdateTier(_tier);
+        cameraController.UpdateTier(_tier);
+
+    }
+
+    private void ApplyYZRotation(Vector2 input){
+        Quaternion target = Quaternion.Euler(new Vector3(0,transform.localEulerAngles.y,0));
+        float speed = yzReturnRotationSpeed;
+
+        if(isGliding){
+            if(input.y > 0){
+                speed = yzDownRotationSpeed;
+            } else speed = yzUpRotationSpeed;
+
+            float xNorm = transform.eulerAngles.x + (yzRotationStrength * input.y * Time.deltaTime);
+            float xAngle = ClampAngle(xNorm, -maxYZRotationAngle, maxYZRotationAngle);
+            target = Quaternion.Euler(new Vector3(xAngle, transform.localEulerAngles.y, 0f));
+        }
+        
+        transform.rotation = Quaternion.Slerp(transform.rotation, target, speed * Time.deltaTime);
+    }
+
+    private float ClampAngle(float current, float min, float max){
+        float dtAngle = Mathf.Abs(((min - max) + 180) % 360 - 180);
+        float hdtAngle = dtAngle * 0.5f;
+        float midAngle = min + hdtAngle;
+    
+        float offset = Mathf.Abs(Mathf.DeltaAngle(current, midAngle)) - hdtAngle;
+        if (offset > 0)
+            current = Mathf.MoveTowardsAngle(current, midAngle, offset);
+        return current;
+    }
+
+    private Vector3 GetForwardVector(){
+        Vector3 forward = transform.forward;
+        if(isGrounded){
+            forward.y = 0f;
+            return forward.normalized;
+        }
+
+        return forward;
+    }
+
+    private float CalculateFallingVelocity(){
         float verticalVelocity = 0;
         float gravFactor = 1;
         float max = maxFallSpeed;
@@ -179,8 +261,6 @@ public class KinematicCharacterController : MonoBehaviour{
         if(isGliding){
             gravFactor = glideGravityFactor;
             max = glideMaxFallSpeed;
-        } else if(isAccelerating){
-            gravFactor = acceleratedFallMultiplier;
         }
         
         verticalVelocity = Mathf.Max(fallingVelocity - (gravity * gravFactor * Time.deltaTime), -max);
@@ -196,23 +276,22 @@ public class KinematicCharacterController : MonoBehaviour{
         return verticalVelocity;
     }
 
-    private float CalculateUpdraftVelocity(float _fallMag){
-        float vel = _fallMag;
-        if(vel <= -updraftThreshold){
-            vel = updraftForce;
-        } else if (vel >= updraftThreshold){
-            vel = -updraftForce;
-        } else vel = 0;
 
-        return vel;
-    }
+    private float CalculateGlidingAcceleration(float _velMag){
+        float ang = transform.localEulerAngles.x;
+        if(ang > 270) ang -= 360;
 
-    private float CalculateGlidingMomentumChange(float _fallMag){
-        if(_fallMag < -momentumChangeThreshold){
-            return -_fallMag * percentageMomentumMaintained;
+        float angleRatio = ang / maxYZRotationAngle;
+        float unclamped = 0;
+
+        // If player is diving, else if is rising
+        if(angleRatio > 0){
+            unclamped = _velMag + (angleRatio * glideAcceleration * Time.deltaTime);
+        } else {
+            unclamped = _velMag + (angleRatio * glideDeceleration * Time.deltaTime);
         }
         
-        return 0;
+        return Mathf.Clamp(unclamped, minSpeed, absoluteMaxSpeed);
     }
 
     private bool CheckGrounded(){
@@ -221,7 +300,6 @@ public class KinematicCharacterController : MonoBehaviour{
         bool grd = colUtil.IsGroundedCast(transform.position, out normal, out tag);
         currentNormal = normal;
         currentGroundTag = tag;
-        AlignToSurface();
 
         return grd;
     }
@@ -236,19 +314,6 @@ public class KinematicCharacterController : MonoBehaviour{
         return 1;
     }
 
-    private void AlignToSurface(){
-        // Quaternion rot = Quaternion.FromToRotation(transform.up, currentNormal) * transform.rotation;
-        // transform.rotation = Quaternion.Lerp(transform.rotation, rot, alignmentSpeed * Time.deltaTime); 
-
-        // Quaternion rot = Quaternion.FromToRotation(transform.up, currentNormal);
-        // rot = Quaternion.Lerp(transform.rotation, rot, alignmentSpeed * Time.deltaTime);
-        // transform.rotation = Quaternion.Euler(rot.eulerAngles.x, transform.eulerAngles.y, rot.eulerAngles.x);
-
-        // Vector3 proj = Vector3.ProjectOnPlane(transform.forward, currentNormal);
-        // Quaternion rot = Quaternion.LookRotation(proj, currentNormal);
-        // transform.rotation = rot;
-    }
-
     private Vector3 SnapToGround(Vector3 _mov){
         Vector3 mov = _mov;
 
@@ -258,23 +323,6 @@ public class KinematicCharacterController : MonoBehaviour{
         mov.y = Mathf.Max(0, mov.y);
 
         return mov;
-    }
-
-
-    private bool GetAccelerationInput(){        
-        if(Input.GetButton("Accelerate")) return true;
-
-        else if(Input.GetAxis("Accelerate") > 0) return true;
-
-        return false;
-    }
-
-    private bool GetDivingInput(){        
-        if(Input.GetButton("Diving")) return true;
-
-        else if(Input.GetAxis("Diving") > 0) return true;
-
-        return false;
     }
 
     private void FreezeFrame(){

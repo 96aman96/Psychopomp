@@ -22776,19 +22776,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationStrength: 100
-  alignmentSpeed: 10
-  maxSpeed: 100
-  maxPassiveSpeed: 40
+  yzRotationStrength: 50
+  yzUpRotationSpeed: 25
+  yzDownRotationSpeed: 35
+  yzReturnRotationSpeed: 1
+  maxYZRotationAngle: 45
+  maxSpeed: 80
+  speedTiers:
+  - 50
+  - 100
+  - 160
+  - 220
   absoluteMaxSpeed: 250
   minSpeed: 10
   acceleration: 50
   deceleration: 70
-  passiveAcceleration: 10
-  passiveAirAcceleration: 10
   passiveDeceleration: 30
   rampMagnitudeMultiplier: 1.25
   currentVelocity: {x: 0, y: 0, z: 0}
   velMagnitude: 0
+  effectiveVelMagnitude: 0
+  currentTier: 0
   gravity: 110
   fallGravityMultiplier: 1.5
   acceleratedFallMultiplier: 8
@@ -22798,13 +22806,11 @@ MonoBehaviour:
   maxJumpCount: 2
   coyoteTime: 0.6
   jumpBufferTime: 0.3
-  updraftForce: 50
-  updraftThreshold: 100
-  momentumChangeThreshold: 120
-  percentageMomentumMaintained: 0.1
   glideGravityFactor: 0.4
   glideMaxFallSpeed: 10
   freezeFrameDuration: 0.05
+  glideDeceleration: 40
+  glideAcceleration: 40
   audioManager: {fileID: 0}
 --- !u!114 &6350911102597528593
 MonoBehaviour:
