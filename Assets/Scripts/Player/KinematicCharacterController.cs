@@ -209,13 +209,14 @@ public class KinematicCharacterController : MonoBehaviour{
         tier = Mathf.Clamp(tier,0,speedTiers.Length-1);
 
         if(currentTier != tier){
-            TriggerTierUpdate(tier);
+            StartCoroutine(TriggerTierUpdate(tier));
         }
 
         return tier;
     }
 
-    private void TriggerTierUpdate(int _tier){
+    private IEnumerator TriggerTierUpdate(int _tier){
+        yield return new WaitForSeconds(0.1f);
         vfx.UpdateTier(_tier);
         cameraController.UpdateTier(_tier);
 

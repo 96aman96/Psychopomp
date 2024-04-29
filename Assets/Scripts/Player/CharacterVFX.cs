@@ -171,7 +171,6 @@ public class CharacterVFX : MonoBehaviour{
 
     private void TriggerShock(){
         if(!isShocking){
-            gameManager._AudioManager.PlayShockAudio();
             isShocking = true;
             shockSFXPlayed = false;
             shockElapsed = 0;
@@ -185,7 +184,6 @@ public class CharacterVFX : MonoBehaviour{
         
         if(!shockSFXPlayed && (shockElapsed/shockDuration)>0.7f){
             shockSFXPlayed = true;
-            gameManager._AudioManager.PlaySoundBarrier();
         }
 
         if(shockElapsed > shockDuration)isShocking = false;

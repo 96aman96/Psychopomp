@@ -38,25 +38,17 @@ public class CameraController : MonoBehaviour{
 
     public void UpdateTier(int _tier){
         if(currenTier < _tier){
-            SwitchToFarCamera();
+            SwitchToCamera(farCamera);
             StartCoroutine(TimedSwitchToNear());
         }
 
         currenTier = _tier;
     }
 
-    public void SwitchToFarCamera(){
-        current = farCamera;
-        ActivateCamera(current);
-    }
+    public void SwitchToCamera(CinemachineVirtualCamera cam){
+        if(cam == current) return;
 
-    public void SwitchToNearCamera(){
-        current = nearCamera;
-        ActivateCamera(current);
-    }
-
-    public void SwitchToGlideCamera(){
-        current = glideCamera;
+        current = cam;
         ActivateCamera(current);
     }
 
@@ -71,11 +63,27 @@ public class CameraController : MonoBehaviour{
     private void UpdateVariables(){
         isGrounded = kcc.GetIsGrounded();
         speed = kcc.GetSpeed();
-        isGliding = kcc.GetIsGliding();
+
+        bool newGlide = kcc.GetIsGliding();
+        if(newGlide != isGliding){
+            if(!isGliding){
+                StartGlide();
+            } else StopGlide();
+        }
+        
+        isGliding = newGlide;
     }
 
     private IEnumerator TimedSwitchToNear(){
         yield return new WaitForSeconds(switchToNearTimer);
-        SwitchToNearCamera();
+        SwitchToCamera(nearCamera);
+    }
+
+    private void StartGlide(){
+        SwitchToCamera(glideCamera);
+    }
+
+    private void StopGlide(){
+        SwitchToCamera(nearCamera);
     }
 }
