@@ -12,6 +12,7 @@ TagManager:
   - Water
   - Game Manager
   - Delivery Booster
+  - Spawnies
   layers:
   - Default
   - TransparentFX
