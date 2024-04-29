@@ -1,6 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{A35B15AE-516B-47E8-A3EB-9706F95E54A1}" SchemaVersion="119">
 	<AudioObjects>
-		<WorkUnit Name="Default Work Unit" ID="{A35B15AE-516B-47E8-A3EB-9706F95E54A1}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{A35B15AE-516B-47E8-A3EB-9706F95E54A1}" PersistMode="Standalone">
+			<ChildrenList>
+				<Folder Name="UI" ID="{F78C3442-17FA-4D59-B4B7-E9C3D47EC18A}" ShortID="278450198">
+					<ChildrenList>
+						<Sound Name="UI_Quit" ID="{987C758D-3FAA-41E8-A333-18A2C18FDBCC}" ShortID="311018186">
+							<PropertyList>
+								<Property Name="IsVoice" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2B7CC0FB-0949-49C5-8228-DCFA38A80237}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FAC89FD8-6922-4802-BE46-2764330B2318}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Quit" ID="{37A87D37-5957-42CC-AEB5-1D1ECB72FB69}">
+									<PropertyList>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimEnd" Type="Real64" Value="3.06617635871553"/>
+									</PropertyList>
+									<Language>English(US)</Language>
+									<AudioFile>Quit.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="334818311"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Quit" ID="{37A87D37-5957-42CC-AEB5-1D1ECB72FB69}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="UI_Start" ID="{EE21F116-DC01-470F-ADF1-6B26B9ABB01D}" ShortID="826358316">
+							<PropertyList>
+								<Property Name="IsVoice" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2B7CC0FB-0949-49C5-8228-DCFA38A80237}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FAC89FD8-6922-4802-BE46-2764330B2318}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Start" ID="{E93990D8-6F96-4811-818F-BEE4004ABC93}">
+									<PropertyList>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimEnd" Type="Real64" Value="2.43904909418965"/>
+									</PropertyList>
+									<Language>English(US)</Language>
+									<AudioFile>Start.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="384855880"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Start" ID="{E93990D8-6F96-4811-818F-BEE4004ABC93}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</Folder>
+			</ChildrenList>
+		</WorkUnit>
 	</AudioObjects>
 </WwiseDocument>

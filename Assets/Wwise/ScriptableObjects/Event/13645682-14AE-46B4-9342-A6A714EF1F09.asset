@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e562bb89a71c8b44ca37b54998edd45f, type: 3}
+  m_Name: 13645682-14AE-46B4-9342-A6A714EF1F09
+  m_EditorClassIdentifier: 
+  objectName: Pause_FlightNew
+  id: 4006404000
+  guid: 13645682-14AE-46B4-9342-A6A714EF1F09

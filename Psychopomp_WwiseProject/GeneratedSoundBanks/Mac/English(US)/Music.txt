@@ -1,0 +1,17 @@
+Event	ID	Name			Wwise Object Path	Notes
+	25429078	Play_FlightNew			\Default Work Unit\Play_FlightNew	
+	560299279	Stop_Theme			\Default Work Unit\Stop_Theme	
+	643450781	Play_UI_Start			\Default Work Unit\UI_SFX\Play_UI_Start	
+	1057286634	Play_UI_Quit			\Default Work Unit\UI_SFX\Play_UI_Quit	
+	1553341287	Pause_Theme			\Default Work Unit\Pause_Theme	
+	1873017685	Resume_FlightNew			\Default Work Unit\Resume_FlightNew	
+	2479442773	Play_Theme			\Default Work Unit\Play_Theme	
+	4006404000	Pause_FlightNew			\Default Work Unit\Pause_FlightNew	
+	4138142034	Resume_Theme			\Default Work Unit\Resume_Theme	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	75906182	Theme	C:\Users\zymay\OneDrive\Documents\GitHub\Psychopomp\Psychopomp_WwiseProject\.cache\Mac\Voices\English(US)\Theme_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\New Work Unit\Theme\Theme		33475076
+	334818311	UI_Quit	C:\Users\zymay\OneDrive\Documents\GitHub\Psychopomp\Psychopomp_WwiseProject\.cache\Mac\Voices\English(US)\Quit_F390C9DE.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\UI_Quit		540968
+	384855880	UI_Start	C:\Users\zymay\OneDrive\Documents\GitHub\Psychopomp\Psychopomp_WwiseProject\.cache\Mac\Voices\English(US)\Start_B44C8388.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\UI_Start		430344
+	591577181	FlightNew	C:\Users\zymay\OneDrive\Documents\GitHub\Psychopomp\Psychopomp_WwiseProject\.cache\Mac\Voices\English(US)\Psychopump New Flight_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\New Work Unit\FlightNew\FlightNew		23629492
+

@@ -190,6 +190,92 @@
 						</ObjectList>
 					</ObjectLists>
 				</MusicSegment>
+				<MusicSegment Name="FlightNew" ID="{23307795-225A-42B6-BB4A-0D79E6C0BFA7}" ShortID="445830436">
+					<PropertyList>
+						<Property Name="EndPosition" Type="Real64" Value="133953.492063492"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2B7CC0FB-0949-49C5-8228-DCFA38A80237}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FAC89FD8-6922-4802-BE46-2764330B2318}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<MusicTrack Name="FlightNew" ID="{382A3BC8-D5DF-4D00-B56A-E90C29908F63}" ShortID="597196855">
+							<ReferenceList>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FAC89FD8-6922-4802-BE46-2764330B2318}"/>
+								</Reference>
+								<Reference Name="TransitionRoot">
+									<Custom>
+										<MusicTransition Name="Root" ID="{C0E2920F-3D10-4BF3-AF83-BC0E5160C836}">
+											<PropertyList>
+												<Property Name="IsFolder" Type="bool" Value="True"/>
+											</PropertyList>
+											<TransitionInfo/>
+										</MusicTransition>
+									</Custom>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Psychopump New Flight" ID="{288C7BD9-8D3E-4FDA-9AB9-783E10EA8D10}">
+									<Language>English(US)</Language>
+									<AudioFile>Psychopump New Flight.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="591577181"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists>
+								<ObjectList Name="Sequences">
+									<Reference>
+										<Local>
+											<MusicTrackSequence Name="" ID="{2E28D8D7-4344-4B38-BC57-C20996DD3A0A}">
+												<ObjectLists>
+													<ObjectList Name="Clips">
+														<Reference>
+															<Local>
+																<MusicClip Name="Psychopump New Flight" ID="{C8689CDF-33F1-48DE-83F1-D8445908C08E}">
+																	<PropertyList>
+																		<Property Name="EndTrimOffset" Type="Real64" Value="133953.492063492"/>
+																		<Property Name="FadeInMode" Type="int16" Value="0"/>
+																		<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																	</PropertyList>
+																	<AudioSourceRef Name="Psychopump New Flight" ID="{288C7BD9-8D3E-4FDA-9AB9-783E10EA8D10}"/>
+																</MusicClip>
+															</Local>
+														</Reference>
+													</ObjectList>
+												</ObjectLists>
+											</MusicTrackSequence>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</MusicTrack>
+					</ChildrenList>
+					<ObjectLists>
+						<ObjectList Name="Cues">
+							<Reference>
+								<Local>
+									<MusicCue Name="Entry Cue" ID="{67745DC2-A542-4BC2-9A3E-AD835C0C5909}"/>
+								</Local>
+							</Reference>
+							<Reference>
+								<Local>
+									<MusicCue Name="Exit Cue" ID="{E8F9D5C2-3D9C-4729-AEBC-2A379C299D0F}">
+										<PropertyList>
+											<Property Name="CueType" Type="int16" Value="1"/>
+											<Property Name="TimeMs" Type="Real64" Value="133953.492063492"/>
+										</PropertyList>
+									</MusicCue>
+								</Local>
+							</Reference>
+						</ObjectList>
+					</ObjectLists>
+				</MusicSegment>
 			</ChildrenList>
 		</WorkUnit>
 	</InteractiveMusic>

@@ -49,22 +49,6 @@
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="Resume_FlightMusic" ID="{13538A7E-2BCB-4A4F-9013-3923FD88A3DB}">
-					<ChildrenList>
-						<Action Name="" ID="{DD83216A-1AF0-4F1B-A771-377DF8DD0210}" ShortID="689361035">
-							<PropertyList>
-								<Property Name="ActionType" Type="int16" Value="9"/>
-								<Property Name="Delay" Type="Real64" Value="2.5"/>
-								<Property Name="FadeTime" Type="Real64" Value="3"/>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="FlightMusic" ID="{63A84B1A-61CF-4BE2-A109-8A402B437DC5}" WorkUnitID="{BA33B5DD-835F-4CC3-9F04-5665BAB2EEB6}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
-					</ChildrenList>
-				</Event>
 				<Event Name="Resume_Theme" ID="{953CDCB9-F157-4B41-A537-EEE6C6F675F2}">
 					<ChildrenList>
 						<Action Name="" ID="{AC618641-F506-4003-9ADE-4CB3DCD6C325}" ShortID="915806238">
@@ -81,37 +65,78 @@
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="Play_FlightMusic" ID="{EE3C3859-1FCB-45E9-A1F7-DD20991926C1}">
+				<Event Name="Pause_FlightNew" ID="{13645682-14AE-46B4-9342-A6A714EF1F09}">
 					<ChildrenList>
-						<Action Name="" ID="{294488DF-9952-4FD4-B5CF-D5F37D172F28}" ShortID="170026219">
+						<Action Name="" ID="{A347AE1D-D1BB-481B-83A4-85B6D24D415A}" ShortID="847941404">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="7"/>
+								<Property Name="FadeTime" Type="Real64" Value="2.5"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="FlightNew" ID="{23307795-225A-42B6-BB4A-0D79E6C0BFA7}" WorkUnitID="{BA33B5DD-835F-4CC3-9F04-5665BAB2EEB6}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_FlightNew" ID="{2FD5A4AF-A035-47C1-B445-EAD377E2DFE2}">
+					<ChildrenList>
+						<Action Name="" ID="{36DAAD1F-D111-4E78-AF4E-78353814ECF7}" ShortID="860844482">
 							<PropertyList>
 								<Property Name="Delay" Type="Real64" Value="2.5"/>
 								<Property Name="FadeTime" Type="Real64" Value="3"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="FlightMusic" ID="{63A84B1A-61CF-4BE2-A109-8A402B437DC5}" WorkUnitID="{BA33B5DD-835F-4CC3-9F04-5665BAB2EEB6}"/>
+									<ObjectRef Name="FlightNew" ID="{23307795-225A-42B6-BB4A-0D79E6C0BFA7}" WorkUnitID="{BA33B5DD-835F-4CC3-9F04-5665BAB2EEB6}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="Pause_FlightMusic" ID="{38BB987F-0F38-441D-99AF-03B10B9925D3}">
+				<Event Name="Resume_FlightNew" ID="{AFB958D1-1D2F-4B8A-B1A9-1A18259D1299}">
 					<ChildrenList>
-						<Action Name="" ID="{7FC011EF-978A-4522-9B17-143B628E60EF}" ShortID="461723994">
+						<Action Name="" ID="{74B7B1E2-D171-4407-92F3-B50A8CCE02B6}" ShortID="655709191">
 							<PropertyList>
-								<Property Name="ActionType" Type="int16" Value="7"/>
-								<Property Name="FadeOutCurve" Type="int16" Value="7"/>
-								<Property Name="FadeTime" Type="Real64" Value="2.5"/>
+								<Property Name="ActionType" Type="int16" Value="9"/>
+								<Property Name="Delay" Type="Real64" Value="2.5"/>
+								<Property Name="FadeTime" Type="Real64" Value="3"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="FlightMusic" ID="{63A84B1A-61CF-4BE2-A109-8A402B437DC5}" WorkUnitID="{BA33B5DD-835F-4CC3-9F04-5665BAB2EEB6}"/>
+									<ObjectRef Name="FlightNew" ID="{23307795-225A-42B6-BB4A-0D79E6C0BFA7}" WorkUnitID="{BA33B5DD-835F-4CC3-9F04-5665BAB2EEB6}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Folder Name="UI_SFX" ID="{6B52FD67-90EC-42CE-9CAC-C5EE331C44FB}" ShortID="517893315">
+					<ChildrenList>
+						<Event Name="Play_UI_Start" ID="{7213B740-87F0-49A0-8041-CA413627DF90}">
+							<ChildrenList>
+								<Action Name="" ID="{1405D4CF-C730-4ACC-B624-309B3F099AA1}" ShortID="954417288">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="UI_Start" ID="{EE21F116-DC01-470F-ADF1-6B26B9ABB01D}" WorkUnitID="{A35B15AE-516B-47E8-A3EB-9706F95E54A1}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_UI_Quit" ID="{E3BA7802-93DC-4ABC-BCA3-6C7227A78061}">
+							<ChildrenList>
+								<Action Name="" ID="{1C0BF257-ECCE-4F16-BABA-A11B00DC116A}" ShortID="381075555">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="UI_Quit" ID="{987C758D-3FAA-41E8-A333-18A2C18FDBCC}" WorkUnitID="{A35B15AE-516B-47E8-A3EB-9706F95E54A1}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>
