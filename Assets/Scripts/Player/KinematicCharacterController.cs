@@ -60,6 +60,7 @@ public class KinematicCharacterController : MonoBehaviour{
 
     // ===== GLIDING =====
     [Header("Gliding")]
+    public float glideTimeLimit = 4f;
     public float glideGravityFactor = 0.1f;
     public float glideMaxFallSpeed = 10f;
     public float freezeFrameDuration = 0.1f;
@@ -67,6 +68,7 @@ public class KinematicCharacterController : MonoBehaviour{
     public float glideAcceleration = 20f;
     private bool isGliding = false;
     private bool isFrozen = false;
+    private float glideTimer = 0f;
 
     // ===== COMPONENT REFERENCES =====
     public AudioManager audioManager;
@@ -104,6 +106,7 @@ public class KinematicCharacterController : MonoBehaviour{
             isGliding=false;
             currentJumpCount = 0;
             currentCoyote = coyoteTime;
+            glideTimer = 0;
         } else currentCoyote -= Time.deltaTime;
 
         // Jumping from air
@@ -133,12 +136,17 @@ public class KinematicCharacterController : MonoBehaviour{
         }
 
         // Check for gliding, apply updraft force
-        if(!isGrounded && !isGliding && Input.GetButtonDown("Glide")){
+        if(!isGrounded && !isGliding && Input.GetButtonDown("Glide") && glideTimer < glideTimeLimit){
             isGliding = true;
             vfx.StartGlide();
             FreezeFrame();
         } else if(!Input.GetButton("Glide")){
             isGliding = false;
+        }
+
+        if(isGliding){
+            glideTimer += Time.deltaTime;
+            if(glideTimer > glideTimeLimit) isGliding = false;
         }
 
         // Updating and clamping velocity
