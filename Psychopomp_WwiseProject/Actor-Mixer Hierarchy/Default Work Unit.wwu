@@ -343,10 +343,20 @@
 								</RandomSequenceContainer>
 							</ChildrenList>
 						</Folder>
-						<Sound Name="wind_0" ID="{6AE30484-27BD-48A9-8851-49EB66C0A552}" ShortID="313228156">
+						<Sound Name="wind" ID="{6AE30484-27BD-48A9-8851-49EB66C0A552}" ShortID="313228156">
 							<PropertyList>
 								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
 								<Property Name="IsVoice" Type="bool" Value="True"/>
+								<Property Name="OutputBusHighpass" Type="int16">
+									<ValueList>
+										<Value>15</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Pitch" Type="int32">
+									<ValueList>
+										<Value>430</Value>
+									</ValueList>
+								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
@@ -369,43 +379,117 @@
 									</MediaIDList>
 								</AudioFileSource>
 							</ChildrenList>
+							<ObjectLists>
+								<ObjectList Name="RTPC">
+									<Reference>
+										<Local>
+											<RTPC Name="" ID="{C9DF5EF1-C8FD-40EA-A5CD-BB0B9F78AC7B}" ShortID="680703935">
+												<PropertyList>
+													<Property Name="PropertyName" Type="string" Value="Lowpass"/>
+												</PropertyList>
+												<ReferenceList>
+													<Reference Name="ControlInput">
+														<ObjectRef Name="LowPass" ID="{6A3EF0EE-E229-4613-BEC9-A6B3807D4FFE}" WorkUnitID="{9F5D6E36-3B99-4EDE-AF14-25F26336BAD9}"/>
+													</Reference>
+													<Reference Name="Curve">
+														<Custom>
+															<Curve Name="" ID="{D003E6C4-2FA5-495F-8B76-93D793FC2BBF}">
+																<PropertyList>
+																	<Property Name="Flags" Type="int32" Value="65537"/>
+																</PropertyList>
+																<PointList>
+																	<Point>
+																		<XPos>0</XPos>
+																		<YPos>0</YPos>
+																		<Flags>5</Flags>
+																	</Point>
+																	<Point>
+																		<XPos>100</XPos>
+																		<YPos>61</YPos>
+																		<Flags>37</Flags>
+																	</Point>
+																</PointList>
+															</Curve>
+														</Custom>
+													</Reference>
+												</ReferenceList>
+											</RTPC>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<RTPC Name="" ID="{7F7AF6CB-721A-4376-8104-0DBC0DC9B91B}" ShortID="255388857">
+												<PropertyList>
+													<Property Name="PropertyName" Type="string" Value="Highpass"/>
+												</PropertyList>
+												<ReferenceList>
+													<Reference Name="ControlInput">
+														<ObjectRef Name="HighPass" ID="{2366E4DD-4EFE-4F2B-B038-DC2A752B84D5}" WorkUnitID="{9F5D6E36-3B99-4EDE-AF14-25F26336BAD9}"/>
+													</Reference>
+													<Reference Name="Curve">
+														<Custom>
+															<Curve Name="" ID="{BD7041CA-A729-42A6-A0FB-6EE03EA3549D}">
+																<PropertyList>
+																	<Property Name="Flags" Type="int32" Value="65537"/>
+																</PropertyList>
+																<PointList>
+																	<Point>
+																		<XPos>0</XPos>
+																		<YPos>0</YPos>
+																		<Flags>5</Flags>
+																	</Point>
+																	<Point>
+																		<XPos>100</XPos>
+																		<YPos>33</YPos>
+																		<Flags>37</Flags>
+																	</Point>
+																</PointList>
+															</Curve>
+														</Custom>
+													</Reference>
+												</ReferenceList>
+											</RTPC>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<RTPC Name="" ID="{AFEC09DB-38F4-4F2C-AE58-CFCA77CEEC65}" ShortID="405215716">
+												<PropertyList>
+													<Property Name="PropertyName" Type="string" Value="Pitch"/>
+												</PropertyList>
+												<ReferenceList>
+													<Reference Name="ControlInput">
+														<ObjectRef Name="Pitch" ID="{D93F4C12-A7FC-447A-8640-AFA26FB8BF71}" WorkUnitID="{9F5D6E36-3B99-4EDE-AF14-25F26336BAD9}"/>
+													</Reference>
+													<Reference Name="Curve">
+														<Custom>
+															<Curve Name="" ID="{AC57D614-E59D-4F5B-B3EC-EA61DF2FAE8B}">
+																<PropertyList>
+																	<Property Name="Flags" Type="int32" Value="65537"/>
+																</PropertyList>
+																<PointList>
+																	<Point>
+																		<XPos>0</XPos>
+																		<YPos>0</YPos>
+																		<Flags>5</Flags>
+																	</Point>
+																	<Point>
+																		<XPos>100</XPos>
+																		<YPos>4500</YPos>
+																		<Flags>37</Flags>
+																	</Point>
+																</PointList>
+															</Curve>
+														</Custom>
+													</Reference>
+												</ReferenceList>
+											</RTPC>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
 							<ActiveSourceList>
 								<ActiveSource Name="wind" ID="{9629DCA2-AD76-43CA-86E3-4BD867C9E855}" Platform="Linked"/>
-							</ActiveSourceList>
-						</Sound>
-						<Sound Name="wind_1" ID="{6CA98A22-FAEF-4E37-BAA8-F01CD7D05CAE}" ShortID="412596947">
-							<PropertyList>
-								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
-								<Property Name="IsVoice" Type="bool" Value="True"/>
-								<Property Name="Pitch" Type="int32">
-									<ValueList>
-										<Value>910</Value>
-									</ValueList>
-								</Property>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2B7CC0FB-0949-49C5-8228-DCFA38A80237}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FAC89FD8-6922-4802-BE46-2764330B2318}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<AudioFileSource Name="wind" ID="{9C83DC85-F6DD-4389-91E1-E13EED616680}">
-									<PropertyList>
-										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-										<Property Name="TrimEnd" Type="Real64" Value="24.6018065456231"/>
-									</PropertyList>
-									<Language>English(US)</Language>
-									<AudioFile>wind.wav</AudioFile>
-									<MediaIDList>
-										<MediaID ID="154551227"/>
-									</MediaIDList>
-								</AudioFileSource>
-							</ChildrenList>
-							<ActiveSourceList>
-								<ActiveSource Name="wind" ID="{9C83DC85-F6DD-4389-91E1-E13EED616680}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
 					</ChildrenList>

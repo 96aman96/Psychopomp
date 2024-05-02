@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{AD4DAE7C-B46F-FDFB-6358-B7A16E084221}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{A41F4D83-4FED-6105-5678-0E6C65B458C2}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -21,8 +21,13 @@
 			<Busses>
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 			</Busses>
+			<GameParameters>
+				<GameParameter Id="1685747766" Name="LowPass"/>
+				<GameParameter Id="1908158473" Name="Pitch"/>
+				<GameParameter Id="2453598386" Name="HighPass"/>
+			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="3991942870" Type="User" Language="English(US)" Hash="{9C3CC10C-38F4-81B0-BCD7-2B1989065474}">
+		<SoundBank Id="3991942870" Type="User" Language="English(US)" Hash="{F53BE48A-CD14-0ABD-AE2B-9B0B25BCCDE5}">
 			<ShortName>Music</ShortName>
 			<Path>English(US)/Music.bnk</Path>
 			<Media>
@@ -32,11 +37,11 @@
 				</File>
 				<File Id="154551227" Language="English(US)" Streaming="false" Location="Memory">
 					<ShortName>wind.wav</ShortName>
-					<CachePath>Voices/English(US)/wind_72D91BE2.wem</CachePath>
+					<CachePath>Voices/English(US)/wind_E9C8EB7C.wem</CachePath>
 				</File>
 				<File Id="160845157" Language="English(US)" Streaming="false" Location="Memory">
 					<ShortName>Feather_Marker 07.wav</ShortName>
-					<CachePath>Voices/English(US)/Feather_Marker 07_4B1ABDE4.wem</CachePath>
+					<CachePath>Voices/English(US)/Feather_Marker 07_2C8DC4D6.wem</CachePath>
 				</File>
 				<File Id="334818311" Language="English(US)" Streaming="false" Location="Memory">
 					<ShortName>Quit.wav</ShortName>
@@ -56,19 +61,19 @@
 				</File>
 				<File Id="632742918" Language="English(US)" Streaming="false" Location="Memory">
 					<ShortName>train_Final.wav</ShortName>
-					<CachePath>Voices/English(US)/train_Final_4C5D2C70.wem</CachePath>
+					<CachePath>Voices/English(US)/train_Final_7824F05D.wem</CachePath>
 				</File>
 				<File Id="947433487" Language="English(US)" Streaming="false" Location="Memory">
 					<ShortName>Feather_Marker 08.wav</ShortName>
-					<CachePath>Voices/English(US)/Feather_Marker 08_1859E083.wem</CachePath>
+					<CachePath>Voices/English(US)/Feather_Marker 08_7E4244C1.wem</CachePath>
 				</File>
 				<File Id="966504071" Language="English(US)" Streaming="false" Location="Memory">
 					<ShortName>Feather_Marker 07.wav</ShortName>
-					<CachePath>Voices/English(US)/Feather_Marker 07_DA1BB666.wem</CachePath>
+					<CachePath>Voices/English(US)/Feather_Marker 07_39D78F3D.wem</CachePath>
 				</File>
 				<File Id="973887848" Language="English(US)" Streaming="false" Location="Memory">
 					<ShortName>Feather_Marker 08.wav</ShortName>
-					<CachePath>Voices/English(US)/Feather_Marker 08_EE9A5B9F.wem</CachePath>
+					<CachePath>Voices/English(US)/Feather_Marker 08_9571BE3B.wem</CachePath>
 				</File>
 			</Media>
 			<Plugins>
@@ -122,7 +127,7 @@
 						<MediaRef Id="384855880"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="3770660377" Name="Play_wind_0" DurationType="Infinite">
+				<Event Id="1020223172" Name="Play_wind" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="154551227"/>
 					</MediaRefs>
@@ -130,9 +135,14 @@
 				<Event Id="1873017685" Name="Resume_FlightNew" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="4138142034" Name="Resume_Theme" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="560299279" Name="Stop_Theme" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
-				<Event Id="4111719819" Name="Stop_wind_0" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="3173136834" Name="Stop_wind" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 			</Events>
+			<GameParameters>
+				<GameParameter Id="1685747766" Name="LowPass"/>
+				<GameParameter Id="1908158473" Name="Pitch"/>
+				<GameParameter Id="2453598386" Name="HighPass"/>
+			</GameParameters>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{5A676095-3817-B1F7-685F-620F4D87C14E}</FileHash>
+	<FileHash>{80276BDC-C073-079E-3A22-62B8DD42C9AC}</FileHash>
 </SoundBanksInfo>

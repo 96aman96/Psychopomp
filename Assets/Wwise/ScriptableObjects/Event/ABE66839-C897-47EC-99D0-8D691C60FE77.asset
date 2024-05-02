@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e562bb89a71c8b44ca37b54998edd45f, type: 3}
   m_Name: ABE66839-C897-47EC-99D0-8D691C60FE77
   m_EditorClassIdentifier: 
-  objectName: Play_wind_0
-  id: 3770660377
+  objectName: Play_wind
+  id: 1020223172
   guid: ABE66839-C897-47EC-99D0-8D691C60FE77

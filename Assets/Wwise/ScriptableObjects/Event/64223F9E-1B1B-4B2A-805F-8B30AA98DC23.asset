@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e562bb89a71c8b44ca37b54998edd45f, type: 3}
   m_Name: 64223F9E-1B1B-4B2A-805F-8B30AA98DC23
   m_EditorClassIdentifier: 
-  objectName: Stop_wind_0
-  id: 4111719819
+  objectName: Stop_wind
+  id: 3173136834
   guid: 64223F9E-1B1B-4B2A-805F-8B30AA98DC23

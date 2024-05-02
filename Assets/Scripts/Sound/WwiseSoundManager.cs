@@ -16,7 +16,13 @@ public class WwiseSoundManager : MonoBehaviour
     public AK.Wwise.Event soundwaveSFX;
     public AK.Wwise.Event random_featherSFX;
     public AK.Wwise.Event WindSoundEvent;
+    public AK.Wwise.RTPC windPitchRTPC;
+    public AK.Wwise.RTPC windLowPassRTPC;
+    public AK.Wwise.RTPC windHighPassRTPC;
+
+    
     public AK.Wwise.Event stopWindSoundEvent;
+    
 
     private bool isFirstTimeGliding = true;
     
@@ -66,8 +72,13 @@ public class WwiseSoundManager : MonoBehaviour
         random_featherSFX.Post(gameObject);
     }
 
-    public void PlayWindSound()
+    public void PlayWindSound(float pitchValue, float lowPassValue, float highPassValue)
     {
+        //you can use this pitch value to set up the pitch of the wind
+        //(0, 100)
+        windPitchRTPC.SetGlobalValue(pitchValue); 
+        windLowPassRTPC.SetGlobalValue(lowPassValue); 
+        windHighPassRTPC.SetGlobalValue(highPassValue); 
         WindSoundEvent.Post(gameObject);
     }
     public void StopWindSound()

@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{9F5D6E36-3B99-4EDE-AF14-25F26336BAD9}" SchemaVersion="119">
 	<GameParameters>
-		<WorkUnit Name="Default Work Unit" ID="{9F5D6E36-3B99-4EDE-AF14-25F26336BAD9}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{9F5D6E36-3B99-4EDE-AF14-25F26336BAD9}" PersistMode="Standalone">
+			<ChildrenList>
+				<GameParameter Name="LowPass" ID="{6A3EF0EE-E229-4613-BEC9-A6B3807D4FFE}"/>
+				<GameParameter Name="HighPass" ID="{2366E4DD-4EFE-4F2B-B038-DC2A752B84D5}"/>
+				<GameParameter Name="Pitch" ID="{D93F4C12-A7FC-447A-8640-AFA26FB8BF71}"/>
+			</ChildrenList>
+		</WorkUnit>
 	</GameParameters>
 </WwiseDocument>
