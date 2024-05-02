@@ -65,6 +65,289 @@
 						</Sound>
 					</ChildrenList>
 				</Folder>
+				<Folder Name="SFX" ID="{6495106F-928C-4E36-A552-63F81BE147FF}" ShortID="184925285">
+					<ChildrenList>
+						<Sound Name="train_Final" ID="{0C9DFB98-D3E8-4175-BB2C-518C023F42A7}" ShortID="75949378">
+							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="2"/>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="IsVoice" Type="bool" Value="True"/>
+								<Property Name="SpeakerPanning" Type="int16" Value="2"/>
+								<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="41"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>5</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Attenuation">
+									<ObjectRef Name="Train Attenuation" ID="{BE396A7B-8E95-42CC-8A8F-430DD8F7CD26}" WorkUnitID="{56939205-5385-494A-A891-3BC2A1227A27}"/>
+								</Reference>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2B7CC0FB-0949-49C5-8228-DCFA38A80237}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FAC89FD8-6922-4802-BE46-2764330B2318}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="train_Final" ID="{3F56AE16-00BF-40B8-B09E-B7305AD44B02}">
+									<PropertyList>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimEnd" Type="Real64" Value="33.7706993348983"/>
+									</PropertyList>
+									<Language>English(US)</Language>
+									<AudioFile>train_Final.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="632742918"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<PositioningInfo>
+								<Panner Name="" ID="{720E0405-07E5-4790-9725-BB090F8E9B58}"/>
+							</PositioningInfo>
+							<ActiveSourceList>
+								<ActiveSource Name="train_Final" ID="{3F56AE16-00BF-40B8-B09E-B7305AD44B02}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="soundwave" ID="{F1A933F6-ABEB-483B-BC72-905BBD8AF68A}" ShortID="853020161">
+							<PropertyList>
+								<Property Name="IsVoice" Type="bool" Value="True"/>
+								<Property Name="OutputBusHighpass" Type="int16">
+									<ValueList>
+										<Value>18</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-9</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2B7CC0FB-0949-49C5-8228-DCFA38A80237}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FAC89FD8-6922-4802-BE46-2764330B2318}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="soundwave" ID="{55089E16-BB1C-43F6-B557-B927166DDE00}">
+									<Language>English(US)</Language>
+									<AudioFile>soundwave.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="375662028"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="soundwave" ID="{55089E16-BB1C-43F6-B557-B927166DDE00}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Folder Name="Feather" ID="{DE92BE98-55FD-4079-9217-919E726E1AC7}" ShortID="987948612">
+							<ChildrenList>
+								<RandomSequenceContainer Name="Feather_Random" ID="{CF7D2B48-A2B4-4D8B-9F23-8C6CE6E89D26}" ShortID="448095503">
+									<PropertyList>
+										<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-3</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2B7CC0FB-0949-49C5-8228-DCFA38A80237}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FAC89FD8-6922-4802-BE46-2764330B2318}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="Feather_2" ID="{9DE63C22-AF99-44D6-87BD-3549FAE69879}" ShortID="398554359">
+											<PropertyList>
+												<Property Name="IsVoice" Type="bool" Value="True"/>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-2</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2B7CC0FB-0949-49C5-8228-DCFA38A80237}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FAC89FD8-6922-4802-BE46-2764330B2318}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Feather_Marker 08" ID="{394C1C96-4235-4083-8D0C-8269CF6D7EE6}">
+													<PropertyList>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.0574577206479047"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="0.0759924692440029"/>
+														<Property Name="TrimEnd" Type="Real64" Value="0.352160223325868"/>
+													</PropertyList>
+													<Language>English(US)</Language>
+													<AudioFile>Feather_Marker 08.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="947433487"/>
+														<MediaID Platform="Windows" ID="973887848"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Feather_Marker 08" ID="{394C1C96-4235-4083-8D0C-8269CF6D7EE6}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Feather_1" ID="{963A9E22-B84A-4328-93F2-D9FA21AA3007}" ShortID="117456428">
+											<PropertyList>
+												<Property Name="IsVoice" Type="bool" Value="True"/>
+												<Property Name="Pitch" Type="int32">
+													<ValueList>
+														<Value>150</Value>
+													</ValueList>
+												</Property>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>4</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2B7CC0FB-0949-49C5-8228-DCFA38A80237}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FAC89FD8-6922-4802-BE46-2764330B2318}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Feather_Marker 07" ID="{899FCBDF-B6A7-4F11-A278-999961FC353C}">
+													<PropertyList>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.0673298276365761"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="0.0846544616483267"/>
+														<Property Name="TrimEnd" Type="Real64" Value="0.363817314246762"/>
+													</PropertyList>
+													<Language>English(US)</Language>
+													<AudioFile>Feather_Marker 07.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="966504071"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Feather_Marker 07" ID="{899FCBDF-B6A7-4F11-A278-999961FC353C}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Feather_3" ID="{FB03D6A7-80C3-4C6F-BE42-0F8301765EEA}" ShortID="303836626">
+											<PropertyList>
+												<Property Name="IsVoice" Type="bool" Value="True"/>
+												<Property Name="Pitch" Type="int32">
+													<ValueList>
+														<Value>-170</Value>
+													</ValueList>
+												</Property>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-2</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2B7CC0FB-0949-49C5-8228-DCFA38A80237}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FAC89FD8-6922-4802-BE46-2764330B2318}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Feather_Marker 08" ID="{6965D23F-377B-4F4F-B207-7F7AD1D764A6}">
+													<PropertyList>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.0496731262375434"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="0.0793287239913006"/>
+														<Property Name="TrimEnd" Type="Real64" Value="0.350306748466258"/>
+													</PropertyList>
+													<Language>English(US)</Language>
+													<AudioFile>Feather_Marker 08.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="973887848"/>
+														<MediaID Platform="Windows" ID="947433487"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Feather_Marker 08" ID="{6965D23F-377B-4F4F-B207-7F7AD1D764A6}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Feather_4" ID="{E1CD1BB0-9E7A-4CBD-BB1F-649F9623C5D8}" ShortID="495751329">
+											<PropertyList>
+												<Property Name="IsVoice" Type="bool" Value="True"/>
+												<Property Name="Pitch" Type="int32">
+													<ValueList>
+														<Value>-50</Value>
+													</ValueList>
+												</Property>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>4</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2B7CC0FB-0949-49C5-8228-DCFA38A80237}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FAC89FD8-6922-4802-BE46-2764330B2318}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Feather_Marker 07" ID="{B3F808D8-7FAF-4113-A35E-61179E70CBDB}">
+													<PropertyList>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.0673298276365761"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="0.0846544616483267"/>
+														<Property Name="TrimEnd" Type="Real64" Value="0.374448339663064"/>
+													</PropertyList>
+													<Language>English(US)</Language>
+													<AudioFile>Feather_Marker 07.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="160845157"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Feather_Marker 07" ID="{B3F808D8-7FAF-4113-A35E-61179E70CBDB}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+									<ObjectLists>
+										<ObjectList Name="Effects">
+											<Reference>
+												<Local>
+													<EffectSlot Name="" ID="{5018C93B-4EDC-4BC8-AB62-165E50C2F7EB}" ShortID="130024000">
+														<ReferenceList>
+															<Reference Name="Effect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+																<ObjectRef Name="New_Parametric_EQ" ID="{9E56C296-9858-4858-9340-74AF4D7D0B9E}" WorkUnitID="{A2D7F6BF-DBBD-4E4F-8FF5-4A03D2002E38}"/>
+															</Reference>
+														</ReferenceList>
+													</EffectSlot>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</RandomSequenceContainer>
+							</ChildrenList>
+						</Folder>
+					</ChildrenList>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>

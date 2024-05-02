@@ -15,8 +15,11 @@ namespace AK
     {
         static const AkUniqueID PAUSE_FLIGHTNEW = 4006404000U;
         static const AkUniqueID PAUSE_THEME = 1553341287U;
+        static const AkUniqueID PLAY_FEATHER_RANDOM = 1424865143U;
         static const AkUniqueID PLAY_FLIGHTNEW = 25429078U;
+        static const AkUniqueID PLAY_SOUNDWAVE = 1044785212U;
         static const AkUniqueID PLAY_THEME = 2479442773U;
+        static const AkUniqueID PLAY_TRAINSOUND = 1934545473U;
         static const AkUniqueID PLAY_UI_QUIT = 1057286634U;
         static const AkUniqueID PLAY_UI_START = 643450781U;
         static const AkUniqueID RESUME_FLIGHTNEW = 1873017685U;

@@ -1,6 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{A2D7F6BF-DBBD-4E4F-8FF5-4A03D2002E38}" SchemaVersion="119">
 	<Effects>
-		<WorkUnit Name="Default Work Unit" ID="{A2D7F6BF-DBBD-4E4F-8FF5-4A03D2002E38}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{A2D7F6BF-DBBD-4E4F-8FF5-4A03D2002E38}" PersistMode="Standalone">
+			<ChildrenList>
+				<Effect Name="New_Delay" ID="{B9246234-DAE7-405F-BFC6-9E368043FDD8}" PluginName="Wwise Delay" CompanyID="0" PluginID="106" PluginType="3"/>
+				<Effect Name="New_RoomVerb" ID="{97DC08D8-2F06-4D6E-B431-ED9CFBF778A6}" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+					<PropertyList>
+						<Property Name="DecayTime" Type="Real32" Value="0.2"/>
+						<Property Name="Density" Type="Real32" Value="0"/>
+						<Property Name="Diffusion" Type="Real32" Value="0"/>
+						<Property Name="DryLevel" Type="Real32" Value="-0.3"/>
+						<Property Name="EnableEarlyReflections" Type="bool" Value="False"/>
+						<Property Name="HFDamping" Type="Real32" Value="0.5"/>
+						<Property Name="LFELevel" Type="Real32" Value="-30.3"/>
+						<Property Name="PreDelay" Type="Real32" Value="0"/>
+						<Property Name="Quality" Type="int32" Value="2"/>
+						<Property Name="ReverbLevel" Type="Real32" Value="-5"/>
+						<Property Name="RoomShape" Type="Real32" Value="0"/>
+						<Property Name="StereoWidth" Type="Real32" Value="0"/>
+					</PropertyList>
+				</Effect>
+				<Effect Name="New_Parametric_EQ" ID="{9E56C296-9858-4858-9340-74AF4D7D0B9E}" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+					<PropertyList>
+						<Property Name="FrequencyBand2" Type="Real32" Value="799"/>
+						<Property Name="FrequencyBand3" Type="Real32" Value="11999"/>
+						<Property Name="GainBand1" Type="Real32" Value="-0.5"/>
+						<Property Name="GainBand3" Type="Real32" Value="0.5"/>
+					</PropertyList>
+				</Effect>
+			</ChildrenList>
+		</WorkUnit>
 	</Effects>
 </WwiseDocument>

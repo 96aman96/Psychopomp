@@ -150,13 +150,12 @@ public class CharacterVFX : MonoBehaviour{
 
     public void StartGlide(){
         TriggerFeathers();
-        //TriggerFlyingMusic();
-        //call the gliding music in Wwise (with built-in fade in-out effect)
         if(wwiseSoundManager) wwiseSoundManager.MusicStartGliding();
     }
 
     private void TriggerFeathers(){
         feathers.Play();
+        if(wwiseSoundManager) wwiseSoundManager.PlayRandomFeather();
     }
 
     private void TriggerGlideTrail(){
@@ -184,6 +183,7 @@ public class CharacterVFX : MonoBehaviour{
         
         if(!shockSFXPlayed && (shockElapsed/shockDuration)>0.7f){
             shockSFXPlayed = true;
+            if(wwiseSoundManager) wwiseSoundManager.PlaySoundWave();
         }
 
         if(shockElapsed > shockDuration)isShocking = false;

@@ -1,17 +1,29 @@
 Event	ID	Name			Wwise Object Path	Notes
-	25429078	Play_FlightNew			\Default Work Unit\Play_FlightNew	
-	560299279	Stop_Theme			\Default Work Unit\Stop_Theme	
-	643450781	Play_UI_Start			\Default Work Unit\UI_SFX\Play_UI_Start	
-	1057286634	Play_UI_Quit			\Default Work Unit\UI_SFX\Play_UI_Quit	
-	1553341287	Pause_Theme			\Default Work Unit\Pause_Theme	
-	1873017685	Resume_FlightNew			\Default Work Unit\Resume_FlightNew	
-	2479442773	Play_Theme			\Default Work Unit\Play_Theme	
-	4006404000	Pause_FlightNew			\Default Work Unit\Pause_FlightNew	
-	4138142034	Resume_Theme			\Default Work Unit\Resume_Theme	
+	25429078	Play_FlightNew			\Default Work Unit\InteractiveMusic\Play_FlightNew	
+	560299279	Stop_Theme			\Default Work Unit\InteractiveMusic\Stop_Theme	
+	643450781	Play_UI_Start			\Default Work Unit\SFX\Play_UI_Start	
+	1044785212	Play_soundwave			\Default Work Unit\SFX\Play_soundwave	
+	1057286634	Play_UI_Quit			\Default Work Unit\SFX\Play_UI_Quit	
+	1424865143	Play_Feather_Random			\Default Work Unit\SFX\Play_Feather_Random	
+	1553341287	Pause_Theme			\Default Work Unit\InteractiveMusic\Pause_Theme	
+	1873017685	Resume_FlightNew			\Default Work Unit\InteractiveMusic\Resume_FlightNew	
+	1934545473	Play_TrainSound			\Default Work Unit\SFX\Play_TrainSound	
+	2479442773	Play_Theme			\Default Work Unit\InteractiveMusic\Play_Theme	
+	4006404000	Pause_FlightNew			\Default Work Unit\InteractiveMusic\Pause_FlightNew	
+	4138142034	Resume_Theme			\Default Work Unit\InteractiveMusic\Resume_Theme	
+
+Effect plug-ins	ID	Name	Type				Notes
+	3657550167	New_Parametric_EQ	Wwise Parametric EQ			
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	75906182	Theme	C:\Users\zymay\OneDrive\Documents\GitHub\Psychopomp\Psychopomp_WwiseProject\.cache\Mac\Voices\English(US)\Theme_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\New Work Unit\Theme\Theme		33475076
+	160845157	Feather_4	C:\Users\zymay\OneDrive\Documents\GitHub\Psychopomp\Psychopomp_WwiseProject\.cache\Mac\Voices\English(US)\Feather_Marker 07_4B1ABDE4.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Feather\Feather_Random\Feather_4		53092
 	334818311	UI_Quit	C:\Users\zymay\OneDrive\Documents\GitHub\Psychopomp\Psychopomp_WwiseProject\.cache\Mac\Voices\English(US)\Quit_F390C9DE.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\UI_Quit		540968
-	384855880	UI_Start	C:\Users\zymay\OneDrive\Documents\GitHub\Psychopomp\Psychopomp_WwiseProject\.cache\Mac\Voices\English(US)\Start_B44C8388.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\UI_Start		430344
+	375662028	soundwave	C:\Users\zymay\OneDrive\Documents\GitHub\Psychopomp\Psychopomp_WwiseProject\.cache\Mac\Voices\English(US)\soundwave_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\soundwave		282336
+	384855880	UI_Start	C:\Users\zymay\OneDrive\Documents\GitHub\Psychopomp\Psychopomp_WwiseProject\.cache\Mac\Voices\English(US)\Start_7AFE0805.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\UI_Start		430344
 	591577181	FlightNew	C:\Users\zymay\OneDrive\Documents\GitHub\Psychopomp\Psychopomp_WwiseProject\.cache\Mac\Voices\English(US)\Psychopump New Flight_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\New Work Unit\FlightNew\FlightNew		23629492
+	632742918	train_Final	C:\Users\zymay\OneDrive\Documents\GitHub\Psychopomp\Psychopomp_WwiseProject\.cache\Mac\Voices\English(US)\train_Final_4C5D2C70.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\train_Final		6484072
+	947433487	Feather_2	C:\Users\zymay\OneDrive\Documents\GitHub\Psychopomp\Psychopomp_WwiseProject\.cache\Mac\Voices\English(US)\Feather_Marker 08_1859E083.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Feather\Feather_Random\Feather_2		48812
+	966504071	Feather_1	C:\Users\zymay\OneDrive\Documents\GitHub\Psychopomp\Psychopomp_WwiseProject\.cache\Mac\Voices\English(US)\Feather_Marker 07_DA1BB666.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Feather\Feather_Random\Feather_1		53092
+	973887848	Feather_3	C:\Users\zymay\OneDrive\Documents\GitHub\Psychopomp\Psychopomp_WwiseProject\.cache\Mac\Voices\English(US)\Feather_Marker 08_EE9A5B9F.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Feather\Feather_Random\Feather_3		50056
 

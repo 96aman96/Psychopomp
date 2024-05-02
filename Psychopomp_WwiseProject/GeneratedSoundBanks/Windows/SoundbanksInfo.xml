@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{B6CBD692-12EC-CDBA-0932-48F63C40C91F}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{9B7E7A25-01D8-1F60-ADF9-347586D7A264}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -22,7 +22,7 @@
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 			</Busses>
 		</SoundBank>
-		<SoundBank Id="3991942870" Type="User" Language="English(US)" Hash="{A3E72FDC-43C6-7628-A438-472533C94BF0}">
+		<SoundBank Id="3991942870" Type="User" Language="English(US)" Hash="{2869DBC2-9A8C-FC24-763D-7C1EB0434CC7}">
 			<ShortName>Music</ShortName>
 			<Path>English(US)/Music.bnk</Path>
 			<Media>
@@ -30,30 +30,82 @@
 					<ShortName>Theme.wav</ShortName>
 					<CachePath>Voices/English(US)/Theme_FBC78EF0.wem</CachePath>
 				</File>
+				<File Id="160845157" Language="English(US)" Streaming="false" Location="Memory">
+					<ShortName>Feather_Marker 07.wav</ShortName>
+					<CachePath>Voices/English(US)/Feather_Marker 07_4B1ABDE4.wem</CachePath>
+				</File>
 				<File Id="334818311" Language="English(US)" Streaming="false" Location="Memory">
 					<ShortName>Quit.wav</ShortName>
 					<CachePath>Voices/English(US)/Quit_F390C9DE.wem</CachePath>
 				</File>
+				<File Id="375662028" Language="English(US)" Streaming="false" Location="Memory">
+					<ShortName>soundwave.wav</ShortName>
+					<CachePath>Voices/English(US)/soundwave_818F3B66.wem</CachePath>
+				</File>
 				<File Id="384855880" Language="English(US)" Streaming="false" Location="Memory">
 					<ShortName>Start.wav</ShortName>
-					<CachePath>Voices/English(US)/Start_B44C8388.wem</CachePath>
+					<CachePath>Voices/English(US)/Start_7AFE0805.wem</CachePath>
 				</File>
 				<File Id="591577181" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Psychopump New Flight.wav</ShortName>
 					<CachePath>Voices/English(US)/Psychopump New Flight_FBC78EF0.wem</CachePath>
 				</File>
+				<File Id="632742918" Language="English(US)" Streaming="false" Location="Memory">
+					<ShortName>train_Final.wav</ShortName>
+					<CachePath>Voices/English(US)/train_Final_4C5D2C70.wem</CachePath>
+				</File>
+				<File Id="947433487" Language="English(US)" Streaming="false" Location="Memory">
+					<ShortName>Feather_Marker 08.wav</ShortName>
+					<CachePath>Voices/English(US)/Feather_Marker 08_EE9A5B9F.wem</CachePath>
+				</File>
+				<File Id="966504071" Language="English(US)" Streaming="false" Location="Memory">
+					<ShortName>Feather_Marker 07.wav</ShortName>
+					<CachePath>Voices/English(US)/Feather_Marker 07_DA1BB666.wem</CachePath>
+				</File>
+				<File Id="973887848" Language="English(US)" Streaming="false" Location="Memory">
+					<ShortName>Feather_Marker 08.wav</ShortName>
+					<CachePath>Voices/English(US)/Feather_Marker 08_1859E083.wem</CachePath>
+				</File>
 			</Media>
+			<Plugins>
+				<ShareSets>
+					<Plugin Id="3657550167" Name="New_Parametric_EQ" LibName="Wwise Parametric EQ" LibId="6881283"/>
+				</ShareSets>
+			</Plugins>
 			<Events>
 				<Event Id="4006404000" Name="Pause_FlightNew" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="1553341287" Name="Pause_Theme" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="1424865143" Name="Play_Feather_Random" DurationType="OneShot" DurationMin="0.27549085" DurationMax="0.31243235">
+					<MediaRefs>
+						<MediaRef Id="160845157"/>
+						<MediaRef Id="947433487"/>
+						<MediaRef Id="966504071"/>
+						<MediaRef Id="973887848"/>
+					</MediaRefs>
+					<PluginRefs>
+						<ShareSets>
+							<PluginRef Id="3657550167"/>
+						</ShareSets>
+					</PluginRefs>
+				</Event>
 				<Event Id="25429078" Name="Play_FlightNew" DurationType="OneShot" DurationMin="136.45349" DurationMax="136.45349">
 					<MediaRefs>
 						<MediaRef Id="591577181"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="1044785212" Name="Play_soundwave" DurationType="OneShot" DurationMin="1.6" DurationMax="1.6">
+					<MediaRefs>
+						<MediaRef Id="375662028"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="2479442773" Name="Play_Theme" DurationType="OneShot" DurationMin="190.76746" DurationMax="190.76746">
 					<MediaRefs>
 						<MediaRef Id="75906182"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1934545473" Name="Play_TrainSound" MaxAttenuation="2000" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="632742918"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="1057286634" Name="Play_UI_Quit" DurationType="OneShot" DurationMin="3.0661764" DurationMax="3.0661764">
@@ -72,5 +124,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{3DD60A80-547B-A9F7-B65A-6A3BA31CE8AE}</FileHash>
+	<FileHash>{9B366174-B4B4-352C-A47E-8920BC628733}</FileHash>
 </SoundBanksInfo>
