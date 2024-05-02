@@ -6,12 +6,16 @@
 				<SoundBank Name="Music" ID="{C11907C3-FBC5-45ED-846A-C681E351710D}">
 					<ObjectInclusionList>
 						<ObjectRef Name="Play_Theme" ID="{BA2838EC-18F5-41CF-90A9-64446403F104}" WorkUnitID="{F200B06E-8FAE-423D-B158-38EC56AAF073}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_wind_1" ID="{55BB2B7E-9F62-4363-AD26-2F0CAE6D6F4B}" WorkUnitID="{F200B06E-8FAE-423D-B158-38EC56AAF073}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Pause_FlightNew" ID="{13645682-14AE-46B4-9342-A6A714EF1F09}" WorkUnitID="{F200B06E-8FAE-423D-B158-38EC56AAF073}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_FlightNew" ID="{2FD5A4AF-A035-47C1-B445-EAD377E2DFE2}" WorkUnitID="{F200B06E-8FAE-423D-B158-38EC56AAF073}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Stop_wind_1" ID="{95FB7404-3A8C-47CD-AD4E-B45AA048E158}" WorkUnitID="{F200B06E-8FAE-423D-B158-38EC56AAF073}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_wind_0" ID="{ABE66839-C897-47EC-99D0-8D691C60FE77}" WorkUnitID="{F200B06E-8FAE-423D-B158-38EC56AAF073}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_UI_Start" ID="{7213B740-87F0-49A0-8041-CA413627DF90}" WorkUnitID="{F200B06E-8FAE-423D-B158-38EC56AAF073}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Stop_Theme" ID="{356293D6-762F-4A8A-8BE3-31AEBA08AD0C}" WorkUnitID="{F200B06E-8FAE-423D-B158-38EC56AAF073}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_UI_Quit" ID="{E3BA7802-93DC-4ABC-BCA3-6C7227A78061}" WorkUnitID="{F200B06E-8FAE-423D-B158-38EC56AAF073}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Pause_Theme" ID="{E4123B31-E77F-4ABF-B9A8-FE5D0ECA12C9}" WorkUnitID="{F200B06E-8FAE-423D-B158-38EC56AAF073}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Stop_wind_0" ID="{64223F9E-1B1B-4B2A-805F-8B30AA98DC23}" WorkUnitID="{F200B06E-8FAE-423D-B158-38EC56AAF073}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Resume_Theme" ID="{953CDCB9-F157-4B41-A537-EEE6C6F675F2}" WorkUnitID="{F200B06E-8FAE-423D-B158-38EC56AAF073}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Resume_FlightNew" ID="{AFB958D1-1D2F-4B8A-B1A9-1A18259D1299}" WorkUnitID="{F200B06E-8FAE-423D-B158-38EC56AAF073}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_soundwave" ID="{A8ECB9F3-BD1F-4C2E-BA66-E3076D46582E}" WorkUnitID="{F200B06E-8FAE-423D-B158-38EC56AAF073}" Origin="Manual" Filter="7"/>

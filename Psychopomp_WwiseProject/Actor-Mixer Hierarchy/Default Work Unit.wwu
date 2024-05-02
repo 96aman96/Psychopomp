@@ -186,7 +186,7 @@
 											<ChildrenList>
 												<AudioFileSource Name="Feather_Marker 08" ID="{394C1C96-4235-4083-8D0C-8269CF6D7EE6}">
 													<PropertyList>
-														<Property Name="FadeOutDuration" Type="Real64" Value="0.0574577206479047"/>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.107872236829292"/>
 														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
 														<Property Name="TrimBegin" Type="Real64" Value="0.0759924692440029"/>
 														<Property Name="TrimEnd" Type="Real64" Value="0.352160223325868"/>
@@ -228,10 +228,9 @@
 											<ChildrenList>
 												<AudioFileSource Name="Feather_Marker 07" ID="{899FCBDF-B6A7-4F11-A278-999961FC353C}">
 													<PropertyList>
-														<Property Name="FadeOutDuration" Type="Real64" Value="0.0673298276365761"/>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.0842607199662414"/>
 														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
 														<Property Name="TrimBegin" Type="Real64" Value="0.0846544616483267"/>
-														<Property Name="TrimEnd" Type="Real64" Value="0.363817314246762"/>
 													</PropertyList>
 													<Language>English(US)</Language>
 													<AudioFile>Feather_Marker 07.wav</AudioFile>
@@ -269,10 +268,9 @@
 											<ChildrenList>
 												<AudioFileSource Name="Feather_Marker 08" ID="{6965D23F-377B-4F4F-B207-7F7AD1D764A6}">
 													<PropertyList>
-														<Property Name="FadeOutDuration" Type="Real64" Value="0.0496731262375434"/>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.116398221183497"/>
 														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
 														<Property Name="TrimBegin" Type="Real64" Value="0.0793287239913006"/>
-														<Property Name="TrimEnd" Type="Real64" Value="0.350306748466258"/>
 													</PropertyList>
 													<Language>English(US)</Language>
 													<AudioFile>Feather_Marker 08.wav</AudioFile>
@@ -311,10 +309,9 @@
 											<ChildrenList>
 												<AudioFileSource Name="Feather_Marker 07" ID="{B3F808D8-7FAF-4113-A35E-61179E70CBDB}">
 													<PropertyList>
-														<Property Name="FadeOutDuration" Type="Real64" Value="0.0673298276365761"/>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.142534488914857"/>
 														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
 														<Property Name="TrimBegin" Type="Real64" Value="0.0846544616483267"/>
-														<Property Name="TrimEnd" Type="Real64" Value="0.374448339663064"/>
 													</PropertyList>
 													<Language>English(US)</Language>
 													<AudioFile>Feather_Marker 07.wav</AudioFile>
@@ -346,6 +343,71 @@
 								</RandomSequenceContainer>
 							</ChildrenList>
 						</Folder>
+						<Sound Name="wind_0" ID="{6AE30484-27BD-48A9-8851-49EB66C0A552}" ShortID="313228156">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="IsVoice" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2B7CC0FB-0949-49C5-8228-DCFA38A80237}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FAC89FD8-6922-4802-BE46-2764330B2318}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="wind" ID="{9629DCA2-AD76-43CA-86E3-4BD867C9E855}">
+									<PropertyList>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimEnd" Type="Real64" Value="24.6018065456231"/>
+									</PropertyList>
+									<Language>English(US)</Language>
+									<AudioFile>wind.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="154551227"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="wind" ID="{9629DCA2-AD76-43CA-86E3-4BD867C9E855}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="wind_1" ID="{6CA98A22-FAEF-4E37-BAA8-F01CD7D05CAE}" ShortID="412596947">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="IsVoice" Type="bool" Value="True"/>
+								<Property Name="Pitch" Type="int32">
+									<ValueList>
+										<Value>910</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2B7CC0FB-0949-49C5-8228-DCFA38A80237}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FAC89FD8-6922-4802-BE46-2764330B2318}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="wind" ID="{9C83DC85-F6DD-4389-91E1-E13EED616680}">
+									<PropertyList>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimEnd" Type="Real64" Value="24.6018065456231"/>
+									</PropertyList>
+									<Language>English(US)</Language>
+									<AudioFile>wind.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="154551227"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="wind" ID="{9C83DC85-F6DD-4389-91E1-E13EED616680}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
 					</ChildrenList>
 				</Folder>
 			</ChildrenList>

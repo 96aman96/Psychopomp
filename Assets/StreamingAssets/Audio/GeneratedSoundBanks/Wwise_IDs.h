@@ -22,9 +22,11 @@ namespace AK
         static const AkUniqueID PLAY_TRAINSOUND = 1934545473U;
         static const AkUniqueID PLAY_UI_QUIT = 1057286634U;
         static const AkUniqueID PLAY_UI_START = 643450781U;
+        static const AkUniqueID PLAY_WIND_0 = 3770660377U;
         static const AkUniqueID RESUME_FLIGHTNEW = 1873017685U;
         static const AkUniqueID RESUME_THEME = 4138142034U;
         static const AkUniqueID STOP_THEME = 560299279U;
+        static const AkUniqueID STOP_WIND_0 = 4111719819U;
     } // namespace EVENTS
 
     namespace BANKS

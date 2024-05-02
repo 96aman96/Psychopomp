@@ -60,6 +60,10 @@ public class CharacterVFX : MonoBehaviour{
     public float maxTilt = 30f;
     public float tiltIntensity = 1f;
     public float tiltVelocityMultiplier = 1f;
+    
+    // SOUND FLAGS
+    private bool isWindSoundPlaying = false;
+
 
     private void Start(){
         kcc = GetComponent<KinematicCharacterController>();
@@ -119,7 +123,15 @@ public class CharacterVFX : MonoBehaviour{
             TriggerGlideTrail();
         } else {
             StopGlideTrail();
-            if(wwiseSoundManager) wwiseSoundManager.MusicStopGliding();
+            if(wwiseSoundManager)
+            {
+                wwiseSoundManager.MusicStopGliding();
+                if (isWindSoundPlaying) 
+                {
+                    wwiseSoundManager.StopWindSound();
+                    isWindSoundPlaying = false;
+                }
+            }
         }
     }
 
@@ -150,7 +162,14 @@ public class CharacterVFX : MonoBehaviour{
 
     public void StartGlide(){
         TriggerFeathers();
-        if(wwiseSoundManager) wwiseSoundManager.MusicStartGliding();
+        if(wwiseSoundManager) 
+        {
+            wwiseSoundManager.MusicStartGliding();
+            if (!isWindSoundPlaying) {
+                wwiseSoundManager.PlayWindSound();
+                isWindSoundPlaying = true;
+            }
+        }
     }
 
     private void TriggerFeathers(){

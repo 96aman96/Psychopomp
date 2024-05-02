@@ -9,7 +9,9 @@ Event	ID	Name			Wwise Object Path	Notes
 	1873017685	Resume_FlightNew			\Default Work Unit\InteractiveMusic\Resume_FlightNew	
 	1934545473	Play_TrainSound			\Default Work Unit\SFX\Play_TrainSound	
 	2479442773	Play_Theme			\Default Work Unit\InteractiveMusic\Play_Theme	
+	3770660377	Play_wind_0			\Default Work Unit\SFX\Wind\Play_wind_0	
 	4006404000	Pause_FlightNew			\Default Work Unit\InteractiveMusic\Pause_FlightNew	
+	4111719819	Stop_wind_0			\Default Work Unit\SFX\Wind\Stop_wind_0	
 	4138142034	Resume_Theme			\Default Work Unit\InteractiveMusic\Resume_Theme	
 
 Effect plug-ins	ID	Name	Type				Notes
@@ -17,6 +19,7 @@ Effect plug-ins	ID	Name	Type				Notes
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	75906182	Theme	C:\Users\zymay\OneDrive\Documents\GitHub\Psychopomp\Psychopomp_WwiseProject\.cache\Mac\Voices\English(US)\Theme_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\New Work Unit\Theme\Theme		33475076
+	154551227	wind_0	C:\Users\zymay\OneDrive\Documents\GitHub\Psychopomp\Psychopomp_WwiseProject\.cache\Mac\Voices\English(US)\wind_72D91BE2.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\wind_0		4723644
 	160845157	Feather_4	C:\Users\zymay\OneDrive\Documents\GitHub\Psychopomp\Psychopomp_WwiseProject\.cache\Mac\Voices\English(US)\Feather_Marker 07_4B1ABDE4.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Feather\Feather_Random\Feather_4		53092
 	334818311	UI_Quit	C:\Users\zymay\OneDrive\Documents\GitHub\Psychopomp\Psychopomp_WwiseProject\.cache\Mac\Voices\English(US)\Quit_F390C9DE.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\UI_Quit		540968
 	375662028	soundwave	C:\Users\zymay\OneDrive\Documents\GitHub\Psychopomp\Psychopomp_WwiseProject\.cache\Mac\Voices\English(US)\soundwave_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\soundwave		282336

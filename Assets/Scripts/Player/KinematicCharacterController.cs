@@ -71,7 +71,7 @@ public class KinematicCharacterController : MonoBehaviour{
     private float glideTimer = 0f;
 
     // ===== COMPONENT REFERENCES =====
-    public AudioManager audioManager;
+    public WwiseSoundManager wwiseSoundManager;
     public CameraController cameraController;
     private ColliderUtil colUtil;
     private CharacterVFX vfx;

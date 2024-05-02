@@ -60,6 +60,62 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Folder Name="Wind" ID="{B5EFC8A0-20EC-4D53-8F50-B4AF617647A0}" ShortID="621292212">
+							<ChildrenList>
+								<Event Name="Play_wind_0" ID="{ABE66839-C897-47EC-99D0-8D691C60FE77}">
+									<ChildrenList>
+										<Action Name="" ID="{83B757CA-2F4D-42AF-A5FA-AC30C2091ACF}" ShortID="688754524">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="wind_0" ID="{6AE30484-27BD-48A9-8851-49EB66C0A552}" WorkUnitID="{A35B15AE-516B-47E8-A3EB-9706F95E54A1}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Stop_wind_0" ID="{64223F9E-1B1B-4B2A-805F-8B30AA98DC23}">
+									<ChildrenList>
+										<Action Name="" ID="{07600CB8-93A4-41CC-8720-7E1656D97F17}" ShortID="318763465">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+												<Property Name="Delay" Type="Real64" Value="0.5"/>
+												<Property Name="FadeTime" Type="Real64" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="wind_0" ID="{6AE30484-27BD-48A9-8851-49EB66C0A552}" WorkUnitID="{A35B15AE-516B-47E8-A3EB-9706F95E54A1}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_wind_1" ID="{55BB2B7E-9F62-4363-AD26-2F0CAE6D6F4B}">
+									<ChildrenList>
+										<Action Name="" ID="{BD5556B0-AC0F-403B-B09E-5654800A47C1}" ShortID="231876167">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="wind_1" ID="{6CA98A22-FAEF-4E37-BAA8-F01CD7D05CAE}" WorkUnitID="{A35B15AE-516B-47E8-A3EB-9706F95E54A1}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Stop_wind_1" ID="{95FB7404-3A8C-47CD-AD4E-B45AA048E158}">
+									<ChildrenList>
+										<Action Name="" ID="{261C39E2-3B98-4C6F-8FC3-BB0F0B75B50A}" ShortID="227577046">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="wind_1" ID="{6CA98A22-FAEF-4E37-BAA8-F01CD7D05CAE}" WorkUnitID="{A35B15AE-516B-47E8-A3EB-9706F95E54A1}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="InteractiveMusic" ID="{4A092CA7-2423-4607-AB83-BF4CE1FA7C6A}" ShortID="331054464">

@@ -15,6 +15,9 @@ public class WwiseSoundManager : MonoBehaviour
     public AK.Wwise.Event resumeFlight;
     public AK.Wwise.Event soundwaveSFX;
     public AK.Wwise.Event random_featherSFX;
+    public AK.Wwise.Event WindSoundEvent;
+    public AK.Wwise.Event stopWindSoundEvent;
+
     private bool isFirstTimeGliding = true;
     
     public AK.Wwise.Event ui_start;
@@ -61,5 +64,14 @@ public class WwiseSoundManager : MonoBehaviour
     public void PlayRandomFeather()
     {
         random_featherSFX.Post(gameObject);
+    }
+
+    public void PlayWindSound()
+    {
+        WindSoundEvent.Post(gameObject);
+    }
+    public void StopWindSound()
+    {
+        stopWindSoundEvent.Post(gameObject);
     }
 }

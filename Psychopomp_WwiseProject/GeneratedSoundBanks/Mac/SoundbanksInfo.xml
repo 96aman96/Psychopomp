@@ -22,13 +22,17 @@
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 			</Busses>
 		</SoundBank>
-		<SoundBank Id="3991942870" Type="User" Language="English(US)" Hash="{5F9CE6B4-0078-D57E-C58B-256F81344C3A}">
+		<SoundBank Id="3991942870" Type="User" Language="English(US)" Hash="{9C3CC10C-38F4-81B0-BCD7-2B1989065474}">
 			<ShortName>Music</ShortName>
 			<Path>English(US)/Music.bnk</Path>
 			<Media>
 				<File Id="75906182" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Theme.wav</ShortName>
 					<CachePath>Voices/English(US)/Theme_FBC78EF0.wem</CachePath>
+				</File>
+				<File Id="154551227" Language="English(US)" Streaming="false" Location="Memory">
+					<ShortName>wind.wav</ShortName>
+					<CachePath>Voices/English(US)/wind_72D91BE2.wem</CachePath>
 				</File>
 				<File Id="160845157" Language="English(US)" Streaming="false" Location="Memory">
 					<ShortName>Feather_Marker 07.wav</ShortName>
@@ -118,11 +122,17 @@
 						<MediaRef Id="384855880"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="3770660377" Name="Play_wind_0" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="154551227"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="1873017685" Name="Resume_FlightNew" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="4138142034" Name="Resume_Theme" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="560299279" Name="Stop_Theme" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="4111719819" Name="Stop_wind_0" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{18328D0A-D106-57B5-DE25-652A743B1856}</FileHash>
+	<FileHash>{5A676095-3817-B1F7-685F-620F4D87C14E}</FileHash>
 </SoundBanksInfo>
