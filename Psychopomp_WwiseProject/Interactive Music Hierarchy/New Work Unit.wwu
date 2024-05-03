@@ -114,7 +114,7 @@
 								<Property Name="MusicTrackType" Type="int16" Value="2"/>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-20</Value>
+										<Value>-22</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -207,7 +207,7 @@
 							<PropertyList>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-3</Value>
+										<Value>-5</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -278,6 +278,19 @@
 											<Property Name="TimeMs" Type="Real64" Value="133953.492063492"/>
 										</PropertyList>
 									</MusicCue>
+								</Local>
+							</Reference>
+						</ObjectList>
+						<ObjectList Name="Effects">
+							<Reference>
+								<Local>
+									<EffectSlot Name="" ID="{A84E2817-11A8-41FA-B860-69A4ABB47B9E}" ShortID="126529279">
+										<ReferenceList>
+											<Reference Name="Effect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+												<ObjectRef Name="New_Parametric_EQ" ID="{9E56C296-9858-4858-9340-74AF4D7D0B9E}" WorkUnitID="{A2D7F6BF-DBBD-4E4F-8FF5-4A03D2002E38}"/>
+											</Reference>
+										</ReferenceList>
+									</EffectSlot>
 								</Local>
 							</Reference>
 						</ObjectList>

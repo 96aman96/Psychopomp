@@ -27,7 +27,7 @@
 				<GameParameter Id="2453598386" Name="HighPass"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="3991942870" Type="User" Language="English(US)" Hash="{F53BE48A-CD14-0ABD-AE2B-9B0B25BCCDE5}">
+		<SoundBank Id="3991942870" Type="User" Language="English(US)" Hash="{CDB421D5-2E52-A460-0209-60250E9C883D}">
 			<ShortName>Music</ShortName>
 			<Path>English(US)/Music.bnk</Path>
 			<Media>
@@ -101,6 +101,11 @@
 					<MediaRefs>
 						<MediaRef Id="591577181"/>
 					</MediaRefs>
+					<PluginRefs>
+						<ShareSets>
+							<PluginRef Id="3657550167"/>
+						</ShareSets>
+					</PluginRefs>
 				</Event>
 				<Event Id="1044785212" Name="Play_soundwave" DurationType="OneShot" DurationMin="1.6" DurationMax="1.6">
 					<MediaRefs>
@@ -144,5 +149,5 @@
 			</GameParameters>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{80276BDC-C073-079E-3A22-62B8DD42C9AC}</FileHash>
+	<FileHash>{736BBD5D-ECDD-9C15-4097-85B991483EA8}</FileHash>
 </SoundBanksInfo>
