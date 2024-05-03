@@ -205,6 +205,78 @@
 						</Event>
 					</ChildrenList>
 				</Folder>
+				<Event Name="Play_ItemPickUp" ID="{B448FB95-31CA-4180-82C0-A948E8C69C15}">
+					<ChildrenList>
+						<Action Name="" ID="{716540AF-05C1-4DEC-A2FE-017A77F05DD6}" ShortID="400843892">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="ItemPickUp" ID="{4855076D-86F5-4AA3-A23D-8FE1960DEA32}" WorkUnitID="{A35B15AE-516B-47E8-A3EB-9706F95E54A1}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Ambient" ID="{EAC42E14-CB8A-4188-9BD2-6C186B8A57DA}">
+					<ChildrenList>
+						<Action Name="" ID="{B6EFBF1F-7661-494C-A6F2-C3FEFC05A1D2}" ShortID="187658851">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Ambient" ID="{25D137C6-6B76-4559-BF32-309239723635}" WorkUnitID="{BA33B5DD-835F-4CC3-9F04-5665BAB2EEB6}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_waterSplash" ID="{D0370D76-79C8-40DB-9FDA-D7F023E71A70}">
+					<ChildrenList>
+						<Action Name="" ID="{F9AAFFD1-C9B8-448A-A867-7C93DDA7311D}" ShortID="371121421">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="waterSplash" ID="{7D1A7579-F343-4750-BFAD-DFDB45B34967}" WorkUnitID="{A35B15AE-516B-47E8-A3EB-9706F95E54A1}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Stop_waterSplash" ID="{3AFB9C6D-6B4E-4828-A982-5C9E064F1957}">
+					<ChildrenList>
+						<Action Name="" ID="{1ED66C8E-1746-4961-A9DF-32541075C87D}" ShortID="1055396308">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="waterSplash" ID="{7D1A7579-F343-4750-BFAD-DFDB45B34967}" WorkUnitID="{A35B15AE-516B-47E8-A3EB-9706F95E54A1}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_waterSplash_fast" ID="{867727D3-B163-48F0-B005-FF5A8357775B}">
+					<ChildrenList>
+						<Action Name="" ID="{E766E402-25E7-4431-859E-08AAB6D64B75}" ShortID="1036671517">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="waterSplash_fast" ID="{197229B6-CF78-4446-87F7-2FBCB8B7BEBC}" WorkUnitID="{A35B15AE-516B-47E8-A3EB-9706F95E54A1}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Stop_waterSplash_fast" ID="{FE12C8BE-F6A4-4A51-9DE1-AD8E8B5F428A}">
+					<ChildrenList>
+						<Action Name="" ID="{0665FA77-B904-4CA1-A575-78165457EFE9}" ShortID="809664760">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="waterSplash_fast" ID="{197229B6-CF78-4446-87F7-2FBCB8B7BEBC}" WorkUnitID="{A35B15AE-516B-47E8-A3EB-9706F95E54A1}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

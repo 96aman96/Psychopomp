@@ -27,10 +27,14 @@
 				<GameParameter Id="2453598386" Name="HighPass"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="3991942870" Type="User" Language="English(US)" Hash="{B95D469C-CA8B-F831-3E1A-18A43F5801BA}">
+		<SoundBank Id="3991942870" Type="User" Language="English(US)" Hash="{FA3CEDD6-29A6-9494-7760-D6E5D81538C0}">
 			<ShortName>Music</ShortName>
 			<Path>English(US)/Music.bnk</Path>
 			<Media>
+				<File Id="30080899" Language="English(US)" Streaming="false" Location="Memory">
+					<ShortName>ItemPickUp.wav</ShortName>
+					<CachePath>Voices/English(US)/ItemPickUp_818F3B66.wem</CachePath>
+				</File>
 				<File Id="75906182" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Theme.wav</ShortName>
 					<CachePath>Voices/English(US)/Theme_FBC78EF0.wem</CachePath>
@@ -43,6 +47,10 @@
 					<ShortName>Feather_Marker 07.wav</ShortName>
 					<CachePath>Voices/English(US)/Feather_Marker 07_2C8DC4D6.wem</CachePath>
 				</File>
+				<File Id="179060220" Language="English(US)" Streaming="false" Location="Memory">
+					<ShortName>accl_01.wav</ShortName>
+					<CachePath>Voices/English(US)/accl_01_F38529CC.wem</CachePath>
+				</File>
 				<File Id="334818311" Language="English(US)" Streaming="false" Location="Memory">
 					<ShortName>Quit.wav</ShortName>
 					<CachePath>Voices/English(US)/Quit_F390C9DE.wem</CachePath>
@@ -54,6 +62,10 @@
 				<File Id="384855880" Language="English(US)" Streaming="false" Location="Memory">
 					<ShortName>Start.wav</ShortName>
 					<CachePath>Voices/English(US)/Start_7AFE0805.wem</CachePath>
+				</File>
+				<File Id="489024773" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>ambient.wav</ShortName>
+					<CachePath>Voices/English(US)/ambient_FBC78EF0.wem</CachePath>
 				</File>
 				<File Id="591577181" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Psychopump New Flight.wav</ShortName>
@@ -84,7 +96,12 @@
 			<Events>
 				<Event Id="4006404000" Name="Pause_FlightNew" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="1553341287" Name="Pause_Theme" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
-				<Event Id="1424865143" Name="Play_Feather_Random" DurationType="OneShot" DurationMin="0.27549085" DurationMax="0.31243235">
+				<Event Id="1562304622" Name="Play_Ambient" DurationType="OneShot" DurationMin="54.18331" DurationMax="54.18331">
+					<MediaRefs>
+						<MediaRef Id="489024773"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1424865143" Name="Play_Feather_Random" DurationType="OneShot" DurationMin="0.25324693" DurationMax="0.30922803">
 					<MediaRefs>
 						<MediaRef Id="160845157"/>
 						<MediaRef Id="947433487"/>
@@ -106,6 +123,11 @@
 							<PluginRef Id="3657550167"/>
 						</ShareSets>
 					</PluginRefs>
+				</Event>
+				<Event Id="4241593335" Name="Play_ItemPickUp" DurationType="OneShot" DurationMin="2.6250114" DurationMax="2.6250114">
+					<MediaRefs>
+						<MediaRef Id="30080899"/>
+					</MediaRefs>
 				</Event>
 				<Event Id="1044785212" Name="Play_soundwave" DurationType="OneShot" DurationMin="1.6" DurationMax="1.6">
 					<MediaRefs>
@@ -132,6 +154,16 @@
 						<MediaRef Id="384855880"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="877418862" Name="Play_waterSplash" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="179060220"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="4130080323" Name="Play_waterSplash_fast" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="179060220"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="1020223172" Name="Play_wind" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="154551227"/>
@@ -140,6 +172,8 @@
 				<Event Id="1873017685" Name="Resume_FlightNew" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="4138142034" Name="Resume_Theme" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="560299279" Name="Stop_Theme" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="332760368" Name="Stop_waterSplash" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="3258240125" Name="Stop_waterSplash_fast" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="3173136834" Name="Stop_wind" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 			</Events>
 			<GameParameters>
@@ -149,5 +183,5 @@
 			</GameParameters>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{A667BE29-E877-91DE-FC8C-D267C779BD7B}</FileHash>
+	<FileHash>{05BDAEDC-015B-6FC3-F100-DE8D9E812EAF}</FileHash>
 </SoundBanksInfo>

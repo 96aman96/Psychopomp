@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using AK.Wwise;
+using UnityEngine.Playables;
 
 public class WwiseSoundManager : MonoBehaviour
 {
@@ -19,9 +20,15 @@ public class WwiseSoundManager : MonoBehaviour
     public AK.Wwise.RTPC windPitchRTPC;
     public AK.Wwise.RTPC windLowPassRTPC;
     public AK.Wwise.RTPC windHighPassRTPC;
-
+    public AK.Wwise.Event itemSFX;
+    public AK.Wwise.Event playAmbient;
     
     public AK.Wwise.Event stopWindSoundEvent;
+    public AK.Wwise.Event playSplash;
+    public AK.Wwise.Event stopSplash;
+    public AK.Wwise.Event playSplashFast;
+    public AK.Wwise.Event stopSplashFast;
+
     
 
     private bool isFirstTimeGliding = true;
@@ -32,6 +39,7 @@ public class WwiseSoundManager : MonoBehaviour
     public void Start()
     {
         playTheme.Post(gameObject);
+        PlayAmbient();
     }
     public void MusicStartGliding()
     {
@@ -84,5 +92,36 @@ public class WwiseSoundManager : MonoBehaviour
     public void StopWindSound()
     {
         stopWindSoundEvent.Post(gameObject);
+    }
+
+    public void ItemSound()//item pick up sfx
+    {
+        itemSFX.Post(gameObject);
+    }
+
+    public void PlayAmbient()//background white noise
+    {
+        playAmbient.Post(gameObject);
+    }
+
+    public void PlaySplash()
+    {
+        playSplash.Post(gameObject);
+    }
+
+    public void StopSplash()
+    {
+        stopSplash.Post(gameObject);
+    }
+
+    public void PlaySplashFast()
+    {
+        playSplashFast.Post(gameObject);
+    }
+
+    
+    public void StopSplashFast()
+    {
+        stopSplashFast.Post(gameObject);
     }
 }

@@ -63,6 +63,7 @@ public class CharacterVFX : MonoBehaviour{
     
     // SOUND FLAGS
     private bool isWindSoundPlaying = false;
+    private bool isSplashPlaying = false;
 
 
     private void Start(){

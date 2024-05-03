@@ -22,11 +22,12 @@
 				</Effect>
 				<Effect Name="New_Parametric_EQ" ID="{9E56C296-9858-4858-9340-74AF4D7D0B9E}" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
 					<PropertyList>
-						<Property Name="FilterTypeBand3" Type="int32" Value="4"/>
+						<Property Name="FilterTypeBand3" Type="int32" Value="0"/>
+						<Property Name="FrequencyBand1" Type="Real32" Value="200"/>
 						<Property Name="FrequencyBand2" Type="Real32" Value="98"/>
-						<Property Name="FrequencyBand3" Type="Real32" Value="16052"/>
+						<Property Name="FrequencyBand3" Type="Real32" Value="1361"/>
 						<Property Name="GainBand1" Type="Real32" Value="-0.5"/>
-						<Property Name="GainBand3" Type="Real32" Value="-16"/>
+						<Property Name="GainBand3" Type="Real32" Value="-21"/>
 					</PropertyList>
 				</Effect>
 			</ChildrenList>
