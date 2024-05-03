@@ -12,17 +12,9 @@ public class RandomLetterSpawner : MonoBehaviour
 {
     public GameObject PickUpItemPrefb;
     public GameObject[] Spawnies;
-    public List<int> SpawnedPositions = new();
     public int currentSpawnCount, maxSpawnCount;
-    private int randIndex;
     private void Start()
     {
-        if (Spawnies.Length==0)
-        {
-         Spawnies = GameObject.FindGameObjectsWithTag("Spawnies");   
-        } 
-        randIndex = Random.Range(0, Spawnies.Length);
-        SpawnedPositions.Add(randIndex);
         TurnOffMeshes();
         SpawnStarters();
     }
@@ -46,18 +38,13 @@ public class RandomLetterSpawner : MonoBehaviour
     [Button("Add Letter")]
     public void SpawnOneInstance()
     {
-        if (SpawnedPositions.Count < 15)
+        if (currentSpawnCount < Spawnies.Length)
         {
-            while (SpawnedPositions.Contains(randIndex))
-            {
-                randIndex = Random.Range(0, Spawnies.Length);
-            }
-        SpawnedPositions.Add(randIndex);
-        GameObject Letter = GameObject.Instantiate(PickUpItemPrefb, Spawnies[randIndex].transform);
-        Letter.transform.localPosition = UnityEngine.Vector3.zero;
-        Letter.transform.localRotation = quaternion.identity;
-        currentSpawnCount++;
-        }
+            GameObject Letter = GameObject.Instantiate(PickUpItemPrefb, Spawnies[currentSpawnCount].transform);
+            Letter.transform.localPosition = UnityEngine.Vector3.zero;
+            Letter.transform.localRotation = quaternion.identity;
+            currentSpawnCount++;
+        }   
     }
 }
 

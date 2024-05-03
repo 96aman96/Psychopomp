@@ -4877,7 +4877,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spinSpeed: 100
-  bounceAmplitude: 5
+  bounceAmplitude: 1
   bounceSpeed: 2
 --- !u!212 &69931241461069343
 SpriteRenderer:
@@ -4941,9 +4941,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4147971411500058729}
   - component: {fileID: 5760112787669956669}
+  - component: {fileID: 95026485199209383}
   m_Layer: 0
   m_Name: Letter Pickup
-  m_TagString: Untagged
+  m_TagString: Pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5050,7 +5051,7 @@ MonoBehaviour:
   miniMapCircleAnimationWhenAppears: 1
   miniMapCircleAnimationRepetitions: 5
   scene:
-    m_Handle: -72926
+    m_Handle: -1272
   compassIconRT: {fileID: 0}
   compassIconImage: {fileID: 0}
   miniMapIconRT: {fileID: 0}
@@ -5068,6 +5069,27 @@ MonoBehaviour:
   compassIconDistanceText: {fileID: 0}
   compassIconDistanceTextRT: {fileID: 0}
   miniMapCurrentIconScale: 0
+--- !u!65 &95026485199209383
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5620987992792039162}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6346162314447328087
 GameObject:
   m_ObjectHideFlags: 0
