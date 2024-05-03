@@ -7,34 +7,42 @@ using UnityEngine;
 
 public class DeliveryManager : MonoBehaviour
 {
-    public Transform pickupPoint, DropPoint, RuinCollectible;
-    public GameObject stashedItem;
+    public Transform pickupPoint;
+    public LetterReader _letterReader;
+    public GameObject LetterReaderPanel;
+
+    private void Start()
+    {
+        
+    }
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("HERE 11111");
         switch (other.tag)
         {
             case "Pickup":
+                Debug.Log("HERE 2");
                 PickupItem(other.transform);
                 break;
             case "Drop Zone":
-                DropItem(other.transform);
+                
                 break;
         }
     }
 
     private void PickupItem(Transform item)
     {
-        item.SetParent(this.transform);
-        Destroy(item.GetComponent<Collider>());
-        item.gameObject.SetActive(false);
-        stashedItem = item.gameObject;
+        Destroy(item.gameObject);
+        _letterReader.AddLetter();
     }
 
-    private void DropItem(Transform drop)
+    private void Update()
     {
-        DropPoint = drop.transform;
-        stashedItem.transform.SetParent(DropPoint);
-        stashedItem.gameObject.SetActive(true);
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            Debug.Log("Nfdvve");
+            LetterReaderPanel.gameObject.SetActive(!LetterReaderPanel.gameObject.activeSelf);
+        }
     }
 }

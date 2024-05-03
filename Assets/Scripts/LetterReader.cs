@@ -53,7 +53,7 @@ public class LetterReader : MonoBehaviour
         }
     }
     [NaughtyAttributes.Button("Add Letter")]
-    public void TestAddLetter()
+    public void AddLetter()
     {
         float randRot = Random.Range(-10, 10);
         GameObject Collectible = GameObject.Instantiate(ReadableLetterPrefab);
@@ -61,9 +61,9 @@ public class LetterReader : MonoBehaviour
         Collectible.transform.localPosition = Vector3.zero;
         Collectible.transform.localRotation = Quaternion.Euler(0,0,randRot);
         Collectible.transform.SetSiblingIndex(collectedLetterHolder.childCount-1);
-        assignmentCounter++;
         Collectible.name = "Letter " + assignmentCounter;
         Collectible.GetComponent<Letter>().Content = LetterContents[assignmentCounter];
+        assignmentCounter++;
     }
     [NaughtyAttributes.Button("Prev Letter")]
     public void ReadPreviousLetter()
