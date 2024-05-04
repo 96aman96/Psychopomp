@@ -20274,7 +20274,7 @@ MonoBehaviour:
   yzDownRotationSpeed: 25
   yzReturnRotationSpeed: 25
   maxYZRotationAngle: 45
-  maxSpeed: 80
+  maxSpeed: 50
   speedTiers:
   - 50
   - 100
@@ -20304,8 +20304,8 @@ MonoBehaviour:
   glideMaxFallSpeed: 10
   freezeFrameDuration: 0.05
   glideDeceleration: 40
-  glideAcceleration: 5
-  audioManager: {fileID: 0}
+  glideAcceleration: 7.5
+  wwiseSoundManager: {fileID: 0}
   cameraController: {fileID: 0}
 --- !u!114 &6350911102597528593
 MonoBehaviour:

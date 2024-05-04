@@ -95,9 +95,10 @@ public class KinematicCharacterController : MonoBehaviour{
         // Calculate current speed based on tiered system, applies speed forward
         velMagnitude = CalculateCurrentVelocityMagnitude(input.y);
         if(isGliding) velMagnitude = CalculateGlidingAcceleration(velMagnitude);
-        currentTier = GetCurrentTier(effectiveVelMagnitude, velMagnitude);
+        UpdateCurrentTier(effectiveVelMagnitude, velMagnitude);
         effectiveVelMagnitude = CalculateEffectiveVelocityMagnitude(velMagnitude, currentTier);
-        Vector3 newVelocity = GetForwardVector() * effectiveVelMagnitude;
+        Vector3 forwardVector = GetForwardVector();
+        Vector3 newVelocity = forwardVector * GetForwardVectorMultiplier(forwardVector) * effectiveVelMagnitude;
 
         // Check if grounded, and keeping track of coyote time timer to allow for delayed jumps
         isGrounded = CheckGrounded();
@@ -135,7 +136,7 @@ public class KinematicCharacterController : MonoBehaviour{
             fallingVelocity = CalculateFallingVelocity();
         }
 
-        // Check for gliding, apply updraft force
+        // Check for gliding
         if(!isGrounded && !isGliding && Input.GetButtonDown("Glide") && glideTimer < glideTimeLimit){
             isGliding = true;
             vfx.StartGlide();
@@ -144,6 +145,7 @@ public class KinematicCharacterController : MonoBehaviour{
             isGliding = false;
         }
 
+        // Limit gliding by glide time limit
         if(isGliding){
             glideTimer += Time.deltaTime;
             if(glideTimer > glideTimeLimit) isGliding = false;
@@ -194,8 +196,8 @@ public class KinematicCharacterController : MonoBehaviour{
         return Mathf.Min(maxVel, _vel);
     }
 
-    private int GetCurrentTier(float lastEffective, float currentVel){
-        if(!isGrounded) return currentTier;
+    private void UpdateCurrentTier(float lastEffective, float currentVel){
+        if(!isGrounded) return;
         
         int a = 0;
         int b = 0;
@@ -212,7 +214,7 @@ public class KinematicCharacterController : MonoBehaviour{
             StartCoroutine(TriggerTierUpdate(tier));
         }
 
-        return tier;
+        currentTier = tier;
     }
 
     private IEnumerator TriggerTierUpdate(int _tier){
@@ -258,6 +260,14 @@ public class KinematicCharacterController : MonoBehaviour{
         }
 
         return forward;
+    }
+
+    private float GetForwardVectorMultiplier(Vector3 fwd){
+        if(!isGliding) return 1f;
+
+        float yaxis = fwd.normalized.y;
+        if(yaxis > 0f) return 1f;
+        return Mathf.Abs(yaxis)+1;      
     }
 
     private float CalculateFallingVelocity(){
