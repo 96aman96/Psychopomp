@@ -8,9 +8,9 @@ using UnityEngine.Rendering;
 public class WwiseSoundManager : MonoBehaviour
 {
     // Start is called before the first frame update
-    public AK.Wwise.Event playTheme;
-    public AK.Wwise.Event pauseTheme;
-    public AK.Wwise.Event resumeTheme;
+    public AK.Wwise.Event playThemePlaylist;
+    public AK.Wwise.Event pauseThemePlaylist;
+    public AK.Wwise.Event resumeThemePlaylist;
     public AK.Wwise.Event stopTheme;
     public AK.Wwise.Event soundwaveSFX;
     public AK.Wwise.Event random_featherSFX;
@@ -45,18 +45,18 @@ public class WwiseSoundManager : MonoBehaviour
 
     public void Start()
     {
-        playTheme.Post(gameObject);
+        playThemePlaylist.Post(gameObject);
         PlayAmbient();
     }
     public void MusicStartGliding()
     {
-        pauseTheme.Post(gameObject);
+        pauseThemePlaylist.Post(gameObject);
         playFly.Post(gameObject);
     }
 
     public void MusicStopGliding()
     { 
-        resumeTheme.Post(gameObject);
+        resumeThemePlaylist.Post(gameObject);
         pauseFly.Post(gameObject);
     }
 

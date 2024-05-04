@@ -63,6 +63,31 @@
 								<ActiveSource Name="Start" ID="{E93990D8-6F96-4811-818F-BEE4004ABC93}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
+						<Sound Name="ItemPickUp" ID="{4855076D-86F5-4AA3-A23D-8FE1960DEA32}" ShortID="205973037">
+							<PropertyList>
+								<Property Name="IsVoice" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2B7CC0FB-0949-49C5-8228-DCFA38A80237}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FAC89FD8-6922-4802-BE46-2764330B2318}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="ItemPickUp" ID="{D7652D1A-C3C9-4014-9857-26A3FD217B9D}">
+									<Language>English(US)</Language>
+									<AudioFile>ItemPickUp.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="30080899"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="ItemPickUp" ID="{D7652D1A-C3C9-4014-9857-26A3FD217B9D}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="SFX" ID="{6495106F-928C-4E36-A552-63F81BE147FF}" ShortID="184925285">
@@ -509,31 +534,6 @@
 								<ActiveSource Name="wind" ID="{9629DCA2-AD76-43CA-86E3-4BD867C9E855}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
-						<Sound Name="ItemPickUp" ID="{4855076D-86F5-4AA3-A23D-8FE1960DEA32}" ShortID="205973037">
-							<PropertyList>
-								<Property Name="IsVoice" Type="bool" Value="True"/>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2B7CC0FB-0949-49C5-8228-DCFA38A80237}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FAC89FD8-6922-4802-BE46-2764330B2318}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<AudioFileSource Name="ItemPickUp" ID="{D7652D1A-C3C9-4014-9857-26A3FD217B9D}">
-									<Language>English(US)</Language>
-									<AudioFile>ItemPickUp.wav</AudioFile>
-									<MediaIDList>
-										<MediaID ID="30080899"/>
-									</MediaIDList>
-								</AudioFileSource>
-							</ChildrenList>
-							<ActiveSourceList>
-								<ActiveSource Name="ItemPickUp" ID="{D7652D1A-C3C9-4014-9857-26A3FD217B9D}" Platform="Linked"/>
-							</ActiveSourceList>
-						</Sound>
 						<Sound Name="waterSplash" ID="{7D1A7579-F343-4750-BFAD-DFDB45B34967}" ShortID="712763017">
 							<PropertyList>
 								<Property Name="Highpass" Type="int16">
@@ -592,7 +592,7 @@
 								</Property>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-7</Value>
+										<Value>-8</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -733,7 +733,7 @@
 						</Sound>
 						<RandomSequenceContainer Name="Building" ID="{6339F76A-9355-4D5C-BAB7-2895671BF4D3}" ShortID="223503397">
 							<PropertyList>
-								<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+								<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="2"/>
 								<Property Name="RestartBeginningOrBackward" Type="int16" Value="0"/>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>

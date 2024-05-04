@@ -8,9 +8,10 @@
 						<ObjectRef Name="Play_waterSplash" ID="{D0370D76-79C8-40DB-9FDA-D7F023E71A70}" WorkUnitID="{F200B06E-8FAE-423D-B158-38EC56AAF073}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_Ambient" ID="{EAC42E14-CB8A-4188-9BD2-6C186B8A57DA}" WorkUnitID="{F200B06E-8FAE-423D-B158-38EC56AAF073}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_Theme" ID="{BA2838EC-18F5-41CF-90A9-64446403F104}" WorkUnitID="{F200B06E-8FAE-423D-B158-38EC56AAF073}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Resume_ThemePlaylist" ID="{5A783EF7-B463-42A6-8C06-5391A767F6FC}" WorkUnitID="{F200B06E-8FAE-423D-B158-38EC56AAF073}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Resume_Fly" ID="{A4938B6A-2A92-430D-B315-1EC3E9F84BB8}" WorkUnitID="{F200B06E-8FAE-423D-B158-38EC56AAF073}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_Fly" ID="{3A7941E3-537B-451B-98E4-6AB8EF2B20F8}" WorkUnitID="{F200B06E-8FAE-423D-B158-38EC56AAF073}" Origin="Manual" Filter="7"/>
-						<ObjectRef Name="Play_Building" ID="{5714A932-8751-468B-8FF8-F397487B2EA8}" WorkUnitID="{F200B06E-8FAE-423D-B158-38EC56AAF073}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_ThemePlaylist" ID="{2624C76F-79FF-4762-82A2-9F91B34770B2}" WorkUnitID="{F200B06E-8FAE-423D-B158-38EC56AAF073}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_wind" ID="{ABE66839-C897-47EC-99D0-8D691C60FE77}" WorkUnitID="{F200B06E-8FAE-423D-B158-38EC56AAF073}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Stop_waterSplash" ID="{3AFB9C6D-6B4E-4828-A982-5C9E064F1957}" WorkUnitID="{F200B06E-8FAE-423D-B158-38EC56AAF073}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_waterSplash_fast" ID="{867727D3-B163-48F0-B005-FF5A8357775B}" WorkUnitID="{F200B06E-8FAE-423D-B158-38EC56AAF073}" Origin="Manual" Filter="7"/>
@@ -23,9 +24,11 @@
 						<ObjectRef Name="Pause_Theme" ID="{E4123B31-E77F-4ABF-B9A8-FE5D0ECA12C9}" WorkUnitID="{F200B06E-8FAE-423D-B158-38EC56AAF073}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Stop_wind" ID="{64223F9E-1B1B-4B2A-805F-8B30AA98DC23}" WorkUnitID="{F200B06E-8FAE-423D-B158-38EC56AAF073}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Resume_Theme" ID="{953CDCB9-F157-4B41-A537-EEE6C6F675F2}" WorkUnitID="{F200B06E-8FAE-423D-B158-38EC56AAF073}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Pause_ThemePlaylist" ID="{22D464A4-62D9-4BDD-852D-948E0AE66690}" WorkUnitID="{F200B06E-8FAE-423D-B158-38EC56AAF073}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_soundwave" ID="{A8ECB9F3-BD1F-4C2E-BA66-E3076D46582E}" WorkUnitID="{F200B06E-8FAE-423D-B158-38EC56AAF073}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_TrainSound" ID="{BDD96A3B-6EA7-4E83-81B3-CA47E40842AA}" WorkUnitID="{F200B06E-8FAE-423D-B158-38EC56AAF073}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_Feather_Random" ID="{76FDB4F0-4646-4EB4-B346-1225B070A163}" WorkUnitID="{F200B06E-8FAE-423D-B158-38EC56AAF073}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_Building_Random" ID="{1BE64302-EBCA-4EDC-ADA5-B8BF0D828C71}" WorkUnitID="{F200B06E-8FAE-423D-B158-38EC56AAF073}" Origin="Manual" Filter="7"/>
 					</ObjectInclusionList>
 					<ObjectExclusionList/>
 					<GameSyncExclusionList/>

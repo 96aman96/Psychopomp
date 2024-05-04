@@ -15,13 +15,15 @@ namespace AK
     {
         static const AkUniqueID PAUSE_FLY = 3831277379U;
         static const AkUniqueID PAUSE_THEME = 1553341287U;
+        static const AkUniqueID PAUSE_THEMEPLAYLIST = 3972391401U;
         static const AkUniqueID PLAY_AMBIENT = 1562304622U;
-        static const AkUniqueID PLAY_BUILDINGSFX = 1145142855U;
+        static const AkUniqueID PLAY_BUILDING_RANDOM = 1910699640U;
         static const AkUniqueID PLAY_FEATHER_RANDOM = 1424865143U;
         static const AkUniqueID PLAY_FLY = 2941622701U;
         static const AkUniqueID PLAY_ITEMPICKUP = 4241593335U;
         static const AkUniqueID PLAY_SOUNDWAVE = 1044785212U;
         static const AkUniqueID PLAY_THEME = 2479442773U;
+        static const AkUniqueID PLAY_THEMEPLAYLIST = 3757628419U;
         static const AkUniqueID PLAY_TRAINSOUND = 1934545473U;
         static const AkUniqueID PLAY_UI_QUIT = 1057286634U;
         static const AkUniqueID PLAY_UI_START = 643450781U;
@@ -30,6 +32,7 @@ namespace AK
         static const AkUniqueID PLAY_WIND = 1020223172U;
         static const AkUniqueID RESUME_FLY = 3714450514U;
         static const AkUniqueID RESUME_THEME = 4138142034U;
+        static const AkUniqueID RESUME_THEMEPLAYLIST = 2834225136U;
         static const AkUniqueID STOP_THEME = 560299279U;
         static const AkUniqueID STOP_WATERSPLASH = 332760368U;
         static const AkUniqueID STOP_WATERSPLASH_FAST = 3258240125U;

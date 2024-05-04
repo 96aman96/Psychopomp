@@ -27,7 +27,7 @@
 				<GameParameter Id="2453598386" Name="HighPass"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="3991942870" Type="User" Language="English(US)" Hash="{70A19232-7FE8-760F-E75C-7DF6049F8D98}">
+		<SoundBank Id="3991942870" Type="User" Language="English(US)" Hash="{B218B45D-9218-26E8-E0EA-FDB3BBE9C47F}">
 			<ShortName>Music</ShortName>
 			<Path>English(US)/Music.bnk</Path>
 			<Media>
@@ -83,10 +83,6 @@
 					<ShortName>BuildingSFX 1-Morphing Glass.wav</ShortName>
 					<CachePath>SFX/BuildingSFX 1-Morphing Glass_818F3B66.wem</CachePath>
 				</File>
-				<File Id="541425780" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Fly.wav</ShortName>
-					<CachePath>SFX/Fly_FBC78EF0.wem</CachePath>
-				</File>
 				<File Id="611478713" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>BuildingSFX 4-Morphing Glass.wav</ShortName>
 					<CachePath>SFX/BuildingSFX 4-Morphing Glass_818F3B66.wem</CachePath>
@@ -98,6 +94,10 @@
 				<File Id="632742918" Language="English(US)" Streaming="false" Location="Memory">
 					<ShortName>train_Final.wav</ShortName>
 					<CachePath>Voices/English(US)/train_Final_7824F05D.wem</CachePath>
+				</File>
+				<File Id="644606555" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>ActualFly.wav</ShortName>
+					<CachePath>SFX/ActualFly_FBC78EF0.wem</CachePath>
 				</File>
 				<File Id="696090401" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>BuildingSFX 5-Morphing Glass.wav</ShortName>
@@ -128,12 +128,13 @@
 			<Events>
 				<Event Id="3831277379" Name="Pause_Fly" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="1553341287" Name="Pause_Theme" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="3972391401" Name="Pause_ThemePlaylist" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="1562304622" Name="Play_Ambient" DurationType="OneShot" DurationMin="54.18331" DurationMax="54.18331">
 					<MediaRefs>
 						<MediaRef Id="489024773"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="1145142855" Name="Play_BuildingSFX" DurationType="OneShot" DurationMin="1.5" DurationMax="1.5">
+				<Event Id="1910699640" Name="Play_Building_Random" DurationType="OneShot" DurationMin="1.5" DurationMax="1.5">
 					<MediaRefs>
 						<MediaRef Id="152958283"/>
 						<MediaRef Id="255599716"/>
@@ -157,9 +158,9 @@
 						</ShareSets>
 					</PluginRefs>
 				</Event>
-				<Event Id="2941622701" Name="Play_Fly" DurationType="OneShot" DurationMin="136.45349" DurationMax="136.45349">
+				<Event Id="2941622701" Name="Play_Fly" DurationType="OneShot" DurationMin="137.45349" DurationMax="137.45349">
 					<MediaRefs>
-						<MediaRef Id="541425780"/>
+						<MediaRef Id="644606555"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="4241593335" Name="Play_ItemPickUp" DurationType="OneShot" DurationMin="2.6250114" DurationMax="2.6250114">
@@ -173,6 +174,11 @@
 					</MediaRefs>
 				</Event>
 				<Event Id="2479442773" Name="Play_Theme" DurationType="OneShot" DurationMin="190.76746" DurationMax="190.76746">
+					<MediaRefs>
+						<MediaRef Id="75906182"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3757628419" Name="Play_ThemePlaylist" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="75906182"/>
 					</MediaRefs>
@@ -209,6 +215,7 @@
 				</Event>
 				<Event Id="3714450514" Name="Resume_Fly" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="4138142034" Name="Resume_Theme" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="2834225136" Name="Resume_ThemePlaylist" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="560299279" Name="Stop_Theme" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="332760368" Name="Stop_waterSplash" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="3258240125" Name="Stop_waterSplash_fast" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
@@ -221,5 +228,5 @@
 			</GameParameters>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{79CEFE6D-A253-9549-FFFF-71446BDDE213}</FileHash>
+	<FileHash>{D3E5C991-321D-5036-551F-47B4D122C92F}</FileHash>
 </SoundBanksInfo>
