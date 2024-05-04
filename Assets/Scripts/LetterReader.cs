@@ -1,9 +1,13 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
+using DG.Tweening;
 using UnityEngine;
 using Random = UnityEngine.Random;
 using NaughtyAttributes;
+using Unity.VisualScripting;
+using UnityEngine.UI;
 
 public class LetterReader : MonoBehaviour
 {
@@ -15,23 +19,29 @@ public class LetterReader : MonoBehaviour
     [TextArea]
     public string[] LetterContents;
     public int assignmentCounter;
-    
-    
+    public GameManager gm;
+    public Transform Inventory;
+    public Image PanelImage;
+    public Letter SingleLetter;
+    public bool SingleLetterShown;
+    public bool bagOpen;
     [Button("Show Letter")]
     public void ShowLetter()
     {
-        
+        SingleLetter.contents.text = LetterContents[assignmentCounter];
+        gm.onGamePause.Invoke();
+        SingleLetterShown = true;
         anim.Play("Show Letter");
-
     }
     [Button("Hide Letter")]
     public void hideLetter()
     {
+        gm.OnGameResume.Invoke();
         anim.Play("Hide Letter");
     }
     private void Update()
     {
-        if (transform.childCount == 0)
+        if (assignmentCounter == 0)
         {
             FallBackText.gameObject.SetActive(true);
         }
@@ -50,6 +60,23 @@ public class LetterReader : MonoBehaviour
             {
                 ReadNextLetter();
             }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Return) && SingleLetterShown)
+        {
+            hideLetter();
+            SingleLetterShown = false;
+        }
+        if (Input.GetKeyDown(KeyCode.B) && bagOpen)
+        {
+            anim.Play("HideBag");
+            bagOpen = false;
+        }
+
+        if (Input.GetKeyDown(KeyCode.B) && !bagOpen)
+        {
+            anim.Play("ShowBag");
+            bagOpen = true;
         }
     }
     [NaughtyAttributes.Button("Add Letter")]
@@ -83,4 +110,13 @@ public class LetterReader : MonoBehaviour
         topLetter.GetComponent<Animator>().Play("Go Back");
 
     }
+
+    public void showStackView()
+    {
+        gm.onGamePause.Invoke();
+        PanelImage.enabled = true;
+        Inventory.gameObject.SetActive(true);
+        collectedLetterHolder.gameObject.SetActive(true);
+    }
+    
 }

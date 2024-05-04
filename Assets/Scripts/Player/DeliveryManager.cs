@@ -18,31 +18,22 @@ public class DeliveryManager : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("HERE 11111");
         switch (other.tag)
         {
             case "Pickup":
-                Debug.Log("HERE 2");
-                PickupItem(other.transform);
+                _letterReader.ShowLetter();
+                _letterReader.AddLetter();
+                Destroy(other.gameObject);
                 break;
-            case "Drop Zone":
-                
-                break;
-        }
-    }
 
-    private void PickupItem(Transform item)
-    {
-        Destroy(item.gameObject);
-        _letterReader.AddLetter();
+        }
     }
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.B))
         {
-            Debug.Log("Nfdvve");
-            LetterReaderPanel.gameObject.SetActive(!LetterReaderPanel.gameObject.activeSelf);
+            _letterReader.showStackView();
         }
     }
 }

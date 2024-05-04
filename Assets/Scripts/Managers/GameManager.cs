@@ -18,12 +18,11 @@ enum TargetType
 #endregion
 public class GameManager : MonoBehaviour
 {
-    public bool canMusic, canFX;
     
     public KinematicCharacterController player;
     public RandomLetterSpawner letterMaker;
     public UIManager _UIManager;
-    bool isPaused;
+    public bool isPaused;
     public delegate void GameStateHandler();
     [SerializeField]
     public UnityEvent onGameStart;
@@ -52,15 +51,18 @@ public class GameManager : MonoBehaviour
     }
     private void Update()
     {
-        if (isPaused && Input.anyKeyDown)
+        if (Input.GetKeyDown(KeyCode.B))
         {
-            isPaused = false;
+            if (isPaused)
+            {
+                isPaused = false;
                 OnGameResume.Invoke();
-        }
-        if (!isPaused && Input.GetKeyDown(KeyCode.Escape))
-        {
+            }
+            else
+            {
             isPaused = true;
-            onGamePause.Invoke();
+         onGamePause.Invoke();
+            }
         }
     }
 
