@@ -27,7 +27,7 @@
 				<GameParameter Id="2453598386" Name="HighPass"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="3991942870" Type="User" Language="English(US)" Hash="{3E2D9856-08F4-7112-BFA6-CB7D03B49A0E}">
+		<SoundBank Id="3991942870" Type="User" Language="English(US)" Hash="{316AC122-21A8-2198-011C-C398E3C7DADA}">
 			<ShortName>Music</ShortName>
 			<Path>English(US)/Music.bnk</Path>
 			<Media>
@@ -43,6 +43,10 @@
 					<ShortName>accl_01.wav</ShortName>
 					<CachePath>Voices/English(US)/accl_01_9234E706.wem</CachePath>
 				</File>
+				<File Id="152958283" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>BuildingSFX 3-Morphing Glass.wav</ShortName>
+					<CachePath>SFX/BuildingSFX 3-Morphing Glass_818F3B66.wem</CachePath>
+				</File>
 				<File Id="154551227" Language="English(US)" Streaming="false" Location="Memory">
 					<ShortName>wind.wav</ShortName>
 					<CachePath>Voices/English(US)/wind_CADBA816.wem</CachePath>
@@ -54,6 +58,10 @@
 				<File Id="179060220" Language="English(US)" Streaming="false" Location="Memory">
 					<ShortName>accl_01.wav</ShortName>
 					<CachePath>Voices/English(US)/accl_01_36DAEC0F.wem</CachePath>
+				</File>
+				<File Id="255599716" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>BuildingSFX 2-Morphing Glass.wav</ShortName>
+					<CachePath>SFX/BuildingSFX 2-Morphing Glass_818F3B66.wem</CachePath>
 				</File>
 				<File Id="334818311" Language="English(US)" Streaming="false" Location="Memory">
 					<ShortName>Quit.wav</ShortName>
@@ -71,13 +79,33 @@
 					<ShortName>ambient.wav</ShortName>
 					<CachePath>Voices/English(US)/ambient_FBC78EF0.wem</CachePath>
 				</File>
+				<File Id="494051313" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>BuildingSFX 1-Morphing Glass.wav</ShortName>
+					<CachePath>SFX/BuildingSFX 1-Morphing Glass_818F3B66.wem</CachePath>
+				</File>
 				<File Id="541425780" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Fly.wav</ShortName>
 					<CachePath>SFX/Fly_FBC78EF0.wem</CachePath>
 				</File>
+				<File Id="611478713" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>BuildingSFX 4-Morphing Glass.wav</ShortName>
+					<CachePath>SFX/BuildingSFX 4-Morphing Glass_818F3B66.wem</CachePath>
+				</File>
+				<File Id="631015966" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>BuildingSFX 6-Morphing Glass.wav</ShortName>
+					<CachePath>SFX/BuildingSFX 6-Morphing Glass_818F3B66.wem</CachePath>
+				</File>
 				<File Id="632742918" Language="English(US)" Streaming="false" Location="Memory">
 					<ShortName>train_Final.wav</ShortName>
 					<CachePath>Voices/English(US)/train_Final_7824F05D.wem</CachePath>
+				</File>
+				<File Id="696090401" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>BuildingSFX 5-Morphing Glass.wav</ShortName>
+					<CachePath>SFX/BuildingSFX 5-Morphing Glass_818F3B66.wem</CachePath>
+				</File>
+				<File Id="773934798" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>BuildingSFX 7-Morphing Glass.wav</ShortName>
+					<CachePath>SFX/BuildingSFX 7-Morphing Glass_818F3B66.wem</CachePath>
 				</File>
 				<File Id="947433487" Language="English(US)" Streaming="false" Location="Memory">
 					<ShortName>Feather_Marker 08.wav</ShortName>
@@ -105,6 +133,17 @@
 						<MediaRef Id="489024773"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="1145142855" Name="Play_BuildingSFX" DurationType="OneShot" DurationMin="1.5" DurationMax="1.5">
+					<MediaRefs>
+						<MediaRef Id="152958283"/>
+						<MediaRef Id="255599716"/>
+						<MediaRef Id="494051313"/>
+						<MediaRef Id="611478713"/>
+						<MediaRef Id="631015966"/>
+						<MediaRef Id="696090401"/>
+						<MediaRef Id="773934798"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="1424865143" Name="Play_Feather_Random" DurationType="OneShot" DurationMin="0.25324693" DurationMax="0.30922803">
 					<MediaRefs>
 						<MediaRef Id="160845157"/>
@@ -118,7 +157,7 @@
 						</ShareSets>
 					</PluginRefs>
 				</Event>
-				<Event Id="2941622701" Name="Play_Fly" DurationType="OneShot" DurationMin="136.95349" DurationMax="136.95349">
+				<Event Id="2941622701" Name="Play_Fly" DurationType="OneShot" DurationMin="136.45349" DurationMax="136.45349">
 					<MediaRefs>
 						<MediaRef Id="541425780"/>
 					</MediaRefs>
@@ -182,5 +221,5 @@
 			</GameParameters>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{760CDC27-311D-F5FC-BDD3-BC75A0824817}</FileHash>
+	<FileHash>{6EC7587D-B72B-F4D7-FF32-3F8B6F96C85F}</FileHash>
 </SoundBanksInfo>

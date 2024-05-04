@@ -6,6 +6,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	1020223172	Play_wind			\Default Work Unit\SFX\Wind\Play_wind	
 	1044785212	Play_soundwave			\Default Work Unit\SFX\Play_soundwave	
 	1057286634	Play_UI_Quit			\Default Work Unit\SFX\Play_UI_Quit	
+	1145142855	Play_BuildingSFX			\Default Work Unit\Play_BuildingSFX	
 	1424865143	Play_Feather_Random			\Default Work Unit\SFX\Play_Feather_Random	
 	1553341287	Pause_Theme			\Default Work Unit\InteractiveMusic\Theme\Pause_Theme	
 	1562304622	Play_Ambient			\Default Work Unit\SFX\Play_Ambient	
@@ -32,15 +33,22 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	30080899	ItemPickUp	C:\Users\zymay\OneDrive\Documents\GitHub\Psychopomp\Psychopomp_WwiseProject\.cache\Mac\Voices\English(US)\ItemPickUp_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\ItemPickUp		463148
 	75906182	Theme	C:\Users\zymay\OneDrive\Documents\GitHub\Psychopomp\Psychopomp_WwiseProject\.cache\Mac\Voices\English(US)\Theme_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\New Work Unit\Theme\Theme		33475076
 	102383427	waterSplash_fast	C:\Users\zymay\OneDrive\Documents\GitHub\Psychopomp\Psychopomp_WwiseProject\.cache\Mac\Voices\English(US)\accl_01_9234E706.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\waterSplash_fast		2856608
+	152958283	Building3	C:\Users\zymay\OneDrive\Documents\GitHub\Psychopomp\Psychopomp_WwiseProject\.cache\Mac\SFX\BuildingSFX 3-Morphing Glass_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Building\Building3		264696
 	154551227	wind	C:\Users\zymay\OneDrive\Documents\GitHub\Psychopomp\Psychopomp_WwiseProject\.cache\Mac\Voices\English(US)\wind_CADBA816.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\wind		4567136
 	160845157	Feather_4	C:\Users\zymay\OneDrive\Documents\GitHub\Psychopomp\Psychopomp_WwiseProject\.cache\Mac\Voices\English(US)\Feather_Marker 07_2C8DC4D6.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Feather\Feather_Random\Feather_4		53092
 	179060220	waterSplash	C:\Users\zymay\OneDrive\Documents\GitHub\Psychopomp\Psychopomp_WwiseProject\.cache\Mac\Voices\English(US)\accl_01_36DAEC0F.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\waterSplash		2230400
+	255599716	Building2	C:\Users\zymay\OneDrive\Documents\GitHub\Psychopomp\Psychopomp_WwiseProject\.cache\Mac\SFX\BuildingSFX 2-Morphing Glass_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Building\Building2		264696
 	334818311	UI_Quit	C:\Users\zymay\OneDrive\Documents\GitHub\Psychopomp\Psychopomp_WwiseProject\.cache\Mac\Voices\English(US)\Quit_F390C9DE.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\UI_Quit		540968
 	375662028	soundwave	C:\Users\zymay\OneDrive\Documents\GitHub\Psychopomp\Psychopomp_WwiseProject\.cache\Mac\Voices\English(US)\soundwave_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\soundwave		282336
 	384855880	UI_Start	C:\Users\zymay\OneDrive\Documents\GitHub\Psychopomp\Psychopomp_WwiseProject\.cache\Mac\Voices\English(US)\Start_7AFE0805.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\UI_Start		430344
 	489024773	ambient	C:\Users\zymay\OneDrive\Documents\GitHub\Psychopomp\Psychopomp_WwiseProject\.cache\Mac\Voices\English(US)\ambient_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\New Work Unit\Ambient\ambient		9558032
+	494051313	Building1	C:\Users\zymay\OneDrive\Documents\GitHub\Psychopomp\Psychopomp_WwiseProject\.cache\Mac\SFX\BuildingSFX 1-Morphing Glass_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Building\Building1		264696
 	541425780	Fly	C:\Users\zymay\OneDrive\Documents\GitHub\Psychopomp\Psychopomp_WwiseProject\.cache\Mac\SFX\Fly_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\New Work Unit\Fly\Fly		23629492
+	611478713	Building4	C:\Users\zymay\OneDrive\Documents\GitHub\Psychopomp\Psychopomp_WwiseProject\.cache\Mac\SFX\BuildingSFX 4-Morphing Glass_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Building\Building4		264696
+	631015966	Building6	C:\Users\zymay\OneDrive\Documents\GitHub\Psychopomp\Psychopomp_WwiseProject\.cache\Mac\SFX\BuildingSFX 6-Morphing Glass_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Building\Building6		264696
 	632742918	train_Final	C:\Users\zymay\OneDrive\Documents\GitHub\Psychopomp\Psychopomp_WwiseProject\.cache\Mac\Voices\English(US)\train_Final_7824F05D.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\train_Final		6484072
+	696090401	Building5	C:\Users\zymay\OneDrive\Documents\GitHub\Psychopomp\Psychopomp_WwiseProject\.cache\Mac\SFX\BuildingSFX 5-Morphing Glass_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Building\Building5		264696
+	773934798	Building7	C:\Users\zymay\OneDrive\Documents\GitHub\Psychopomp\Psychopomp_WwiseProject\.cache\Mac\SFX\BuildingSFX 7-Morphing Glass_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Building\Building7		264696
 	947433487	Feather_2	C:\Users\zymay\OneDrive\Documents\GitHub\Psychopomp\Psychopomp_WwiseProject\.cache\Mac\Voices\English(US)\Feather_Marker 08_7E4244C1.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Feather\Feather_Random\Feather_2		48812
 	966504071	Feather_1	C:\Users\zymay\OneDrive\Documents\GitHub\Psychopomp\Psychopomp_WwiseProject\.cache\Mac\Voices\English(US)\Feather_Marker 07_39D78F3D.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Feather\Feather_Random\Feather_1		53092
 	973887848	Feather_3	C:\Users\zymay\OneDrive\Documents\GitHub\Psychopomp\Psychopomp_WwiseProject\.cache\Mac\Voices\English(US)\Feather_Marker 08_9571BE3B.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Feather\Feather_Random\Feather_3		50056

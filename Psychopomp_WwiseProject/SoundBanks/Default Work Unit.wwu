@@ -10,6 +10,7 @@
 						<ObjectRef Name="Play_Theme" ID="{BA2838EC-18F5-41CF-90A9-64446403F104}" WorkUnitID="{F200B06E-8FAE-423D-B158-38EC56AAF073}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Resume_Fly" ID="{A4938B6A-2A92-430D-B315-1EC3E9F84BB8}" WorkUnitID="{F200B06E-8FAE-423D-B158-38EC56AAF073}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_Fly" ID="{3A7941E3-537B-451B-98E4-6AB8EF2B20F8}" WorkUnitID="{F200B06E-8FAE-423D-B158-38EC56AAF073}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_Building" ID="{5714A932-8751-468B-8FF8-F397487B2EA8}" WorkUnitID="{F200B06E-8FAE-423D-B158-38EC56AAF073}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_wind" ID="{ABE66839-C897-47EC-99D0-8D691C60FE77}" WorkUnitID="{F200B06E-8FAE-423D-B158-38EC56AAF073}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Stop_waterSplash" ID="{3AFB9C6D-6B4E-4828-A982-5C9E064F1957}" WorkUnitID="{F200B06E-8FAE-423D-B158-38EC56AAF073}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_waterSplash_fast" ID="{867727D3-B163-48F0-B005-FF5A8357775B}" WorkUnitID="{F200B06E-8FAE-423D-B158-38EC56AAF073}" Origin="Manual" Filter="7"/>

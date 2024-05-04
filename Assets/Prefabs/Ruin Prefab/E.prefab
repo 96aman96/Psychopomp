@@ -1,5 +1,103 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3447205676631338898
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7561965475774235127}
+  - component: {fileID: 5206982887575747223}
+  - component: {fileID: 248309364439615485}
+  - component: {fileID: 2061735131265667652}
+  m_Layer: 2
+  m_Name: Trigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7561965475774235127
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3447205676631338898}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0.9999987, z: -0, w: -0.001635961}
+  m_LocalPosition: {x: -3.5443745, y: 23.977198, z: 5.225248}
+  m_LocalScale: {x: 0.19999996, y: 0.2, z: 0.16708197}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1153712235113027858}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &5206982887575747223
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3447205676631338898}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 68.34796, y: 74.63086, z: 62.603027}
+  m_Center: {x: -33.67398, y: -9.947754, z: 31.219482}
+--- !u!54 &248309364439615485
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3447205676631338898}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &2061735131265667652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3447205676631338898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5615eb6e99733546bd449608145ae4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildingSFX:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: a4a568afdc33cbf4daaeb92899610375, type: 2}
 --- !u!1001 &1695735376617045753
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -90,12 +188,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 73ae2da48d810dc41a9881fbca861c64, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7561965475774235127}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 73ae2da48d810dc41a9881fbca861c64, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6534771400931868266}
   m_SourcePrefab: {fileID: 100100000, guid: 73ae2da48d810dc41a9881fbca861c64, type: 3}
+--- !u!4 &1153712235113027858 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 73ae2da48d810dc41a9881fbca861c64, type: 3}
+  m_PrefabInstance: {fileID: 1695735376617045753}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1966137376205915048 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 73ae2da48d810dc41a9881fbca861c64, type: 3}
@@ -113,3 +219,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5615eb6e99733546bd449608145ae4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buildingSFX:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}

@@ -34,7 +34,7 @@ public class WwiseSoundManager : MonoBehaviour
     public AK.Wwise.Event pauseFly;
     public AK.Wwise.Event resumeFly;
 
-
+    public AK.Wwise.Event buildingSFX;
     
 
     private bool isFirstTimeGliding = true;
@@ -139,4 +139,10 @@ public class WwiseSoundManager : MonoBehaviour
     {
         resumeFly.Post(gameObject);
     }
+
+    public void PlayBuilding()
+    {
+        buildingSFX.Post(gameObject);
+    }
+    
 }

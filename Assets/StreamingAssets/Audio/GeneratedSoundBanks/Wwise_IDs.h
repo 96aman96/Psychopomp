@@ -16,6 +16,7 @@ namespace AK
         static const AkUniqueID PAUSE_FLY = 3831277379U;
         static const AkUniqueID PAUSE_THEME = 1553341287U;
         static const AkUniqueID PLAY_AMBIENT = 1562304622U;
+        static const AkUniqueID PLAY_BUILDINGSFX = 1145142855U;
         static const AkUniqueID PLAY_FEATHER_RANDOM = 1424865143U;
         static const AkUniqueID PLAY_FLY = 2941622701U;
         static const AkUniqueID PLAY_ITEMPICKUP = 4241593335U;

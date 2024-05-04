@@ -509,19 +509,6 @@
 								<ActiveSource Name="wind" ID="{9629DCA2-AD76-43CA-86E3-4BD867C9E855}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
-						<RandomSequenceContainer Name="Building_Sequence" ID="{556EAC38-7C3F-4E9E-9925-F5F098C780A3}" ShortID="1072907397">
-							<PropertyList>
-								<Property Name="RandomOrSequence" Type="int16" Value="0"/>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2B7CC0FB-0949-49C5-8228-DCFA38A80237}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FAC89FD8-6922-4802-BE46-2764330B2318}"/>
-								</Reference>
-							</ReferenceList>
-						</RandomSequenceContainer>
 						<Sound Name="ItemPickUp" ID="{4855076D-86F5-4AA3-A23D-8FE1960DEA32}" ShortID="205973037">
 							<PropertyList>
 								<Property Name="IsVoice" Type="bool" Value="True"/>
@@ -744,6 +731,181 @@
 								<ActiveSource Name="SwitchLetter" ID="{881C811B-8B0F-4674-8D21-4ACEB35577EA}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
+						<RandomSequenceContainer Name="Building" ID="{6339F76A-9355-4D5C-BAB7-2895671BF4D3}" ShortID="223503397">
+							<PropertyList>
+								<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+								<Property Name="RestartBeginningOrBackward" Type="int16" Value="0"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-3</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2B7CC0FB-0949-49C5-8228-DCFA38A80237}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FAC89FD8-6922-4802-BE46-2764330B2318}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Building6" ID="{2C5DA863-4F77-4BA5-8754-F9DA1333FC6C}" ShortID="962519963">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2B7CC0FB-0949-49C5-8228-DCFA38A80237}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FAC89FD8-6922-4802-BE46-2764330B2318}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="BuildingSFX 6-Morphing Glass" ID="{EE8F7E88-D1F1-492D-9AB1-E00D6E0ABBCE}">
+											<Language>SFX</Language>
+											<AudioFile>BuildingSFX 6-Morphing Glass.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="631015966"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="BuildingSFX 6-Morphing Glass" ID="{EE8F7E88-D1F1-492D-9AB1-E00D6E0ABBCE}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Building4" ID="{4D13F7C9-B9E3-4442-A365-A9823C34CB2C}" ShortID="1033840750">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2B7CC0FB-0949-49C5-8228-DCFA38A80237}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FAC89FD8-6922-4802-BE46-2764330B2318}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="BuildingSFX 4-Morphing Glass" ID="{B85ED7AD-0C2C-45C6-8B9C-5AE7D91203E7}">
+											<Language>SFX</Language>
+											<AudioFile>BuildingSFX 4-Morphing Glass.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="611478713"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="BuildingSFX 4-Morphing Glass" ID="{B85ED7AD-0C2C-45C6-8B9C-5AE7D91203E7}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Building1" ID="{603E27D5-62BD-4AA7-9EA0-43FAA096D808}" ShortID="159085799">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2B7CC0FB-0949-49C5-8228-DCFA38A80237}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FAC89FD8-6922-4802-BE46-2764330B2318}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="BuildingSFX 1-Morphing Glass" ID="{F2338890-9C11-4D5E-81DA-E2BB9A0B233A}">
+											<Language>SFX</Language>
+											<AudioFile>BuildingSFX 1-Morphing Glass.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="494051313"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="BuildingSFX 1-Morphing Glass" ID="{F2338890-9C11-4D5E-81DA-E2BB9A0B233A}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Building5" ID="{49953E8D-034C-4AC4-AA35-40EACB330D8C}" ShortID="1057684229">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2B7CC0FB-0949-49C5-8228-DCFA38A80237}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FAC89FD8-6922-4802-BE46-2764330B2318}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="BuildingSFX 5-Morphing Glass" ID="{7E7A6F3F-3B95-4083-A8D8-CDBB344ACE15}">
+											<Language>SFX</Language>
+											<AudioFile>BuildingSFX 5-Morphing Glass.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="696090401"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="BuildingSFX 5-Morphing Glass" ID="{7E7A6F3F-3B95-4083-A8D8-CDBB344ACE15}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Building3" ID="{DB6FCFA3-CC5F-4143-9833-EB6D38B44586}" ShortID="1012602951">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2B7CC0FB-0949-49C5-8228-DCFA38A80237}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FAC89FD8-6922-4802-BE46-2764330B2318}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="BuildingSFX 3-Morphing Glass" ID="{7C177A94-3213-4521-A259-7C192EB48956}">
+											<Language>SFX</Language>
+											<AudioFile>BuildingSFX 3-Morphing Glass.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="152958283"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="BuildingSFX 3-Morphing Glass" ID="{7C177A94-3213-4521-A259-7C192EB48956}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Building2" ID="{DC48D061-FA9A-4428-8100-F579577DCC4B}" ShortID="565124770">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2B7CC0FB-0949-49C5-8228-DCFA38A80237}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FAC89FD8-6922-4802-BE46-2764330B2318}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="BuildingSFX 2-Morphing Glass" ID="{6D569EB3-437A-4A41-B100-3CCD2D396A61}">
+											<Language>SFX</Language>
+											<AudioFile>BuildingSFX 2-Morphing Glass.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="255599716"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="BuildingSFX 2-Morphing Glass" ID="{6D569EB3-437A-4A41-B100-3CCD2D396A61}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Building7" ID="{4E89E074-090E-4016-8924-49C7E0886223}" ShortID="700972995">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2B7CC0FB-0949-49C5-8228-DCFA38A80237}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FAC89FD8-6922-4802-BE46-2764330B2318}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="BuildingSFX 7-Morphing Glass" ID="{4EDCC07A-DC92-42E0-BB16-8862B728E9F1}">
+											<Language>SFX</Language>
+											<AudioFile>BuildingSFX 7-Morphing Glass.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="773934798"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="BuildingSFX 7-Morphing Glass" ID="{4EDCC07A-DC92-42E0-BB16-8862B728E9F1}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</RandomSequenceContainer>
 					</ChildrenList>
 				</Folder>
 			</ChildrenList>

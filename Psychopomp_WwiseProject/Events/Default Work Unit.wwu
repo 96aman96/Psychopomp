@@ -303,6 +303,17 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Play_Building" ID="{5714A932-8751-468B-8FF8-F397487B2EA8}">
+					<ChildrenList>
+						<Action Name="" ID="{50CC228B-B9C4-43F3-9409-579723490FC1}" ShortID="784900435">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Building" ID="{6339F76A-9355-4D5C-BAB7-2895671BF4D3}" WorkUnitID="{A35B15AE-516B-47E8-A3EB-9706F95E54A1}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>
