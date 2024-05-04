@@ -369,8 +369,9 @@
 							<ChildrenList>
 								<AudioFileSource Name="wind" ID="{9629DCA2-AD76-43CA-86E3-4BD867C9E855}">
 									<PropertyList>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.0820793433652511"/>
 										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-										<Property Name="TrimEnd" Type="Real64" Value="23.6168544252401"/>
+										<Property Name="TrimEnd" Type="Real64" Value="23.7753575058073"/>
 									</PropertyList>
 									<Language>English(US)</Language>
 									<AudioFile>wind.wav</AudioFile>

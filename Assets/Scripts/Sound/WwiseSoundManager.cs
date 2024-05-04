@@ -12,8 +12,6 @@ public class WwiseSoundManager : MonoBehaviour
     public AK.Wwise.Event pauseTheme;
     public AK.Wwise.Event resumeTheme;
     public AK.Wwise.Event stopTheme;
-    public AK.Wwise.Event playFlight;
-    public AK.Wwise.Event pauseFlight;
     public AK.Wwise.Event soundwaveSFX;
     public AK.Wwise.Event random_featherSFX;
     public AK.Wwise.Event WindSoundEvent;
@@ -31,8 +29,10 @@ public class WwiseSoundManager : MonoBehaviour
     public AK.Wwise.Event playOpenLetterSFX;
     public AK.Wwise.Event playSwitchLetterSFX;    
 
-    public AK.Wwise.Event resumeFlightMusic;
 
+    public AK.Wwise.Event playFly;
+    public AK.Wwise.Event pauseFly;
+    public AK.Wwise.Event resumeFly;
 
 
     
@@ -51,26 +51,13 @@ public class WwiseSoundManager : MonoBehaviour
     public void MusicStartGliding()
     {
         pauseTheme.Post(gameObject);
-        if(isFirstTimeGliding)
-        {
-            playFlight.Post(gameObject);
-            isFirstTimeGliding = false;
-        }
-        else
-        {
-            ResumeFlightMusic();
-        }
+        playFly.Post(gameObject);
     }
 
     public void MusicStopGliding()
     { 
         resumeTheme.Post(gameObject);
-        pauseFlight.Post(gameObject);
-    }
-
-    public void ResumeFlightMusic()
-    {
-        resumeFlightMusic.Post(gameObject);
+        pauseFly.Post(gameObject);
     }
 
     public void UI_Sound_Start()
@@ -146,5 +133,10 @@ public class WwiseSoundManager : MonoBehaviour
     public void playSwitchLetter()
     {
         playSwitchLetterSFX.Post(gameObject);
+    }
+
+    public void ResumeFlyMusic()
+    {
+        resumeFly.Post(gameObject);
     }
 }

@@ -175,7 +175,7 @@
 								</Action>
 							</ChildrenList>
 						</Event>
-						<Event Name="Play_OpenLetter" ID="{F884B65A-B8C4-41EF-8F76-6BB5CAF3E9E7}">
+						<Event Name="Play_openLetter" ID="{F884B65A-B8C4-41EF-8F76-6BB5CAF3E9E7}">
 							<ChildrenList>
 								<Action Name="" ID="{731D6EB2-F9CD-4B19-8982-8CCBAC889974}" ShortID="326204083">
 									<ReferenceList>
@@ -256,50 +256,48 @@
 								</Event>
 							</ChildrenList>
 						</Folder>
-						<Folder Name="Flight" ID="{3B3CAB1B-60BD-4E6C-95C2-8841E7E617AB}" ShortID="904798493">
-							<ChildrenList>
-								<Event Name="Play_Flight" ID="{2FD5A4AF-A035-47C1-B445-EAD377E2DFE2}">
-									<ChildrenList>
-										<Action Name="" ID="{36DAAD1F-D111-4E78-AF4E-78353814ECF7}" ShortID="860844482">
-											<PropertyList>
-												<Property Name="Delay" Type="Real64" Value="2.5"/>
-												<Property Name="FadeTime" Type="Real64" Value="3"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Target">
-													<ObjectRef Name="Flight" ID="{23307795-225A-42B6-BB4A-0D79E6C0BFA7}" WorkUnitID="{BA33B5DD-835F-4CC3-9F04-5665BAB2EEB6}"/>
-												</Reference>
-											</ReferenceList>
-										</Action>
-									</ChildrenList>
-								</Event>
-								<Event Name="Pause_Flight" ID="{CBF7EB43-548F-4AA9-84B7-7167D871EC93}">
-									<ChildrenList>
-										<Action Name="" ID="{66284B31-92F8-4EC7-8B8E-0CF23416B7D0}" ShortID="253200277">
-											<PropertyList>
-												<Property Name="ActionType" Type="int16" Value="7"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Target">
-													<ObjectRef Name="Flight" ID="{23307795-225A-42B6-BB4A-0D79E6C0BFA7}" WorkUnitID="{BA33B5DD-835F-4CC3-9F04-5665BAB2EEB6}"/>
-												</Reference>
-											</ReferenceList>
-										</Action>
-									</ChildrenList>
-								</Event>
-							</ChildrenList>
-						</Folder>
 					</ChildrenList>
 				</Folder>
-				<Event Name="Resume_Flight" ID="{F36E5910-09BA-4ADE-90E2-688BD3A7FA2D}">
+				<Event Name="Play_Fly" ID="{3A7941E3-537B-451B-98E4-6AB8EF2B20F8}">
 					<ChildrenList>
-						<Action Name="" ID="{522A6EA8-6C75-4972-B010-B8961E5CA2D8}" ShortID="517048202">
+						<Action Name="" ID="{1FAAB198-39BD-443B-8A1D-3F7C108D92C2}" ShortID="852489050">
 							<PropertyList>
-								<Property Name="ActionType" Type="int16" Value="9"/>
+								<Property Name="Delay" Type="Real64" Value="2.5"/>
+								<Property Name="FadeTime" Type="Real64" Value="3"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="Flight" ID="{23307795-225A-42B6-BB4A-0D79E6C0BFA7}" WorkUnitID="{BA33B5DD-835F-4CC3-9F04-5665BAB2EEB6}"/>
+									<ObjectRef Name="Fly" ID="{B649B8C8-D3A0-48DB-97A0-ED6BABA5022D}" WorkUnitID="{BA33B5DD-835F-4CC3-9F04-5665BAB2EEB6}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Pause_Fly" ID="{515A3601-FA36-497D-9295-1C7B6D12006C}">
+					<ChildrenList>
+						<Action Name="" ID="{B75601EF-C1A6-446F-A99B-6D49AC0D51BF}" ShortID="747429288">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="7"/>
+								<Property Name="FadeTime" Type="Real64" Value="2.5"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Fly" ID="{B649B8C8-D3A0-48DB-97A0-ED6BABA5022D}" WorkUnitID="{BA33B5DD-835F-4CC3-9F04-5665BAB2EEB6}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Resume_Fly" ID="{A4938B6A-2A92-430D-B315-1EC3E9F84BB8}">
+					<ChildrenList>
+						<Action Name="" ID="{CA12A7C5-FC82-4CB9-A5C9-36326C1DC1AD}" ShortID="999828089">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="9"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Fly" ID="{B649B8C8-D3A0-48DB-97A0-ED6BABA5022D}" WorkUnitID="{BA33B5DD-835F-4CC3-9F04-5665BAB2EEB6}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

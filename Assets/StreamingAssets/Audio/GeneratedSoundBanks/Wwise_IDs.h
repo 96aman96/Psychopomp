@@ -13,11 +13,11 @@ namespace AK
 {
     namespace EVENTS
     {
-        static const AkUniqueID PAUSE_FLIGHT = 1964081394U;
+        static const AkUniqueID PAUSE_FLY = 3831277379U;
         static const AkUniqueID PAUSE_THEME = 1553341287U;
         static const AkUniqueID PLAY_AMBIENT = 1562304622U;
         static const AkUniqueID PLAY_FEATHER_RANDOM = 1424865143U;
-        static const AkUniqueID PLAY_FLIGHT = 2101214892U;
+        static const AkUniqueID PLAY_FLY = 2941622701U;
         static const AkUniqueID PLAY_ITEMPICKUP = 4241593335U;
         static const AkUniqueID PLAY_SOUNDWAVE = 1044785212U;
         static const AkUniqueID PLAY_THEME = 2479442773U;
@@ -27,7 +27,7 @@ namespace AK
         static const AkUniqueID PLAY_WATERSPLASH = 877418862U;
         static const AkUniqueID PLAY_WATERSPLASH_FAST = 4130080323U;
         static const AkUniqueID PLAY_WIND = 1020223172U;
-        static const AkUniqueID RESUME_FLIGHT = 1781513685U;
+        static const AkUniqueID RESUME_FLY = 3714450514U;
         static const AkUniqueID RESUME_THEME = 4138142034U;
         static const AkUniqueID STOP_THEME = 560299279U;
         static const AkUniqueID STOP_WATERSPLASH = 332760368U;

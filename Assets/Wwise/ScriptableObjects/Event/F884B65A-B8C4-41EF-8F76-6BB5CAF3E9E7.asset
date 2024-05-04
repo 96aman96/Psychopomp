@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e562bb89a71c8b44ca37b54998edd45f, type: 3}
   m_Name: F884B65A-B8C4-41EF-8F76-6BB5CAF3E9E7
   m_EditorClassIdentifier: 
-  objectName: Play_OpenLetter
+  objectName: Play_openLetter
   id: 3721414862
   guid: F884B65A-B8C4-41EF-8F76-6BB5CAF3E9E7
