@@ -27,7 +27,7 @@
 				<GameParameter Id="2453598386" Name="HighPass"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="3991942870" Type="User" Language="English(US)" Hash="{FA3CEDD6-29A6-9494-7760-D6E5D81538C0}">
+		<SoundBank Id="3991942870" Type="User" Language="English(US)" Hash="{01EA67F0-84B0-F727-C28C-E4AF3ED0B0E7}">
 			<ShortName>Music</ShortName>
 			<Path>English(US)/Music.bnk</Path>
 			<Media>
@@ -39,9 +39,13 @@
 					<ShortName>Theme.wav</ShortName>
 					<CachePath>Voices/English(US)/Theme_FBC78EF0.wem</CachePath>
 				</File>
+				<File Id="102383427" Language="English(US)" Streaming="false" Location="Memory">
+					<ShortName>accl_01.wav</ShortName>
+					<CachePath>Voices/English(US)/accl_01_F6DF2214.wem</CachePath>
+				</File>
 				<File Id="154551227" Language="English(US)" Streaming="false" Location="Memory">
 					<ShortName>wind.wav</ShortName>
-					<CachePath>Voices/English(US)/wind_E9C8EB7C.wem</CachePath>
+					<CachePath>Voices/English(US)/wind_67E31032.wem</CachePath>
 				</File>
 				<File Id="160845157" Language="English(US)" Streaming="false" Location="Memory">
 					<ShortName>Feather_Marker 07.wav</ShortName>
@@ -49,7 +53,7 @@
 				</File>
 				<File Id="179060220" Language="English(US)" Streaming="false" Location="Memory">
 					<ShortName>accl_01.wav</ShortName>
-					<CachePath>Voices/English(US)/accl_01_F38529CC.wem</CachePath>
+					<CachePath>Voices/English(US)/accl_01_36DAEC0F.wem</CachePath>
 				</File>
 				<File Id="334818311" Language="English(US)" Streaming="false" Location="Memory">
 					<ShortName>Quit.wav</ShortName>
@@ -67,13 +71,13 @@
 					<ShortName>ambient.wav</ShortName>
 					<CachePath>Voices/English(US)/ambient_FBC78EF0.wem</CachePath>
 				</File>
-				<File Id="591577181" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Psychopump New Flight.wav</ShortName>
-					<CachePath>Voices/English(US)/Psychopump New Flight_FBC78EF0.wem</CachePath>
-				</File>
 				<File Id="632742918" Language="English(US)" Streaming="false" Location="Memory">
 					<ShortName>train_Final.wav</ShortName>
 					<CachePath>Voices/English(US)/train_Final_7824F05D.wem</CachePath>
+				</File>
+				<File Id="651536055" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>ActualTheme.wav</ShortName>
+					<CachePath>SFX/ActualTheme_FBC78EF0.wem</CachePath>
 				</File>
 				<File Id="947433487" Language="English(US)" Streaming="false" Location="Memory">
 					<ShortName>Feather_Marker 08.wav</ShortName>
@@ -94,7 +98,7 @@
 				</ShareSets>
 			</Plugins>
 			<Events>
-				<Event Id="4006404000" Name="Pause_FlightNew" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="1964081394" Name="Pause_Flight" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="1553341287" Name="Pause_Theme" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="1562304622" Name="Play_Ambient" DurationType="OneShot" DurationMin="54.18331" DurationMax="54.18331">
 					<MediaRefs>
@@ -114,15 +118,10 @@
 						</ShareSets>
 					</PluginRefs>
 				</Event>
-				<Event Id="25429078" Name="Play_FlightNew" DurationType="OneShot" DurationMin="136.45349" DurationMax="136.45349">
+				<Event Id="2101214892" Name="Play_Flight" DurationType="OneShot" DurationMin="136.45349" DurationMax="136.45349">
 					<MediaRefs>
-						<MediaRef Id="591577181"/>
+						<MediaRef Id="651536055"/>
 					</MediaRefs>
-					<PluginRefs>
-						<ShareSets>
-							<PluginRef Id="3657550167"/>
-						</ShareSets>
-					</PluginRefs>
 				</Event>
 				<Event Id="4241593335" Name="Play_ItemPickUp" DurationType="OneShot" DurationMin="2.6250114" DurationMax="2.6250114">
 					<MediaRefs>
@@ -161,7 +160,7 @@
 				</Event>
 				<Event Id="4130080323" Name="Play_waterSplash_fast" DurationType="Infinite">
 					<MediaRefs>
-						<MediaRef Id="179060220"/>
+						<MediaRef Id="102383427"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="1020223172" Name="Play_wind" DurationType="Infinite">
@@ -169,7 +168,7 @@
 						<MediaRef Id="154551227"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="1873017685" Name="Resume_FlightNew" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="1781513685" Name="Resume_Flight" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="4138142034" Name="Resume_Theme" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="560299279" Name="Stop_Theme" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="332760368" Name="Stop_waterSplash" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
@@ -183,5 +182,5 @@
 			</GameParameters>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{05BDAEDC-015B-6FC3-F100-DE8D9E812EAF}</FileHash>
+	<FileHash>{53693D8D-A5B4-4168-C708-B7EBD816071A}</FileHash>
 </SoundBanksInfo>

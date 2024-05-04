@@ -91,113 +91,96 @@
 								</Event>
 							</ChildrenList>
 						</Folder>
-					</ChildrenList>
-				</Folder>
-				<Folder Name="InteractiveMusic" ID="{4A092CA7-2423-4607-AB83-BF4CE1FA7C6A}" ShortID="331054464">
-					<ChildrenList>
-						<Event Name="Pause_FlightNew" ID="{13645682-14AE-46B4-9342-A6A714EF1F09}">
+						<Event Name="Play_waterSplash" ID="{D0370D76-79C8-40DB-9FDA-D7F023E71A70}">
 							<ChildrenList>
-								<Action Name="" ID="{A347AE1D-D1BB-481B-83A4-85B6D24D415A}" ShortID="847941404">
-									<PropertyList>
-										<Property Name="ActionType" Type="int16" Value="7"/>
-										<Property Name="FadeTime" Type="Real64" Value="2.5"/>
-									</PropertyList>
+								<Action Name="" ID="{F9AAFFD1-C9B8-448A-A867-7C93DDA7311D}" ShortID="371121421">
 									<ReferenceList>
 										<Reference Name="Target">
-											<ObjectRef Name="FlightNew" ID="{23307795-225A-42B6-BB4A-0D79E6C0BFA7}" WorkUnitID="{BA33B5DD-835F-4CC3-9F04-5665BAB2EEB6}"/>
+											<ObjectRef Name="waterSplash" ID="{7D1A7579-F343-4750-BFAD-DFDB45B34967}" WorkUnitID="{A35B15AE-516B-47E8-A3EB-9706F95E54A1}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
 							</ChildrenList>
 						</Event>
-						<Event Name="Pause_Theme" ID="{E4123B31-E77F-4ABF-B9A8-FE5D0ECA12C9}">
+						<Event Name="Play_Ambient" ID="{EAC42E14-CB8A-4188-9BD2-6C186B8A57DA}">
 							<ChildrenList>
-								<Action Name="" ID="{1265E215-8BD8-43FA-B16E-458837C462E6}" ShortID="639199954">
-									<PropertyList>
-										<Property Name="ActionType" Type="int16" Value="7"/>
-										<Property Name="Delay" Type="Real64" Value="1.5"/>
-										<Property Name="FadeOutCurve" Type="int16" Value="7"/>
-										<Property Name="FadeTime" Type="Real64" Value="2"/>
-									</PropertyList>
+								<Action Name="" ID="{B6EFBF1F-7661-494C-A6F2-C3FEFC05A1D2}" ShortID="187658851">
 									<ReferenceList>
 										<Reference Name="Target">
-											<ObjectRef Name="Theme" ID="{E387088E-98C6-4573-9DEF-90ABBC4F4664}" WorkUnitID="{BA33B5DD-835F-4CC3-9F04-5665BAB2EEB6}"/>
+											<ObjectRef Name="Ambient" ID="{25D137C6-6B76-4559-BF32-309239723635}" WorkUnitID="{BA33B5DD-835F-4CC3-9F04-5665BAB2EEB6}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
 							</ChildrenList>
 						</Event>
-						<Event Name="Play_Theme" ID="{BA2838EC-18F5-41CF-90A9-64446403F104}">
+						<Event Name="Play_waterSplash_fast" ID="{867727D3-B163-48F0-B005-FF5A8357775B}">
 							<ChildrenList>
-								<Action Name="" ID="{8A7E757F-F5DC-404F-B8E0-335A15DA7722}" ShortID="74368223">
-									<PropertyList>
-										<Property Name="Delay" Type="Real64" Value="1"/>
-										<Property Name="FadeTime" Type="Real64" Value="3"/>
-									</PropertyList>
+								<Action Name="" ID="{E766E402-25E7-4431-859E-08AAB6D64B75}" ShortID="1036671517">
 									<ReferenceList>
 										<Reference Name="Target">
-											<ObjectRef Name="Theme" ID="{E387088E-98C6-4573-9DEF-90ABBC4F4664}" WorkUnitID="{BA33B5DD-835F-4CC3-9F04-5665BAB2EEB6}"/>
+											<ObjectRef Name="waterSplash_fast" ID="{197229B6-CF78-4446-87F7-2FBCB8B7BEBC}" WorkUnitID="{A35B15AE-516B-47E8-A3EB-9706F95E54A1}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
 							</ChildrenList>
 						</Event>
-						<Event Name="Resume_Theme" ID="{953CDCB9-F157-4B41-A537-EEE6C6F675F2}">
+						<Event Name="Stop_waterSplash_fast" ID="{FE12C8BE-F6A4-4A51-9DE1-AD8E8B5F428A}">
 							<ChildrenList>
-								<Action Name="" ID="{AC618641-F506-4003-9ADE-4CB3DCD6C325}" ShortID="915806238">
+								<Action Name="" ID="{0665FA77-B904-4CA1-A575-78165457EFE9}" ShortID="809664760">
 									<PropertyList>
-										<Property Name="ActionType" Type="int16" Value="9"/>
-										<Property Name="Delay" Type="Real64" Value="3.5"/>
-										<Property Name="FadeTime" Type="Real64" Value="3.5"/>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+										<Property Name="FadeTime" Type="Real64" Value="0.5"/>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Target">
-											<ObjectRef Name="Theme" ID="{E387088E-98C6-4573-9DEF-90ABBC4F4664}" WorkUnitID="{BA33B5DD-835F-4CC3-9F04-5665BAB2EEB6}"/>
+											<ObjectRef Name="waterSplash_fast" ID="{197229B6-CF78-4446-87F7-2FBCB8B7BEBC}" WorkUnitID="{A35B15AE-516B-47E8-A3EB-9706F95E54A1}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
 							</ChildrenList>
 						</Event>
-						<Event Name="Play_FlightNew" ID="{2FD5A4AF-A035-47C1-B445-EAD377E2DFE2}">
+						<Event Name="Play_ItemPickUp" ID="{B448FB95-31CA-4180-82C0-A948E8C69C15}">
 							<ChildrenList>
-								<Action Name="" ID="{36DAAD1F-D111-4E78-AF4E-78353814ECF7}" ShortID="860844482">
-									<PropertyList>
-										<Property Name="Delay" Type="Real64" Value="2.5"/>
-										<Property Name="FadeTime" Type="Real64" Value="3"/>
-									</PropertyList>
+								<Action Name="" ID="{716540AF-05C1-4DEC-A2FE-017A77F05DD6}" ShortID="400843892">
 									<ReferenceList>
 										<Reference Name="Target">
-											<ObjectRef Name="FlightNew" ID="{23307795-225A-42B6-BB4A-0D79E6C0BFA7}" WorkUnitID="{BA33B5DD-835F-4CC3-9F04-5665BAB2EEB6}"/>
+											<ObjectRef Name="ItemPickUp" ID="{4855076D-86F5-4AA3-A23D-8FE1960DEA32}" WorkUnitID="{A35B15AE-516B-47E8-A3EB-9706F95E54A1}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
 							</ChildrenList>
 						</Event>
-						<Event Name="Stop_Theme" ID="{356293D6-762F-4A8A-8BE3-31AEBA08AD0C}">
+						<Event Name="Stop_waterSplash" ID="{3AFB9C6D-6B4E-4828-A982-5C9E064F1957}">
 							<ChildrenList>
-								<Action Name="" ID="{AAB30D08-278B-4527-A285-5CC59FAD54C2}" ShortID="989102621">
+								<Action Name="" ID="{1ED66C8E-1746-4961-A9DF-32541075C87D}" ShortID="1055396308">
 									<PropertyList>
 										<Property Name="ActionType" Type="int16" Value="2"/>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Target">
-											<ObjectRef Name="Theme" ID="{E387088E-98C6-4573-9DEF-90ABBC4F4664}" WorkUnitID="{BA33B5DD-835F-4CC3-9F04-5665BAB2EEB6}"/>
+											<ObjectRef Name="waterSplash" ID="{7D1A7579-F343-4750-BFAD-DFDB45B34967}" WorkUnitID="{A35B15AE-516B-47E8-A3EB-9706F95E54A1}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
 							</ChildrenList>
 						</Event>
-						<Event Name="Resume_FlightNew" ID="{AFB958D1-1D2F-4B8A-B1A9-1A18259D1299}">
+						<Event Name="Play_SwitchLetter" ID="{BA2210F1-E28B-4AB9-B458-21CBF5CA8EA5}">
 							<ChildrenList>
-								<Action Name="" ID="{74B7B1E2-D171-4407-92F3-B50A8CCE02B6}" ShortID="655709191">
-									<PropertyList>
-										<Property Name="ActionType" Type="int16" Value="9"/>
-										<Property Name="Delay" Type="Real64" Value="2.5"/>
-										<Property Name="FadeTime" Type="Real64" Value="3"/>
-									</PropertyList>
+								<Action Name="" ID="{887E79B2-841B-4E76-B585-2EE51972DA4C}" ShortID="445986233">
 									<ReferenceList>
 										<Reference Name="Target">
-											<ObjectRef Name="FlightNew" ID="{23307795-225A-42B6-BB4A-0D79E6C0BFA7}" WorkUnitID="{BA33B5DD-835F-4CC3-9F04-5665BAB2EEB6}"/>
+											<ObjectRef Name="SwitchLetter" ID="{8BD89A26-4645-4FFC-85FA-4BC151E86905}" WorkUnitID="{A35B15AE-516B-47E8-A3EB-9706F95E54A1}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_OpenLetter" ID="{F884B65A-B8C4-41EF-8F76-6BB5CAF3E9E7}">
+							<ChildrenList>
+								<Action Name="" ID="{731D6EB2-F9CD-4B19-8982-8CCBAC889974}" ShortID="326204083">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Letter" ID="{29083582-ACD7-4362-952F-572AFA350313}" WorkUnitID="{A35B15AE-516B-47E8-A3EB-9706F95E54A1}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
@@ -205,73 +188,118 @@
 						</Event>
 					</ChildrenList>
 				</Folder>
-				<Event Name="Play_ItemPickUp" ID="{B448FB95-31CA-4180-82C0-A948E8C69C15}">
+				<Folder Name="InteractiveMusic" ID="{4A092CA7-2423-4607-AB83-BF4CE1FA7C6A}" ShortID="331054464">
 					<ChildrenList>
-						<Action Name="" ID="{716540AF-05C1-4DEC-A2FE-017A77F05DD6}" ShortID="400843892">
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="ItemPickUp" ID="{4855076D-86F5-4AA3-A23D-8FE1960DEA32}" WorkUnitID="{A35B15AE-516B-47E8-A3EB-9706F95E54A1}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
+						<Folder Name="Theme" ID="{63E9A4E6-3810-43FF-8109-2B0993B1CF3D}" ShortID="979773717">
+							<ChildrenList>
+								<Event Name="Pause_Theme" ID="{E4123B31-E77F-4ABF-B9A8-FE5D0ECA12C9}">
+									<ChildrenList>
+										<Action Name="" ID="{1265E215-8BD8-43FA-B16E-458837C462E6}" ShortID="639199954">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="7"/>
+												<Property Name="Delay" Type="Real64" Value="1.5"/>
+												<Property Name="FadeOutCurve" Type="int16" Value="7"/>
+												<Property Name="FadeTime" Type="Real64" Value="2"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Theme" ID="{E387088E-98C6-4573-9DEF-90ABBC4F4664}" WorkUnitID="{BA33B5DD-835F-4CC3-9F04-5665BAB2EEB6}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_Theme" ID="{BA2838EC-18F5-41CF-90A9-64446403F104}">
+									<ChildrenList>
+										<Action Name="" ID="{8A7E757F-F5DC-404F-B8E0-335A15DA7722}" ShortID="74368223">
+											<PropertyList>
+												<Property Name="Delay" Type="Real64" Value="1"/>
+												<Property Name="FadeTime" Type="Real64" Value="3"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Theme" ID="{E387088E-98C6-4573-9DEF-90ABBC4F4664}" WorkUnitID="{BA33B5DD-835F-4CC3-9F04-5665BAB2EEB6}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Stop_Theme" ID="{356293D6-762F-4A8A-8BE3-31AEBA08AD0C}">
+									<ChildrenList>
+										<Action Name="" ID="{AAB30D08-278B-4527-A285-5CC59FAD54C2}" ShortID="989102621">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Theme" ID="{E387088E-98C6-4573-9DEF-90ABBC4F4664}" WorkUnitID="{BA33B5DD-835F-4CC3-9F04-5665BAB2EEB6}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Resume_Theme" ID="{953CDCB9-F157-4B41-A537-EEE6C6F675F2}">
+									<ChildrenList>
+										<Action Name="" ID="{AC618641-F506-4003-9ADE-4CB3DCD6C325}" ShortID="915806238">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="9"/>
+												<Property Name="Delay" Type="Real64" Value="3.5"/>
+												<Property Name="FadeTime" Type="Real64" Value="3.5"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Theme" ID="{E387088E-98C6-4573-9DEF-90ABBC4F4664}" WorkUnitID="{BA33B5DD-835F-4CC3-9F04-5665BAB2EEB6}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
+						<Folder Name="Flight" ID="{3B3CAB1B-60BD-4E6C-95C2-8841E7E617AB}" ShortID="904798493">
+							<ChildrenList>
+								<Event Name="Play_Flight" ID="{2FD5A4AF-A035-47C1-B445-EAD377E2DFE2}">
+									<ChildrenList>
+										<Action Name="" ID="{36DAAD1F-D111-4E78-AF4E-78353814ECF7}" ShortID="860844482">
+											<PropertyList>
+												<Property Name="Delay" Type="Real64" Value="2.5"/>
+												<Property Name="FadeTime" Type="Real64" Value="3"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Flight" ID="{23307795-225A-42B6-BB4A-0D79E6C0BFA7}" WorkUnitID="{BA33B5DD-835F-4CC3-9F04-5665BAB2EEB6}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Pause_Flight" ID="{CBF7EB43-548F-4AA9-84B7-7167D871EC93}">
+									<ChildrenList>
+										<Action Name="" ID="{66284B31-92F8-4EC7-8B8E-0CF23416B7D0}" ShortID="253200277">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="7"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Flight" ID="{23307795-225A-42B6-BB4A-0D79E6C0BFA7}" WorkUnitID="{BA33B5DD-835F-4CC3-9F04-5665BAB2EEB6}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
 					</ChildrenList>
-				</Event>
-				<Event Name="Play_Ambient" ID="{EAC42E14-CB8A-4188-9BD2-6C186B8A57DA}">
+				</Folder>
+				<Event Name="Resume_Flight" ID="{F36E5910-09BA-4ADE-90E2-688BD3A7FA2D}">
 					<ChildrenList>
-						<Action Name="" ID="{B6EFBF1F-7661-494C-A6F2-C3FEFC05A1D2}" ShortID="187658851">
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="Ambient" ID="{25D137C6-6B76-4559-BF32-309239723635}" WorkUnitID="{BA33B5DD-835F-4CC3-9F04-5665BAB2EEB6}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
-					</ChildrenList>
-				</Event>
-				<Event Name="Play_waterSplash" ID="{D0370D76-79C8-40DB-9FDA-D7F023E71A70}">
-					<ChildrenList>
-						<Action Name="" ID="{F9AAFFD1-C9B8-448A-A867-7C93DDA7311D}" ShortID="371121421">
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="waterSplash" ID="{7D1A7579-F343-4750-BFAD-DFDB45B34967}" WorkUnitID="{A35B15AE-516B-47E8-A3EB-9706F95E54A1}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
-					</ChildrenList>
-				</Event>
-				<Event Name="Stop_waterSplash" ID="{3AFB9C6D-6B4E-4828-A982-5C9E064F1957}">
-					<ChildrenList>
-						<Action Name="" ID="{1ED66C8E-1746-4961-A9DF-32541075C87D}" ShortID="1055396308">
+						<Action Name="" ID="{522A6EA8-6C75-4972-B010-B8961E5CA2D8}" ShortID="517048202">
 							<PropertyList>
-								<Property Name="ActionType" Type="int16" Value="2"/>
+								<Property Name="ActionType" Type="int16" Value="9"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="waterSplash" ID="{7D1A7579-F343-4750-BFAD-DFDB45B34967}" WorkUnitID="{A35B15AE-516B-47E8-A3EB-9706F95E54A1}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
-					</ChildrenList>
-				</Event>
-				<Event Name="Play_waterSplash_fast" ID="{867727D3-B163-48F0-B005-FF5A8357775B}">
-					<ChildrenList>
-						<Action Name="" ID="{E766E402-25E7-4431-859E-08AAB6D64B75}" ShortID="1036671517">
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="waterSplash_fast" ID="{197229B6-CF78-4446-87F7-2FBCB8B7BEBC}" WorkUnitID="{A35B15AE-516B-47E8-A3EB-9706F95E54A1}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
-					</ChildrenList>
-				</Event>
-				<Event Name="Stop_waterSplash_fast" ID="{FE12C8BE-F6A4-4A51-9DE1-AD8E8B5F428A}">
-					<ChildrenList>
-						<Action Name="" ID="{0665FA77-B904-4CA1-A575-78165457EFE9}" ShortID="809664760">
-							<PropertyList>
-								<Property Name="ActionType" Type="int16" Value="2"/>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="waterSplash_fast" ID="{197229B6-CF78-4446-87F7-2FBCB8B7BEBC}" WorkUnitID="{A35B15AE-516B-47E8-A3EB-9706F95E54A1}"/>
+									<ObjectRef Name="Flight" ID="{23307795-225A-42B6-BB4A-0D79E6C0BFA7}" WorkUnitID="{BA33B5DD-835F-4CC3-9F04-5665BAB2EEB6}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

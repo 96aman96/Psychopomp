@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using AK.Wwise;
 using UnityEngine.Playables;
+using UnityEngine.Rendering;
 
 public class WwiseSoundManager : MonoBehaviour
 {
@@ -13,7 +14,6 @@ public class WwiseSoundManager : MonoBehaviour
     public AK.Wwise.Event stopTheme;
     public AK.Wwise.Event playFlight;
     public AK.Wwise.Event pauseFlight;
-    public AK.Wwise.Event resumeFlight;
     public AK.Wwise.Event soundwaveSFX;
     public AK.Wwise.Event random_featherSFX;
     public AK.Wwise.Event WindSoundEvent;
@@ -28,10 +28,17 @@ public class WwiseSoundManager : MonoBehaviour
     public AK.Wwise.Event stopSplash;
     public AK.Wwise.Event playSplashFast;
     public AK.Wwise.Event stopSplashFast;
+    public AK.Wwise.Event playOpenLetterSFX;
+    public AK.Wwise.Event playSwitchLetterSFX;    
+
+    public AK.Wwise.Event resumeFlightMusic;
+
+
 
     
 
     private bool isFirstTimeGliding = true;
+    
     
     public AK.Wwise.Event ui_start;
     public AK.Wwise.Event ui_quit;
@@ -47,10 +54,11 @@ public class WwiseSoundManager : MonoBehaviour
         if(isFirstTimeGliding)
         {
             playFlight.Post(gameObject);
+            isFirstTimeGliding = false;
         }
         else
         {
-            resumeFlight.Post(gameObject);
+            ResumeFlightMusic();
         }
     }
 
@@ -58,6 +66,11 @@ public class WwiseSoundManager : MonoBehaviour
     { 
         resumeTheme.Post(gameObject);
         pauseFlight.Post(gameObject);
+    }
+
+    public void ResumeFlightMusic()
+    {
+        resumeFlightMusic.Post(gameObject);
     }
 
     public void UI_Sound_Start()
@@ -123,5 +136,15 @@ public class WwiseSoundManager : MonoBehaviour
     public void StopSplashFast()
     {
         stopSplashFast.Post(gameObject);
+    }
+
+    public void playOpenLetter()
+    {
+        playOpenLetterSFX.Post(gameObject);
+    }
+
+    public void playSwitchLetter()
+    {
+        playSwitchLetterSFX.Post(gameObject);
     }
 }
