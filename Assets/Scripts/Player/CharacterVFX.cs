@@ -63,6 +63,7 @@ public class CharacterVFX : MonoBehaviour{
     
     // SOUND FLAGS
     private bool isWindSoundPlaying = false;
+    private bool isSplashPlaying = false;
 
 
     private void Start(){
@@ -115,8 +116,13 @@ public class CharacterVFX : MonoBehaviour{
     private void TriggerParticles(){
         if(onWater && isGrounded){
             TriggerRipple();
+            PlaySplashSound();
         } else if (isGrounded){
             TriggerDust();
+        }
+        else
+        {
+            StopSplashSound();
         }
         
         if (isGliding){
@@ -231,4 +237,22 @@ public class CharacterVFX : MonoBehaviour{
     {
         return 20f; 
     }
+
+    private void PlaySplashSound()
+    {
+        if (onWater && !isSplashPlaying && wwiseSoundManager != null)
+        {
+            wwiseSoundManager.PlaySplash(); 
+            isSplashPlaying = true;
+        }
+    }
+
+    private void StopSplashSound(){
+    if (!onWater && isSplashPlaying && wwiseSoundManager != null)
+    {
+        wwiseSoundManager.StopSplash(); 
+        isSplashPlaying = false;
+    }
+
+}
 }

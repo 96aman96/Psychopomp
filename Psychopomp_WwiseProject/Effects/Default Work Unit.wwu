@@ -12,22 +12,34 @@
 						<Property Name="DryLevel" Type="Real32" Value="-0.3"/>
 						<Property Name="EnableEarlyReflections" Type="bool" Value="False"/>
 						<Property Name="HFDamping" Type="Real32" Value="0.5"/>
-						<Property Name="LFELevel" Type="Real32" Value="-30.3"/>
+						<Property Name="InputLFELevel" Type="Real32" Value="-0.3"/>
+						<Property Name="LFELevel" Type="Real32" Value="-1.3"/>
 						<Property Name="PreDelay" Type="Real32" Value="0"/>
 						<Property Name="Quality" Type="int32" Value="2"/>
-						<Property Name="ReverbLevel" Type="Real32" Value="-5"/>
+						<Property Name="ReverbLevel" Type="Real32" Value="-4"/>
 						<Property Name="RoomShape" Type="Real32" Value="0"/>
 						<Property Name="StereoWidth" Type="Real32" Value="0"/>
 					</PropertyList>
 				</Effect>
 				<Effect Name="New_Parametric_EQ" ID="{9E56C296-9858-4858-9340-74AF4D7D0B9E}" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
 					<PropertyList>
-						<Property Name="FrequencyBand2" Type="Real32" Value="799"/>
-						<Property Name="FrequencyBand3" Type="Real32" Value="11999"/>
+						<Property Name="FrequencyBand1" Type="Real32" Value="200"/>
+						<Property Name="FrequencyBand2" Type="Real32" Value="98"/>
+						<Property Name="FrequencyBand3" Type="Real32" Value="1069"/>
 						<Property Name="GainBand1" Type="Real32" Value="-0.5"/>
-						<Property Name="GainBand3" Type="Real32" Value="0.5"/>
+						<Property Name="GainBand3" Type="Real32" Value="-21"/>
 					</PropertyList>
 				</Effect>
+				<Effect Name="New_Parametric_EQ_01" ID="{C3D1FFC0-74D7-49B5-BDCD-E95F3560ABB8}" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+					<PropertyList>
+						<Property Name="FrequencyBand1" Type="Real32" Value="98"/>
+						<Property Name="FrequencyBand3" Type="Real32" Value="12877"/>
+						<Property Name="GainBand1" Type="Real32" Value="-1.5"/>
+						<Property Name="GainBand3" Type="Real32" Value="9.5"/>
+						<Property Name="OutputLevel" Type="Real32" Value="1"/>
+					</PropertyList>
+				</Effect>
+				<Effect Name="New_RoomVerb_01" ID="{DF6A1F9E-17F5-4D7C-A8F8-21DEDEA3E448}" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3"/>
 			</ChildrenList>
 		</WorkUnit>
 	</Effects>

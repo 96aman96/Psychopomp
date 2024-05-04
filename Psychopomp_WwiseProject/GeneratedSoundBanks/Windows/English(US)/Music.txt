@@ -1,18 +1,24 @@
 Event	ID	Name			Wwise Object Path	Notes
-	25429078	Play_FlightNew			\Default Work Unit\InteractiveMusic\Play_FlightNew	
-	560299279	Stop_Theme			\Default Work Unit\InteractiveMusic\Stop_Theme	
+	332760368	Stop_waterSplash			\Default Work Unit\SFX\Stop_waterSplash	
+	560299279	Stop_Theme			\Default Work Unit\InteractiveMusic\Theme\Stop_Theme	
 	643450781	Play_UI_Start			\Default Work Unit\SFX\Play_UI_Start	
+	877418862	Play_waterSplash			\Default Work Unit\SFX\Play_waterSplash	
 	1020223172	Play_wind			\Default Work Unit\SFX\Wind\Play_wind	
 	1044785212	Play_soundwave			\Default Work Unit\SFX\Play_soundwave	
 	1057286634	Play_UI_Quit			\Default Work Unit\SFX\Play_UI_Quit	
 	1424865143	Play_Feather_Random			\Default Work Unit\SFX\Play_Feather_Random	
-	1553341287	Pause_Theme			\Default Work Unit\InteractiveMusic\Pause_Theme	
-	1873017685	Resume_FlightNew			\Default Work Unit\InteractiveMusic\Resume_FlightNew	
+	1553341287	Pause_Theme			\Default Work Unit\InteractiveMusic\Theme\Pause_Theme	
+	1562304622	Play_Ambient			\Default Work Unit\SFX\Play_Ambient	
 	1934545473	Play_TrainSound			\Default Work Unit\SFX\Play_TrainSound	
-	2479442773	Play_Theme			\Default Work Unit\InteractiveMusic\Play_Theme	
+	2479442773	Play_Theme			\Default Work Unit\InteractiveMusic\Theme\Play_Theme	
+	2941622701	Play_Fly			\Default Work Unit\Play_Fly	
 	3173136834	Stop_wind			\Default Work Unit\SFX\Wind\Stop_wind	
-	4006404000	Pause_FlightNew			\Default Work Unit\InteractiveMusic\Pause_FlightNew	
-	4138142034	Resume_Theme			\Default Work Unit\InteractiveMusic\Resume_Theme	
+	3258240125	Stop_waterSplash_fast			\Default Work Unit\SFX\Stop_waterSplash_fast	
+	3714450514	Resume_Fly			\Default Work Unit\Resume_Fly	
+	3831277379	Pause_Fly			\Default Work Unit\Pause_Fly	
+	4130080323	Play_waterSplash_fast			\Default Work Unit\SFX\Play_waterSplash_fast	
+	4138142034	Resume_Theme			\Default Work Unit\InteractiveMusic\Theme\Resume_Theme	
+	4241593335	Play_ItemPickUp			\Default Work Unit\SFX\Play_ItemPickUp	
 
 Game Parameter	ID	Name			Wwise Object Path	Notes
 	1685747766	LowPass			\Default Work Unit\LowPass	
@@ -23,13 +29,17 @@ Effect plug-ins	ID	Name	Type				Notes
 	3657550167	New_Parametric_EQ	Wwise Parametric EQ			
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	30080899	ItemPickUp	C:\Users\zymay\OneDrive\Documents\GitHub\Psychopomp\Psychopomp_WwiseProject\.cache\Windows\Voices\English(US)\ItemPickUp_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\ItemPickUp		463148
 	75906182	Theme	C:\Users\zymay\OneDrive\Documents\GitHub\Psychopomp\Psychopomp_WwiseProject\.cache\Windows\Voices\English(US)\Theme_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\New Work Unit\Theme\Theme		33475076
-	154551227	wind	C:\Users\zymay\OneDrive\Documents\GitHub\Psychopomp\Psychopomp_WwiseProject\.cache\Windows\Voices\English(US)\wind_E9C8EB7C.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\wind		4723644
+	102383427	waterSplash_fast	C:\Users\zymay\OneDrive\Documents\GitHub\Psychopomp\Psychopomp_WwiseProject\.cache\Windows\Voices\English(US)\accl_01_9234E706.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\waterSplash_fast		2856608
+	154551227	wind	C:\Users\zymay\OneDrive\Documents\GitHub\Psychopomp\Psychopomp_WwiseProject\.cache\Windows\Voices\English(US)\wind_CADBA816.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\wind		4567136
 	160845157	Feather_4	C:\Users\zymay\OneDrive\Documents\GitHub\Psychopomp\Psychopomp_WwiseProject\.cache\Windows\Voices\English(US)\Feather_Marker 07_2C8DC4D6.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Feather\Feather_Random\Feather_4		53092
+	179060220	waterSplash	C:\Users\zymay\OneDrive\Documents\GitHub\Psychopomp\Psychopomp_WwiseProject\.cache\Windows\Voices\English(US)\accl_01_36DAEC0F.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\waterSplash		2230400
 	334818311	UI_Quit	C:\Users\zymay\OneDrive\Documents\GitHub\Psychopomp\Psychopomp_WwiseProject\.cache\Windows\Voices\English(US)\Quit_F390C9DE.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\UI_Quit		540968
 	375662028	soundwave	C:\Users\zymay\OneDrive\Documents\GitHub\Psychopomp\Psychopomp_WwiseProject\.cache\Windows\Voices\English(US)\soundwave_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\soundwave		282336
 	384855880	UI_Start	C:\Users\zymay\OneDrive\Documents\GitHub\Psychopomp\Psychopomp_WwiseProject\.cache\Windows\Voices\English(US)\Start_7AFE0805.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\UI_Start		430344
-	591577181	FlightNew	C:\Users\zymay\OneDrive\Documents\GitHub\Psychopomp\Psychopomp_WwiseProject\.cache\Windows\Voices\English(US)\Psychopump New Flight_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\New Work Unit\FlightNew\FlightNew		23629492
+	489024773	ambient	C:\Users\zymay\OneDrive\Documents\GitHub\Psychopomp\Psychopomp_WwiseProject\.cache\Windows\Voices\English(US)\ambient_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\New Work Unit\Ambient\ambient		9558032
+	541425780	Fly	C:\Users\zymay\OneDrive\Documents\GitHub\Psychopomp\Psychopomp_WwiseProject\.cache\Windows\SFX\Fly_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\New Work Unit\Fly\Fly		23629492
 	632742918	train_Final	C:\Users\zymay\OneDrive\Documents\GitHub\Psychopomp\Psychopomp_WwiseProject\.cache\Windows\Voices\English(US)\train_Final_7824F05D.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\train_Final		6484072
 	947433487	Feather_3	C:\Users\zymay\OneDrive\Documents\GitHub\Psychopomp\Psychopomp_WwiseProject\.cache\Windows\Voices\English(US)\Feather_Marker 08_9571BE3B.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Feather\Feather_Random\Feather_3		50056
 	966504071	Feather_1	C:\Users\zymay\OneDrive\Documents\GitHub\Psychopomp\Psychopomp_WwiseProject\.cache\Windows\Voices\English(US)\Feather_Marker 07_39D78F3D.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Feather\Feather_Random\Feather_1		53092

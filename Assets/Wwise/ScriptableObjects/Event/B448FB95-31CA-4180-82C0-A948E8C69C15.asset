@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e562bb89a71c8b44ca37b54998edd45f, type: 3}
+  m_Name: B448FB95-31CA-4180-82C0-A948E8C69C15
+  m_EditorClassIdentifier: 
+  objectName: Play_ItemPickUp
+  id: 4241593335
+  guid: B448FB95-31CA-4180-82C0-A948E8C69C15
