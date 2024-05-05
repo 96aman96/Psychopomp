@@ -29,6 +29,11 @@ public class CharacterVFX : MonoBehaviour{
     public float currentRipple = 0;
     public AnimationCurve rippleBurstPerSpeed;
     public AnimationCurve rippleVelocityPerSpeed;
+    
+    // WATER FOAM
+    [Header("Water Foam")]
+    public VisualEffect foam;
+    private bool isFoaming = false;
 
     // GROUND DUST
     [Header("Ground Dust")]
@@ -118,11 +123,14 @@ public class CharacterVFX : MonoBehaviour{
         if(onWater && isGrounded){
             PlaySplashSound();
             TriggerRipple();
+            StartFoam();
         } else if (isGrounded){
             TriggerDust();
             StopSplashSound();
+            StopFoam();
         } else {
             StopSplashSound();
+            StopFoam();
         }
         
         if (isGliding){
@@ -155,6 +163,20 @@ public class CharacterVFX : MonoBehaviour{
             currentRipple = 0;
             ripple.Play();
         }
+    }
+
+    private void StartFoam(){
+        if(!isFoaming){
+            isFoaming = true;
+            foam.enabled = true;
+            foam.SendEvent("Start");
+        }
+    }
+
+    private void StopFoam(){
+        isFoaming = false;
+        foam.enabled = false;
+        foam.SendEvent("Stop");
     }
 
     private void TriggerDust(){

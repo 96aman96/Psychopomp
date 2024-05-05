@@ -225,7 +225,6 @@ public class KinematicCharacterController : MonoBehaviour{
         currentTier = _tier;
         vfx.UpdateTier(_tier);
         cameraController.UpdateTier(_tier);
-
     }
 
     private void ApplyYZRotation(Vector2 input){
