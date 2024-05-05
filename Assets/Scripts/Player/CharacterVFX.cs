@@ -67,6 +67,8 @@ public class CharacterVFX : MonoBehaviour{
         isGliding = kcc.GetIsGliding();
         onWater = kcc.GetIsOnWater();
         input = kcc.GetInput();
+
+        if(!isGliding) StopGlide();
     }
 
     private void SetAnimatorState(){ 
@@ -108,6 +110,10 @@ public class CharacterVFX : MonoBehaviour{
                 isWindSoundPlaying = true;
             }
         }
+    }
+
+    private void StopGlide(){
+        
     }
 
     private void TriggerShock(){
