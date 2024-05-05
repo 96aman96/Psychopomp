@@ -144,6 +144,7 @@ public class KinematicCharacterController : MonoBehaviour{
         // Check for gliding
         if(!isGrounded && !isGliding && Input.GetButtonDown("Glide") && glideTimer < glideTimeLimit){
             isGliding = true;
+            vfx.PlayFeather();
             vfx.StartGlide();
             FreezeFrame();
         } else if(!Input.GetButton("Glide")){
