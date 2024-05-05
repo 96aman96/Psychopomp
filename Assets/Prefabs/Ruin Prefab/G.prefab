@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7173562121979316754}
   - component: {fileID: 5256821581788996778}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pillar (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -63,7 +63,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5566130975555690182}
   - component: {fileID: 3850064771784996040}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pillar (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116,7 +116,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2936869055191402559}
   - component: {fileID: 5386894577833595558}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pillar (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -169,7 +169,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7764485924708705986}
   - component: {fileID: 472396671761029009}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: floor (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -222,7 +222,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6957553564247531579}
   - component: {fileID: 9200964283260409506}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: floor (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -275,7 +275,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7281393073891481303}
   - component: {fileID: 3017773522268431242}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: floor (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -328,7 +328,7 @@ GameObject:
   m_Component:
   - component: {fileID: 878308926437331027}
   - component: {fileID: 170075987958993061}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pillar (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -381,7 +381,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3463147787491641988}
   - component: {fileID: 7151291146817510164}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -434,7 +434,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4848732467529014275}
   - component: {fileID: 4408121165735696465}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: floor (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -487,7 +487,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2443482353263057258}
   - component: {fileID: 5902337965445376897}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -539,7 +539,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4973035276774409440}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -584,7 +584,7 @@ GameObject:
   m_Component:
   - component: {fileID: 911744935704288056}
   - component: {fileID: 7461625873108721082}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pillar (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -636,13 +636,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6504648205635252548}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6504648205635252548
 Transform:
   m_ObjectHideFlags: 0
@@ -688,7 +688,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8942629112081697410}
   - component: {fileID: 8963942312539679671}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall2 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -741,7 +741,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3565410332704193814}
   - component: {fileID: 6730396898264273135}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: floor (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -794,7 +794,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1378361740532914835}
   - component: {fileID: 4703034944395886996}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pillar (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -847,7 +847,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3435341156490742851}
   - component: {fileID: 1143544216992235930}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pillar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -900,7 +900,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1672144807461967209}
   - component: {fileID: 2244072373791259560}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: floor (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -953,7 +953,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5874046711588219684}
   - component: {fileID: 5098228029578071738}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: floor (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1006,7 +1006,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1006071539284533488}
   - component: {fileID: 1050129631401221717}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: floor (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1059,7 +1059,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5250287284763260160}
   - component: {fileID: 415463363276211695}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: floor (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1112,7 +1112,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9166364874244492794}
   - component: {fileID: 4970238253499111172}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pillar (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1165,7 +1165,7 @@ GameObject:
   m_Component:
   - component: {fileID: 362885733242574664}
   - component: {fileID: 1487242988798784005}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pillar (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1218,7 +1218,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3672692422899057442}
   - component: {fileID: 6083629783136675967}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: floor (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1271,7 +1271,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7655787935519289216}
   - component: {fileID: 1139391319104645477}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pillar (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1324,7 +1324,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1734766640587325833}
   - component: {fileID: 8852982153478750713}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1377,7 +1377,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1378847804541490128}
   - component: {fileID: 5854536178612608264}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall2 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1430,7 +1430,7 @@ GameObject:
   m_Component:
   - component: {fileID: 718776084303469732}
   - component: {fileID: 4507938963084880358}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pillar (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1483,7 +1483,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1439902050447175307}
   - component: {fileID: 2556793746914207119}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: floor (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1536,7 +1536,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7319186741718792746}
   - component: {fileID: 2488361180431496528}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: floor (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1589,7 +1589,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6930650351206891952}
   - component: {fileID: 3049043739910982410}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pillar (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1642,7 +1642,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4106887853631139444}
   - component: {fileID: 5381026405743342550}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: floor (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1695,7 +1695,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2611273707883284438}
   - component: {fileID: 5276801375614468014}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1748,7 +1748,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9100148859719679649}
   - component: {fileID: 5791917222393524320}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pillar (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1801,7 +1801,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2251100125962054846}
   - component: {fileID: 719486798361805425}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: floor (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1892,9 +1892,77 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7350777715158576987, guid: 587aeffe829364a47951f7e565b1b247, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -6949091856063537776, guid: 587aeffe829364a47951f7e565b1b247, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -3653983715662582221, guid: 587aeffe829364a47951f7e565b1b247, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -3653983715662582221, guid: 587aeffe829364a47951f7e565b1b247, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -2904617447678645746, guid: 587aeffe829364a47951f7e565b1b247, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -2503731505730741859, guid: 587aeffe829364a47951f7e565b1b247, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -1558709471088140896, guid: 587aeffe829364a47951f7e565b1b247, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -1550086991348647483, guid: 587aeffe829364a47951f7e565b1b247, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -364903811296175642, guid: 587aeffe829364a47951f7e565b1b247, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 592835857487848533, guid: 587aeffe829364a47951f7e565b1b247, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 587aeffe829364a47951f7e565b1b247, type: 3}
       propertyPath: m_Name
       value: 007f
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 587aeffe829364a47951f7e565b1b247, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2847060162288057115, guid: 587aeffe829364a47951f7e565b1b247, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4579585666459208323, guid: 587aeffe829364a47951f7e565b1b247, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4703821362884317912, guid: 587aeffe829364a47951f7e565b1b247, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7034455982580203672, guid: 587aeffe829364a47951f7e565b1b247, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7034455982580203672, guid: 587aeffe829364a47951f7e565b1b247, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7978513056438770174, guid: 587aeffe829364a47951f7e565b1b247, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1973,6 +2041,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 0d192433d33e6224595c7ee18e10b470, type: 3}
       propertyPath: m_Name
       value: G
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0d192433d33e6224595c7ee18e10b470, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
