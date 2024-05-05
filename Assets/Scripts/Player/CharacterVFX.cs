@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.VFX;
 
 public class CharacterVFX : MonoBehaviour{
     public Animator animator;
@@ -115,13 +116,12 @@ public class CharacterVFX : MonoBehaviour{
 
     private void TriggerParticles(){
         if(onWater && isGrounded){
-            TriggerRipple();
             PlaySplashSound();
+            TriggerRipple();
         } else if (isGrounded){
             TriggerDust();
-        }
-        else
-        {
+            StopSplashSound();
+        } else {
             StopSplashSound();
         }
         

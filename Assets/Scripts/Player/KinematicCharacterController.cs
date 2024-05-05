@@ -19,6 +19,7 @@ public class KinematicCharacterController : MonoBehaviour{
     private Vector2 input = Vector2.zero;
     private Vector3 currentNormal = Vector3.zero;
     private string currentGroundTag = null; 
+    private Vector3 forwardVector = Vector3.zero;
 
     // ===== MOVEMENT ACCELERATION =====
     [Header("Movement Acceleration")]
@@ -30,6 +31,7 @@ public class KinematicCharacterController : MonoBehaviour{
     public float deceleration = 40f;
     public float passiveDeceleration = 10f;
     public float rampMagnitudeMultiplier = 1.05f;
+    private bool isUpdatingTier = false;
 
     // ===== MOVEMENT VELOCITY VARIABLES =====
     [Header("Current Velocity")]
@@ -97,8 +99,8 @@ public class KinematicCharacterController : MonoBehaviour{
         if(isGliding) velMagnitude = CalculateGlidingAcceleration(velMagnitude);
         UpdateCurrentTier(effectiveVelMagnitude, velMagnitude);
         effectiveVelMagnitude = CalculateEffectiveVelocityMagnitude(velMagnitude, currentTier);
-        Vector3 forwardVector = GetForwardVector();
-        Vector3 newVelocity = forwardVector * GetForwardVectorMultiplier(forwardVector) * effectiveVelMagnitude;
+        forwardVector = GetForwardVector();
+        Vector3 newVelocity = effectiveVelMagnitude * GetForwardVectorMultiplier(forwardVector) * forwardVector;
 
         // Check if grounded, and keeping track of coyote time timer to allow for delayed jumps
         isGrounded = CheckGrounded();
@@ -149,6 +151,7 @@ public class KinematicCharacterController : MonoBehaviour{
         if(isGliding){
             glideTimer += Time.deltaTime;
             if(glideTimer > glideTimeLimit) isGliding = false;
+            if(velMagnitude < 15) isGliding = false;
         }
 
         // Updating and clamping velocity
@@ -210,15 +213,16 @@ public class KinematicCharacterController : MonoBehaviour{
         int tier = Mathf.Max(a, b);
         tier = Mathf.Clamp(tier,0,speedTiers.Length-1);
 
-        if(currentTier != tier){
+        if(currentTier != tier && !isUpdatingTier){
+            isUpdatingTier = true;
             StartCoroutine(TriggerTierUpdate(tier));
         }
-
-        currentTier = tier;
     }
 
     private IEnumerator TriggerTierUpdate(int _tier){
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.5f);
+        isUpdatingTier = false;
+        currentTier = _tier;
         vfx.UpdateTier(_tier);
         cameraController.UpdateTier(_tier);
 
@@ -335,12 +339,7 @@ public class KinematicCharacterController : MonoBehaviour{
 
     private Vector3 SnapToGround(Vector3 _mov){
         Vector3 mov = _mov;
-
-        // Vector3 antiNormal = Vector3.Project(mov, currentNormal);
-        // mov -= antiNormal;
-
         mov.y = Mathf.Max(0, mov.y);
-
         return mov;
     }
 
@@ -373,6 +372,10 @@ public class KinematicCharacterController : MonoBehaviour{
     public bool GetIsOnWater(){
         if(currentGroundTag == "Water") return true;
         return false;
+    }
+
+    public Vector3 GetCurrentForwardVector(){
+        return forwardVector;
     }
 
     public void Pause(){

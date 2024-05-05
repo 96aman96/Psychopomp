@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
+using Unity.VisualScripting;
+using Unity.Mathematics;
 
 public class CameraController : MonoBehaviour{
     // ======= CAMERA REFS ======
@@ -18,6 +20,8 @@ public class CameraController : MonoBehaviour{
     // ======= CAMERA VARIABLES ======
     [Header("Camera Variables")]
     public float switchToNearTimer = 1f;
+    public AnimationCurve glideNoiseFreqCurve;
+    public AnimationCurve glideNoiseAmpCurve;
 
     // ======= KCC VARIABLES ======
     [Header("Components")]
@@ -26,6 +30,7 @@ public class CameraController : MonoBehaviour{
     private bool isGrounded = false;
     private float speed = 0;
     private int currenTier = 0;
+    private Vector3 fwdVector = Vector3.zero;
 
     void Start(){
         current = initialCamera;
@@ -34,6 +39,9 @@ public class CameraController : MonoBehaviour{
 
     void LateUpdate(){
         UpdateVariables();
+        if(isGliding){
+            UpdateGlidingCamera();
+        }
     }
 
     public void UpdateTier(int _tier){
@@ -63,6 +71,7 @@ public class CameraController : MonoBehaviour{
     private void UpdateVariables(){
         isGrounded = kcc.GetIsGrounded();
         speed = kcc.GetSpeed();
+        fwdVector = kcc.GetCurrentForwardVector();
 
         bool newGlide = kcc.GetIsGliding();
         if(newGlide != isGliding){
@@ -85,5 +94,24 @@ public class CameraController : MonoBehaviour{
 
     private void StopGlide(){
         SwitchToCamera(nearCamera);
+    }
+
+    private void UpdateGlidingCamera(){
+        float yaxis = fwdVector.y;
+        
+        float freq = 0;
+        float amp = 0;
+        if(yaxis < 0){
+            freq = glideNoiseFreqCurve.Evaluate(Mathf.Abs(yaxis));
+            amp = glideNoiseAmpCurve.Evaluate(Mathf.Abs(yaxis));
+        }
+
+        UpdateCameraNoise(glideCamera, freq, amp);
+    }
+
+    private void UpdateCameraNoise(CinemachineVirtualCamera _cam, float _freq, float _amp){
+        _cam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_FrequencyGain = _freq;
+        _cam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = _amp;
+
     }
 }
