@@ -138,10 +138,6 @@ public class CharacterVFX : MonoBehaviour{
         if(shockElapsed > shockDuration)isShocking = false;
     }
 
-    //Sound Real-Time Parameter Setup
-    //change the value to adjust pitch, HighPass, and LowPass
-    //(0, 100), 0 is default value
-    //you can dynamically change the value, maybe for different tier of speed you have different parameters
 
     //I suggest when player glides up, LowPass++; when player dives, low pass --, high pass ++, pitch ++
     float CalculatePitch()
@@ -175,6 +171,11 @@ public class CharacterVFX : MonoBehaviour{
             wwiseSoundManager.StopSplash(); 
             isSplashPlaying = false;
         }
+    }
+
+    public void PlayFeather()
+    {
+        wwiseSoundManager.PlayRandomFeather();
     }
 
 
