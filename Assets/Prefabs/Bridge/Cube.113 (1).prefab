@@ -103,7 +103,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -5061437265948370845, guid: 3a7f8da66bcc68446806aa12016cd90c, type: 3}
 --- !u!1 &4929402091757246736
@@ -213,7 +213,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -8055043631442472731, guid: 3a7f8da66bcc68446806aa12016cd90c, type: 3}
 --- !u!1 &6607046719188757534
@@ -319,7 +319,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -5061437265948370845, guid: 3a7f8da66bcc68446806aa12016cd90c, type: 3}
 --- !u!1001 &2216849533319263855
@@ -340,19 +340,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 659979391576763268, guid: e184e1a52526af2458f89bdb69293843, type: 3}
       propertyPath: m_LocalScale.z
-      value: 2.0993347
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 659979391576763268, guid: e184e1a52526af2458f89bdb69293843, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.032222986
+      value: 0.0322
       objectReference: {fileID: 0}
     - target: {fileID: 659979391576763268, guid: e184e1a52526af2458f89bdb69293843, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.1414062
+      value: -0.1414
       objectReference: {fileID: 0}
     - target: {fileID: 659979391576763268, guid: e184e1a52526af2458f89bdb69293843, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.014600282
+      value: -0.0243
       objectReference: {fileID: 0}
     - target: {fileID: 659979391576763268, guid: e184e1a52526af2458f89bdb69293843, type: 3}
       propertyPath: m_LocalRotation.w
@@ -414,19 +414,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 659979391576763268, guid: e184e1a52526af2458f89bdb69293843, type: 3}
       propertyPath: m_LocalScale.z
-      value: 2.099335
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 659979391576763268, guid: e184e1a52526af2458f89bdb69293843, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.019499261
+      value: 0.0195
       objectReference: {fileID: 0}
     - target: {fileID: 659979391576763268, guid: e184e1a52526af2458f89bdb69293843, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.037093457
+      value: 0.0371
       objectReference: {fileID: 0}
     - target: {fileID: 659979391576763268, guid: e184e1a52526af2458f89bdb69293843, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.014599949
+      value: -0.0243
       objectReference: {fileID: 0}
     - target: {fileID: 659979391576763268, guid: e184e1a52526af2458f89bdb69293843, type: 3}
       propertyPath: m_LocalRotation.w
@@ -478,6 +478,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7526347840846912278}
     m_Modifications:
+    - target: {fileID: -7989616378084679176, guid: a2ca25144939e6d43b0c5b5398bbd96f, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3864726760402826620, guid: a2ca25144939e6d43b0c5b5398bbd96f, type: 3}
       propertyPath: m_Name
       value: Cube.123 (1)
@@ -535,6 +539,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7526347840846912278}
     m_Modifications:
+    - target: {fileID: -7989616378084679176, guid: a2ca25144939e6d43b0c5b5398bbd96f, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3864726760402826620, guid: a2ca25144939e6d43b0c5b5398bbd96f, type: 3}
       propertyPath: m_Name
       value: Cube.123
