@@ -487,6 +487,7 @@ namespace Dreamteck.Splines
                 MeshUtility.CalculateTangents(_tsMesh);
             }
 
+            _meshIndexFormat = UnityEngine.Rendering.IndexFormat.UInt32;
             if (_meshIndexFormat == UnityEngine.Rendering.IndexFormat.UInt16 && _tsMesh.vertexCount > UNITY_16_VERTEX_LIMIT)
             {
                 Debug.LogError("WARNING: The generated mesh for " + name + " exceeds the maximum vertex count for standard meshes in Unity (" + UNITY_16_VERTEX_LIMIT + "). To create bigger meshes, set the Index Format inside the Vertices foldout to 32.");
