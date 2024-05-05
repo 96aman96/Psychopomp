@@ -1,13 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.VFX;
 
 public class CharacterVFX : MonoBehaviour{
     public Animator animator;
     public Transform model;
-    private GameManager gameManager;
-    private KinematicCharacterController kcc;
+    public KinematicCharacterController kcc;
     
     private WwiseSoundManager wwiseSoundManager;
 
@@ -18,37 +18,11 @@ public class CharacterVFX : MonoBehaviour{
     private float previousSpeed = 0;
     private bool isGliding = false;
     private Vector2 input = Vector2.zero;
-    private int currentTier = 0;
+    private int tier = 0;
 
-    // WATER RIPPLE AND SPLATTER
-    [Header("Water Ripple and Splatter")]
-    public ParticleSystem ripple;
-    public ParticleSystem splatter;
-    public float baseRippleInterval = 0.5f;
-    public float rippleIntervalMultiplier = 1f;
-    public float currentRipple = 0;
-    public AnimationCurve rippleBurstPerSpeed;
-    public AnimationCurve rippleVelocityPerSpeed;
-    
-    // WATER FOAM
-    [Header("Water Foam")]
-    public VisualEffect foam;
-    private bool isFoaming = false;
-
-    // GROUND DUST
-    [Header("Ground Dust")]
-    public ParticleSystem dust;
-    public float baseDustInterval = 0.5f;
-    public float dustIntervalMultiplier = 1f;
-    public float currentDust = 0;
-
-    // GLIDE FEATHER
-    [Header("Gliding")]
-    public ParticleSystem feathers;
-
-    // GLIDE TRAIL
-    public TrailRenderer glideTrailR;
-    public TrailRenderer glideTrailL;
+    // PARTICLE SYSTEMS
+    [Header("Particle Systems")]
+    public ParticleController[] particleSystems;
 
     // SHOCKWAVE SOUND BARRIER THING
     [Header("Shockwave")]
@@ -74,20 +48,20 @@ public class CharacterVFX : MonoBehaviour{
 
     private void Start(){
         kcc = GetComponent<KinematicCharacterController>();
-        gameManager = GameObject.FindWithTag("Game Manager").GetComponent<GameManager>();
         wwiseSoundManager = GameObject.FindObjectOfType<WwiseSoundManager>();
+        UpdateTier(0);
     }
 
     private void LateUpdate(){
         UpdateVariables();
         SetAnimatorState();
         UpdateModelRotation();
-        TriggerParticles();
         UpdateShock();
     }
 
     private void UpdateVariables(){
         previousSpeed = speed;
+
         isGrounded = kcc.GetIsGrounded();
         speed = kcc.GetSpeed();
         isGliding = kcc.GetIsGliding();
@@ -114,82 +88,15 @@ public class CharacterVFX : MonoBehaviour{
     }
 
     public void UpdateTier(int _newTier){
-        if(currentTier < _newTier) TriggerShock();
+        if(tier<_newTier && _newTier>1) TriggerShock();
         
-        currentTier = _newTier;
-    }
-
-    private void TriggerParticles(){
-        if(onWater && isGrounded){
-            PlaySplashSound();
-            TriggerRipple();
-            StartFoam();
-        } else if (isGrounded){
-            TriggerDust();
-            StopSplashSound();
-            StopFoam();
-        } else {
-            StopSplashSound();
-            StopFoam();
-        }
-        
-        if (isGliding){
-            TriggerGlideTrail();
-        } else {
-            StopGlideTrail();
-            if(wwiseSoundManager)
-            {
-                wwiseSoundManager.MusicStopGliding();
-                if (isWindSoundPlaying) 
-                {
-                    wwiseSoundManager.StopWindSound();
-                    isWindSoundPlaying = false;
-                }
-            }
-        }
-    }
-
-    private void TriggerRipple(){
-        var em = splatter.emission;
-        em.SetBursts(new ParticleSystem.Burst[]{
-            new ParticleSystem.Burst(0, rippleBurstPerSpeed.Evaluate(speed/maxSpeed))
-        });
-        var main = splatter.main;
-        main.startSpeed = rippleVelocityPerSpeed.Evaluate(speed/maxSpeed);
-
-        float rippleInterval = baseRippleInterval - rippleIntervalMultiplier * speed;
-        currentRipple += Time.deltaTime;
-        if(currentRipple>rippleInterval){
-            currentRipple = 0;
-            ripple.Play();
-        }
-    }
-
-    private void StartFoam(){
-        if(!isFoaming){
-            isFoaming = true;
-            foam.enabled = true;
-            foam.SendEvent("Start");
-        }
-    }
-
-    private void StopFoam(){
-        isFoaming = false;
-        foam.enabled = false;
-        foam.SendEvent("Stop");
-    }
-
-    private void TriggerDust(){
-        float dustInterval = baseDustInterval - dustIntervalMultiplier * speed;
-        currentDust += Time.deltaTime;
-        if(currentDust>dustInterval){
-            currentDust=0;
-            dust.Play();
+        tier = _newTier;
+        foreach(ParticleController pc in particleSystems){
+            pc.UpdateTier(tier);
         }
     }
 
     public void StartGlide(){
-        TriggerFeathers();
         if(wwiseSoundManager) 
         {
             wwiseSoundManager.MusicStartGliding();
@@ -201,21 +108,6 @@ public class CharacterVFX : MonoBehaviour{
                 isWindSoundPlaying = true;
             }
         }
-    }
-
-    private void TriggerFeathers(){
-        feathers.Play();
-        if(wwiseSoundManager) wwiseSoundManager.PlayRandomFeather();
-    }
-
-    private void TriggerGlideTrail(){
-        glideTrailR.emitting = true;
-        glideTrailL.emitting = true;
-    }
-
-    private void StopGlideTrail(){
-        glideTrailR.emitting = false;
-        glideTrailL.emitting = false;
     }
 
     private void TriggerShock(){

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6943539257842260367}
   - component: {fileID: 749952365611188389}
   m_Layer: 0
-  m_Name: Foam
+  m_Name: Foam_t1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -42,8 +42,8 @@ VisualEffect:
   m_GameObject: {fileID: 16946682885964849}
   m_Enabled: 1
   m_Asset: {fileID: 8926484042661614526, guid: e25925b7d9e683d409b316b790c8d2f7, type: 3}
-  m_InitialEventName: OnPlay
-  m_InitialEventNameOverriden: 0
+  m_InitialEventName: Play
+  m_InitialEventNameOverriden: 1
   m_StartSeed: 0
   m_ResetSeedOnPlay: 1
   m_AllowInstancing: 1
@@ -123,7 +123,7 @@ GameObject:
   - component: {fileID: 7293055692389217453}
   - component: {fileID: 6233436937932543669}
   m_Layer: 0
-  m_Name: GlideFeathers
+  m_Name: GlideFeathers_t1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4963,7 +4963,7 @@ GameObject:
   - component: {fileID: 7986557235454656074}
   - component: {fileID: 4503322103022670273}
   m_Layer: 0
-  m_Name: Ripple
+  m_Name: Ripple_t1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9849,6 +9849,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5765788298327418803}
+  - component: {fileID: 3026935409007391396}
   m_Layer: 0
   m_Name: Tier 1
   m_TagString: Untagged
@@ -9878,6 +9879,32 @@ Transform:
   - {fileID: 3664521656813180971}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3026935409007391396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3774484292872728570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44fe1620155a102418323b5be9001bf8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  kcc: {fileID: 0}
+  thisTier: 1
+  ripple: {fileID: 7986557235454656074}
+  splatter: {fileID: 9067513548464773890}
+  rippleInterval: 0.01
+  foam: {fileID: 6943539257842260367}
+  dust: {fileID: 5537130088439735251}
+  baseDustInterval: 1
+  dustIntervalMultiplier: 0.009
+  currentDust: 0
+  feathers: {fileID: 7293055692389217453}
+  glideTrailR: {fileID: 4271358667298815407}
+  glideTrailL: {fileID: 4058221832989879275}
+  wind: {fileID: 5880279769996375097}
 --- !u!1 &4044220009965759596
 GameObject:
   m_ObjectHideFlags: 0
@@ -9890,7 +9917,7 @@ GameObject:
   - component: {fileID: 5537130088439735251}
   - component: {fileID: 6775966187270039701}
   m_Layer: 0
-  m_Name: Dust
+  m_Name: Dust_t1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14778,7 +14805,7 @@ GameObject:
   - component: {fileID: 9067513548464773890}
   - component: {fileID: 8751664369553859397}
   m_Layer: 0
-  m_Name: Splatter
+  m_Name: Splatter_t1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19666,7 +19693,7 @@ GameObject:
   - component: {fileID: 5880279769996375097}
   - component: {fileID: 9130601077881454243}
   m_Layer: 0
-  m_Name: Wind
+  m_Name: Wind_t1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19704,7 +19731,7 @@ ParticleSystem:
   emitterVelocityMode: 1
   looping: 1
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   startDelay:
@@ -23732,7 +23759,7 @@ ParticleSystem:
         m_Curve:
         - serializedVersion: 3
           time: 0
-          value: 0.78492737
+          value: 0.5959511
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -23740,8 +23767,8 @@ ParticleSystem:
           inWeight: 0.33333334
           outWeight: 0.33333334
         - serializedVersion: 3
-          time: 0.4666655
-          value: 1
+          time: 0.46291184
+          value: 0.81889915
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -23792,8 +23819,8 @@ ParticleSystem:
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 0}
-        key1: {r: 1, g: 1, b: 1, a: 0.5686275}
-        key2: {r: 0, g: 0, b: 0, a: 0.5686275}
+        key1: {r: 1, g: 1, b: 1, a: 0.32941177}
+        key2: {r: 0, g: 0, b: 0, a: 0.29411766}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
         key5: {r: 0, g: 0, b: 0, a: 0}
@@ -24505,7 +24532,7 @@ GameObject:
   - component: {fileID: 3991082322911646411}
   - component: {fileID: 4058221832989879275}
   m_Layer: 0
-  m_Name: GlideTrail-L
+  m_Name: GlideTrail-L_t1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24677,7 +24704,7 @@ GameObject:
   - component: {fileID: 2219534259127874420}
   - component: {fileID: 4271358667298815407}
   m_Layer: 0
-  m_Name: GlideTrail-R
+  m_Name: GlideTrail-R_t1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

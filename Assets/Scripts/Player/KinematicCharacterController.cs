@@ -193,8 +193,9 @@ public class KinematicCharacterController : MonoBehaviour{
     }
     
     private float CalculateEffectiveVelocityMagnitude(float _vel, int _tier){
+        // if(isGliding) return _vel;  
         float maxVel = speedTiers[_tier];
-
+ 
         // return _vel;
         return Mathf.Min(maxVel, _vel);
     }
@@ -220,7 +221,10 @@ public class KinematicCharacterController : MonoBehaviour{
     }
 
     private IEnumerator TriggerTierUpdate(int _tier){
-        yield return new WaitForSeconds(0.5f);
+        if(_tier > 1){
+            yield return new WaitForSeconds(0.25f);
+        } else yield return new WaitForSeconds(0);
+        
         isUpdatingTier = false;
         currentTier = _tier;
         vfx.UpdateTier(_tier);
@@ -354,6 +358,10 @@ public class KinematicCharacterController : MonoBehaviour{
 
     public Vector2 GetInput(){
         return input;
+    }
+
+    public int GetTier(){
+        return currentTier;
     }
     
     public bool GetIsGrounded(){

@@ -10,9 +10,9 @@ public class CameraController : MonoBehaviour{
     [Header("Cameras")]
     public CinemachineVirtualCamera[] cameras;
     
-    public CinemachineVirtualCamera nearCamera;
-    public CinemachineVirtualCamera farCamera;
-    public CinemachineVirtualCamera glideCamera;
+    public CinemachineVirtualCamera[] nearCameras;
+    public CinemachineVirtualCamera[] farCameras;
+    public CinemachineVirtualCamera[] glideCameras;
 
     public CinemachineVirtualCamera initialCamera;
     private CinemachineVirtualCamera current;
@@ -29,7 +29,7 @@ public class CameraController : MonoBehaviour{
     private bool isGliding = false;
     private bool isGrounded = false;
     private float speed = 0;
-    private int currenTier = 0;
+    private int currentTier = 0;
     private Vector3 fwdVector = Vector3.zero;
 
     void Start(){
@@ -45,12 +45,12 @@ public class CameraController : MonoBehaviour{
     }
 
     public void UpdateTier(int _tier){
-        if(currenTier < _tier){
-            SwitchToCamera(farCamera);
+        if(currentTier < _tier && _tier>1){
+            SwitchToCamera(farCameras[_tier]);
             StartCoroutine(TimedSwitchToNear());
         }
 
-        currenTier = _tier;
+        currentTier = _tier;
     }
 
     public void SwitchToCamera(CinemachineVirtualCamera cam){
@@ -85,15 +85,15 @@ public class CameraController : MonoBehaviour{
 
     private IEnumerator TimedSwitchToNear(){
         yield return new WaitForSeconds(switchToNearTimer);
-        SwitchToCamera(nearCamera);
+        SwitchToCamera(nearCameras[currentTier]);
     }
 
     private void StartGlide(){
-        SwitchToCamera(glideCamera);
+        SwitchToCamera(glideCameras[currentTier]);
     }
 
     private void StopGlide(){
-        SwitchToCamera(nearCamera);
+        SwitchToCamera(nearCameras[currentTier]);
     }
 
     private void UpdateGlidingCamera(){
@@ -106,7 +106,7 @@ public class CameraController : MonoBehaviour{
             amp = glideNoiseAmpCurve.Evaluate(Mathf.Abs(yaxis));
         }
 
-        UpdateCameraNoise(glideCamera, freq, amp);
+        UpdateCameraNoise(glideCameras[currentTier], freq, amp);
     }
 
     private void UpdateCameraNoise(CinemachineVirtualCamera _cam, float _freq, float _amp){
