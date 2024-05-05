@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 2145763234292093083}
   - component: {fileID: 8102575789270038929}
   - component: {fileID: 7078651876253953716}
-  - component: {fileID: 7879508028158446726}
+  - component: {fileID: 3229748802506807771}
+  - component: {fileID: 5842807389437975937}
   m_Layer: 6
   m_Name: Cube.082 1
   m_TagString: Untagged
@@ -29,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0.76338595, y: 0.09147535, z: 0.076078005, w: 0.6348908}
   m_LocalPosition: {x: -2379.6775, y: 200.7109, z: 6582.2944}
-  m_LocalScale: {x: 1000, y: 1000, z: 2099.335}
+  m_LocalScale: {x: 1000, y: 1000, z: 1000}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -84,8 +85,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &7879508028158446726
-MeshCollider:
+--- !u!65 &3229748802506807771
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -102,7 +103,27 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -8966066520460312795, guid: 3a7f8da66bcc68446806aa12016cd90c, type: 3}
+  serializedVersion: 3
+  m_Size: {x: 0.02083353, y: 0.020000003, z: 0.10085064}
+  m_Center: {x: 0.00004528598, y: 0.00000004475353, z: -0.04291391}
+--- !u!65 &5842807389437975937
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6853069467193642960}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.060000025, y: 0.020000003, z: 0.010078285}
+  m_Center: {x: 1.5664456e-11, y: 0.000000004788351, z: 0.0024722796}
