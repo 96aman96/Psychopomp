@@ -306,7 +306,7 @@
 																		<MusicClip Name="Theme" ID="{87925EE6-E146-4D32-8418-0CB9F3DCDC35}">
 																			<PropertyList>
 																				<Property Name="EndTrimOffset" Type="Real64" Value="189767.46031746"/>
-																				<Property Name="FadeInMode" Type="int16" Value="0"/>
+																				<Property Name="FadeInDuration" Type="Real64" Value="1264.13471944888"/>
 																				<Property Name="FadeOutMode" Type="int16" Value="0"/>
 																			</PropertyList>
 																			<AudioSourceRef Name="Theme" ID="{34AAC75D-32A8-4B2B-A56B-F4A4562CE0E4}"/>
