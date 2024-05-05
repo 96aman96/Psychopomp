@@ -110,7 +110,10 @@ public class KinematicCharacterController : MonoBehaviour{
             currentJumpCount = 0;
             currentCoyote = coyoteTime;
             glideTimer = 0;
-        } else currentCoyote -= Time.deltaTime;
+            vfx.PlaySplashSound();
+        } else {currentCoyote -= Time.deltaTime;
+        vfx.StopSplashSound();
+        }
 
         // Jumping from air
         if(isJumping && currentJumpCount < maxJumpCount && Input.GetButtonDown("Jump")){
@@ -145,6 +148,7 @@ public class KinematicCharacterController : MonoBehaviour{
             FreezeFrame();
         } else if(!Input.GetButton("Glide")){
             isGliding = false;
+            vfx.StopGlide();
         }
 
         // Limit gliding by glide time limit

@@ -36,10 +36,6 @@ public class WwiseSoundManager : MonoBehaviour
 
     public AK.Wwise.Event buildingSFX;
     
-
-    private bool isFirstTimeGliding = true;
-    
-    
     public AK.Wwise.Event ui_start;
     public AK.Wwise.Event ui_quit;
 

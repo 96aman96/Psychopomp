@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.VFX;
@@ -112,8 +113,8 @@ public class CharacterVFX : MonoBehaviour{
         }
     }
 
-    private void StopGlide(){
-        
+    public void StopGlide(){
+        wwiseSoundManager.MusicStopGliding();
     }
 
     private void TriggerShock(){
@@ -158,7 +159,7 @@ public class CharacterVFX : MonoBehaviour{
         return 20f; 
     }
 
-    private void PlaySplashSound()
+    public void PlaySplashSound()
     {
         if (onWater && !isSplashPlaying && wwiseSoundManager != null)
         {
@@ -167,12 +168,15 @@ public class CharacterVFX : MonoBehaviour{
         }
     }
 
-    private void StopSplashSound(){
-    if (!onWater && isSplashPlaying && wwiseSoundManager != null)
+    public void StopSplashSound()
     {
-        wwiseSoundManager.StopSplash(); 
-        isSplashPlaying = false;
+        if (!onWater && isSplashPlaying && wwiseSoundManager != null)
+        {
+            wwiseSoundManager.StopSplash(); 
+            isSplashPlaying = false;
+        }
     }
 
+
 }
-}
+

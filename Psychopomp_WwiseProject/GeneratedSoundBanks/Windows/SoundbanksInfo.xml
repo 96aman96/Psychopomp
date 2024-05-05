@@ -27,7 +27,7 @@
 				<GameParameter Id="2453598386" Name="HighPass"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="3991942870" Type="User" Language="English(US)" Hash="{5685C5B2-EA93-D115-CD88-79B16C281058}">
+		<SoundBank Id="3991942870" Type="User" Language="English(US)" Hash="{7260F4C4-5FAA-C569-CE12-16C6564D5C0E}">
 			<ShortName>Music</ShortName>
 			<Path>English(US)/Music.bnk</Path>
 			<Media>
@@ -228,5 +228,5 @@
 			</GameParameters>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{A186B455-8FD9-CE8D-6E6A-4DF82CE53E28}</FileHash>
+	<FileHash>{7EE1527B-EC84-5AAF-8E53-7F730B135525}</FileHash>
 </SoundBanksInfo>
