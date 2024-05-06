@@ -2115,6 +2115,7 @@ GameObject:
   - component: {fileID: 1168981380260435450}
   - component: {fileID: 2234849154249492069}
   - component: {fileID: 6128337511056159457}
+  - component: {fileID: 327685137488883528}
   m_Layer: 2
   m_Name: Cube
   m_TagString: Delivery Booster
@@ -2208,6 +2209,33 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 38.729427, y: 16.75, z: 214.88976}
   m_Center: {x: -2.0352461, y: 6.8, z: -73.11818}
+--- !u!54 &327685137488883528
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2132667927407644613}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &2566122498414469660
 GameObject:
   m_ObjectHideFlags: 0
@@ -4426,6 +4454,7 @@ GameObject:
   - component: {fileID: 6280586975149696511}
   - component: {fileID: 5391467872563425246}
   - component: {fileID: 2063065033380930817}
+  - component: {fileID: 1361667211100573651}
   m_Layer: 2
   m_Name: Cube
   m_TagString: Delivery Booster
@@ -4519,6 +4548,33 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 38.729427, y: 16.75, z: 214.88976}
   m_Center: {x: -2.0352461, y: 6.8, z: -73.11818}
+--- !u!54 &1361667211100573651
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9037076443013287204}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &955877175232163261
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5309,6 +5365,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3fe35536e830f5049961ee3acd26ce32, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7830976312080737582}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3fe35536e830f5049961ee3acd26ce32, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2797354819091566073}
   m_SourcePrefab: {fileID: 100100000, guid: 3fe35536e830f5049961ee3acd26ce32, type: 3}
 --- !u!4 &3765444053634090845 stripped
 Transform:
@@ -5539,8 +5598,113 @@ MonoBehaviour:
   MultiPositionType: 1
   multiPositionTypeLabel: 0
   attenuationSphereColor: {r: 1, g: 0, b: 0, a: 0.1}
-  LargeModePositions: []
+  LargeModePositions:
+  - {fileID: 0}
+  - {fileID: 0}
   multiPositionArray: []
+--- !u!114 &2797354819091566073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4542544081137950183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78ba861a214074aa4bdac708dcacc9fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 2022364366
+  priority: 0
+  visibility: 1
+  clampPosition: 0
+  visibleDistanceOverride: 0
+  visibleMinDistanceOverride: 0
+  titleMinPOIDistanceOverride: 0
+  title: 
+  titleVisibility: 0
+  canBeVisited: 0
+  visitedDistanceOverride: 0
+  hideWhenVisited: 0
+  isVisited: 0
+  visitedText: 
+  playAudioClipWhenVisited: 1
+  visitedAudioClipOverride: {fileID: 0}
+  radius: 0
+  iconScale: 1
+  iconShowDistance: 1
+  iconNonVisited: {fileID: 21300000, guid: 5b0f0ccb429ed41d5a253ab03d44b15b, type: 3}
+  iconVisited: {fileID: 0}
+  tintColor: {r: 1, g: 1, b: 1, a: 1}
+  showOnScreenIndicator: 0
+  onScreenIndicatorScale: 1
+  onScreenIndicatorShowDistance: 1
+  onScreenIndicatorShowTitle: 1
+  positionOffset: {x: 0, y: 0, z: 0}
+  showOffScreenIndicator: 0
+  onScreenIndicatorNearFadeDistance: 0
+  onScreenIndicatorNearFadeMin: 0
+  beaconAudioClip: {fileID: 0}
+  dontDestroyOnLoad: 0
+  heartbeatEnabled: 0
+  heartbeatAudioClip: {fileID: 0}
+  heartbeatDistance: 20
+  heartbeatInterval:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.25
+      inSlope: 0
+      outSlope: 2.75
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 3
+      inSlope: 2.75
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  miniMapVisibility: 2
+  miniMapIconPrefabOverride: {fileID: 0}
+  miniMapVisibleDistanceOverride: 0
+  miniMapClampPosition: 0
+  miniMapShowRotation: 0
+  miniMapRotationAngleOffset: 0
+  miniMapIconScale: 1
+  miniMapShowCircle: 0
+  miniMapCircleColor: {r: 0, g: 1, b: 0, a: 0.5}
+  miniMapCircleInnerColor: {r: 0, g: 0, b: 1, a: 0}
+  miniMapCircleStartRadius: 0.25
+  miniMapCircleAnimationWhenAppears: 1
+  miniMapCircleAnimationRepetitions: 5
+  scene:
+    m_Handle: -611330
+  compassIconRT: {fileID: 0}
+  compassIconImage: {fileID: 0}
+  miniMapIconRT: {fileID: 0}
+  miniMapIconImageRT: {fileID: 0}
+  miniMapIconImage: {fileID: 0}
+  miniMapCircleImage: {fileID: 0}
+  miniMapCircleMaterial: {fileID: 0}
+  miniMapCircleRT: {fileID: 0}
+  indicatorRT: {fileID: 0}
+  indicatorImage: {fileID: 0}
+  indicatorCanvasGroup: {fileID: 0}
+  indicatorArrowRT: {fileID: 0}
+  indicatorDistanceText: {fileID: 0}
+  indicatorTitleText: {fileID: 0}
+  compassIconDistanceText: {fileID: 0}
+  compassIconDistanceTextRT: {fileID: 0}
+  miniMapCurrentIconScale: 0
 --- !u!1001 &4534499919213739024
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6331,6 +6495,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3fe35536e830f5049961ee3acd26ce32, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1844049496281128054}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3fe35536e830f5049961ee3acd26ce32, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8359338346927006724}
   m_SourcePrefab: {fileID: 100100000, guid: 3fe35536e830f5049961ee3acd26ce32, type: 3}
 --- !u!1 &6245811199524398209 stripped
 GameObject:
@@ -6558,6 +6725,109 @@ MonoBehaviour:
   attenuationSphereColor: {r: 1, g: 0, b: 0, a: 0.1}
   LargeModePositions: []
   multiPositionArray: []
+--- !u!114 &8359338346927006724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6245811199524398209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78ba861a214074aa4bdac708dcacc9fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 2022364366
+  priority: 0
+  visibility: 1
+  clampPosition: 0
+  visibleDistanceOverride: 0
+  visibleMinDistanceOverride: 0
+  titleMinPOIDistanceOverride: 0
+  title: 
+  titleVisibility: 0
+  canBeVisited: 0
+  visitedDistanceOverride: 0
+  hideWhenVisited: 0
+  isVisited: 0
+  visitedText: 
+  playAudioClipWhenVisited: 1
+  visitedAudioClipOverride: {fileID: 0}
+  radius: 0
+  iconScale: 1
+  iconShowDistance: 1
+  iconNonVisited: {fileID: 21300000, guid: 5b0f0ccb429ed41d5a253ab03d44b15b, type: 3}
+  iconVisited: {fileID: 0}
+  tintColor: {r: 1, g: 1, b: 1, a: 1}
+  showOnScreenIndicator: 0
+  onScreenIndicatorScale: 1
+  onScreenIndicatorShowDistance: 1
+  onScreenIndicatorShowTitle: 1
+  positionOffset: {x: 0, y: 0, z: 0}
+  showOffScreenIndicator: 0
+  onScreenIndicatorNearFadeDistance: 0
+  onScreenIndicatorNearFadeMin: 0
+  beaconAudioClip: {fileID: 0}
+  dontDestroyOnLoad: 0
+  heartbeatEnabled: 0
+  heartbeatAudioClip: {fileID: 0}
+  heartbeatDistance: 20
+  heartbeatInterval:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.25
+      inSlope: 0
+      outSlope: 2.75
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 3
+      inSlope: 2.75
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  miniMapVisibility: 2
+  miniMapIconPrefabOverride: {fileID: 0}
+  miniMapVisibleDistanceOverride: 0
+  miniMapClampPosition: 0
+  miniMapShowRotation: 0
+  miniMapRotationAngleOffset: 0
+  miniMapIconScale: 1
+  miniMapShowCircle: 0
+  miniMapCircleColor: {r: 0, g: 1, b: 0, a: 0.5}
+  miniMapCircleInnerColor: {r: 0, g: 0, b: 1, a: 0}
+  miniMapCircleStartRadius: 0.25
+  miniMapCircleAnimationWhenAppears: 1
+  miniMapCircleAnimationRepetitions: 5
+  scene:
+    m_Handle: -611330
+  compassIconRT: {fileID: 0}
+  compassIconImage: {fileID: 0}
+  miniMapIconRT: {fileID: 0}
+  miniMapIconImageRT: {fileID: 0}
+  miniMapIconImage: {fileID: 0}
+  miniMapCircleImage: {fileID: 0}
+  miniMapCircleMaterial: {fileID: 0}
+  miniMapCircleRT: {fileID: 0}
+  indicatorRT: {fileID: 0}
+  indicatorImage: {fileID: 0}
+  indicatorCanvasGroup: {fileID: 0}
+  indicatorArrowRT: {fileID: 0}
+  indicatorDistanceText: {fileID: 0}
+  indicatorTitleText: {fileID: 0}
+  compassIconDistanceText: {fileID: 0}
+  compassIconDistanceTextRT: {fileID: 0}
+  miniMapCurrentIconScale: 0
 --- !u!4 &6766170931866811963 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 3fe35536e830f5049961ee3acd26ce32, type: 3}
