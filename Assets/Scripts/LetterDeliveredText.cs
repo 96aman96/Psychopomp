@@ -8,6 +8,7 @@ public class LetterDeliveredText : MonoBehaviour
     private Animator anim;
     private void OnEnable()
     {
+        anim = GetComponent<Animator>();
         anim.Play("Hooray");
     }
 

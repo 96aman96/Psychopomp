@@ -78,7 +78,6 @@ public class DeliveryManager : MonoBehaviour
                 DeliveredLetters = false;
                 _letterReader.ClearAllLetters();
                 DeliveryText.gameObject.SetActive(true);
-                Debug.Log("HELOEDEDDgivbodvmrgmofdgmW");
             }
         }
     }
