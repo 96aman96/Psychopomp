@@ -142,7 +142,7 @@ public class KinematicCharacterController : MonoBehaviour{
         }
 
         // Check for gliding
-        if(!isGrounded && !isGliding && GetGlideInput() && glideTimer < glideTimeLimit){
+        if(!isGrounded && !isGliding && GetGlideInput() && glideTimer < glideTimeLimit && velMagnitude > 15){
             isGliding = true;
             vfx.PlayFeather();
             vfx.StartGlide();
@@ -155,8 +155,14 @@ public class KinematicCharacterController : MonoBehaviour{
         // Limit gliding by glide time limit
         if(isGliding){
             glideTimer += Time.deltaTime;
-            if(glideTimer > glideTimeLimit) isGliding = false;
-            if(velMagnitude < 15) isGliding = false;
+            if(glideTimer > glideTimeLimit){
+                isGliding = false;
+                vfx.StopGlide();
+            }
+            if(velMagnitude < 15){
+                isGliding = false;
+                vfx.StopGlide();
+            }
         }
 
         // Updating and clamping velocity
