@@ -27,7 +27,7 @@
 				<GameParameter Id="2453598386" Name="HighPass"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="3991942870" Type="User" Language="English(US)" Hash="{0DA16CA5-52D2-5F94-8667-A37D6786454C}">
+		<SoundBank Id="3991942870" Type="User" Language="English(US)" Hash="{4C8F2A79-45A8-6A73-FEAC-6BB5E94B360D}">
 			<ShortName>Music</ShortName>
 			<Path>English(US)/Music.bnk</Path>
 			<Media>
@@ -42,10 +42,6 @@
 				<File Id="102383427" Language="English(US)" Streaming="false" Location="Memory">
 					<ShortName>accl_01.wav</ShortName>
 					<CachePath>Voices/English(US)/accl_01_9234E706.wem</CachePath>
-				</File>
-				<File Id="141811352" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>collecting.wav</ShortName>
-					<CachePath>SFX/collecting_0406326B.wem</CachePath>
 				</File>
 				<File Id="152958283" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>BuildingSFX 3-Morphing Glass.wav</ShortName>
@@ -86,10 +82,6 @@
 				<File Id="494051313" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>BuildingSFX 1-Morphing Glass.wav</ShortName>
 					<CachePath>SFX/BuildingSFX 1-Morphing Glass_818F3B66.wem</CachePath>
-				</File>
-				<File Id="562437963" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>SwitchLetter.wav</ShortName>
-					<CachePath>SFX/SwitchLetter_57D7923F.wem</CachePath>
 				</File>
 				<File Id="611478713" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>BuildingSFX 4-Morphing Glass.wav</ShortName>
@@ -153,11 +145,6 @@
 						<MediaRef Id="773934798"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="1479915328" Name="Play_collecting" DurationType="OneShot" DurationMin="1.1809628" DurationMax="1.1809628">
-					<MediaRefs>
-						<MediaRef Id="141811352"/>
-					</MediaRefs>
-				</Event>
 				<Event Id="1424865143" Name="Play_Feather_Random" DurationType="OneShot" DurationMin="0.25324693" DurationMax="0.30922803">
 					<MediaRefs>
 						<MediaRef Id="160845157"/>
@@ -184,11 +171,6 @@
 				<Event Id="1044785212" Name="Play_soundwave" DurationType="OneShot" DurationMin="1.6" DurationMax="1.6">
 					<MediaRefs>
 						<MediaRef Id="375662028"/>
-					</MediaRefs>
-				</Event>
-				<Event Id="2807105238" Name="Play_SwitchLetter" DurationType="OneShot" DurationMin="2.1446717" DurationMax="2.1446717">
-					<MediaRefs>
-						<MediaRef Id="562437963"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="2479442773" Name="Play_Theme" DurationType="OneShot" DurationMin="190.76746" DurationMax="190.76746">
@@ -246,5 +228,5 @@
 			</GameParameters>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{4F08F87F-E6F8-E0DA-8956-8025E11C25BA}</FileHash>
+	<FileHash>{1AB675CA-46BD-2354-8A56-232F96AC406A}</FileHash>
 </SoundBanksInfo>
