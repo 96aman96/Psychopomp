@@ -39,6 +39,8 @@ public class WwiseSoundManager : MonoBehaviour
     public AK.Wwise.Event ui_start;
     public AK.Wwise.Event ui_quit;
 
+    public AK.Wwise.Event collecting;
+
     public void Start()
     {
         playThemePlaylist.Post(gameObject);
@@ -139,6 +141,11 @@ public class WwiseSoundManager : MonoBehaviour
     public void PlayBuilding()
     {
         buildingSFX.Post(gameObject);
+    }
+
+    public void CollectingBottles()
+    {
+        collecting.Post(gameObject);
     }
     
 }
