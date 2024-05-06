@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Dreamteck.Splines.Primitives;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
@@ -13,6 +14,7 @@ public class UIManager : MonoBehaviour
     private GameManager gm;
     public UnityEvent PauseGame, ResumeGame;
     public bool isPausedGame;
+
     private void LetterDeliveredToTrain()
     {
         if(InGamePanel!=null)

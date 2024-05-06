@@ -25,6 +25,15 @@ public class LetterReader : MonoBehaviour
     public Letter SingleLetter;
     public bool SingleLetterShown;
     public bool bagOpen;
+    private WwiseSoundManager wwiseSoundManager;
+
+
+    private void Start()
+    {
+        wwiseSoundManager = GameObject.FindObjectOfType<WwiseSoundManager>();
+
+    }
+
     [Button("Show Letter")]
     public void ShowLetter()
     {
@@ -90,12 +99,17 @@ public class LetterReader : MonoBehaviour
         Collectible.transform.SetSiblingIndex(collectedLetterHolder.childCount-1);
         Collectible.name = "Letter " + assignmentCounter;
         Collectible.GetComponent<Letter>().Content = LetterContents[assignmentCounter];
+        Collectible.transform.localScale = new Vector3(1, 1, 1);
         assignmentCounter++;
     }
     [NaughtyAttributes.Button("Prev Letter")]
     public void ReadPreviousLetter()
     {
-        bottomLetter.GetComponent<Animator>().Play("Come To Front");
+        if (collectedLetterHolder.gameObject.activeSelf == true)
+        {
+            wwiseSoundManager.playSwitchLetter();
+            bottomLetter.GetComponent<Animator>().Play("Come To Front");
+        }
     }
 
     public void GetTopAndBottom()
@@ -107,7 +121,12 @@ public class LetterReader : MonoBehaviour
     [NaughtyAttributes.Button("Next Letter")]
     public void ReadNextLetter()
     {
-        topLetter.GetComponent<Animator>().Play("Go Back");
+        if (collectedLetterHolder.gameObject.activeSelf == true)
+        {
+            wwiseSoundManager.playSwitchLetter();
+            topLetter.GetComponent<Animator>().Play("Go Back");
+
+        }
 
     }
 
@@ -118,5 +137,12 @@ public class LetterReader : MonoBehaviour
         Inventory.gameObject.SetActive(true);
         collectedLetterHolder.gameObject.SetActive(true);
     }
-    
+
+    public void ClearAllLetters()
+    {
+        for (int i = 0; i < collectedLetterHolder.transform.childCount; i++)
+        {
+            Destroy(collectedLetterHolder.transform.GetChild(i).gameObject);
+        }
+    }
 }
