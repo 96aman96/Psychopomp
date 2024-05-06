@@ -82,6 +82,7 @@ public class ParticleController : MonoBehaviour{
     private void StopEmitting(){
         isEmitting = false;
         StopFoam();
+        StopDirt();
         StopGlideTrail();
         StopWind();
     }
