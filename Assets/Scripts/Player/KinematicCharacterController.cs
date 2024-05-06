@@ -142,12 +142,12 @@ public class KinematicCharacterController : MonoBehaviour{
         }
 
         // Check for gliding
-        if(!isGrounded && !isGliding && Input.GetButtonDown("Glide") && glideTimer < glideTimeLimit){
+        if(!isGrounded && !isGliding && GetGlideInput() && glideTimer < glideTimeLimit){
             isGliding = true;
             vfx.PlayFeather();
             vfx.StartGlide();
             FreezeFrame();
-        } else if(!Input.GetButton("Glide")){
+        } else if(!GetGlideInput()){
             isGliding = false;
             vfx.StopGlide();
         }
@@ -359,6 +359,14 @@ public class KinematicCharacterController : MonoBehaviour{
     private IEnumerator UnfreezeFrame(){
         yield return new WaitForSecondsRealtime(freezeFrameDuration);
         isFrozen = false;
+    }
+
+    private bool GetGlideInput(){
+        if(Input.GetButton("Glide")) return true;
+
+        else if(Input.GetAxis("Glide") > 0) return true;
+
+        return false;
     }
 
     public Vector2 GetInput(){

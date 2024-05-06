@@ -554,6 +554,7 @@ Transform:
   - {fileID: 8424160829868703464}
   - {fileID: 2724136266758186991}
   - {fileID: 6294240291543136054}
+  - {fileID: 2799129994643009673}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &6310009296070999206
@@ -687,6 +688,77 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5920649485553439789}
   m_Enabled: 1
+--- !u!1 &5964489317606040511
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2799129994643009673}
+  - component: {fileID: 3461342673088708023}
+  - component: {fileID: 1832706162623802647}
+  m_Layer: 0
+  m_Name: LetterDeliveryHandler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2799129994643009673
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5964489317606040511}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1162659622859939156}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3461342673088708023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5964489317606040511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f15739c402d84930b3ac5aa54903208, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pickupPoint: {fileID: 0}
+  _letterReader: {fileID: 0}
+  LetterReaderPanel: {fileID: 0}
+--- !u!136 &1832706162623802647
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5964489317606040511}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.75487304
+  m_Height: 5.024555
+  m_Direction: 1
+  m_Center: {x: -0, y: 2.0122776, z: -0}
 --- !u!1 &8133171603888853216
 GameObject:
   m_ObjectHideFlags: 0
@@ -702,7 +774,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &5671001041373897632
 Transform:
   m_ObjectHideFlags: 0
@@ -758,50 +830,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8424160829868703464}
     m_Modifications:
-    - target: {fileID: 2087829139689984759, guid: 7f689f20f1df192429ee315037fe3460, type: 3}
-      propertyPath: m_Name
-      value: GlideTrail-L_t3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3118707988599154132, guid: 7f689f20f1df192429ee315037fe3460, type: 3}
-      propertyPath: m_Name
-      value: GlideFeathers_t3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3170070125402641860, guid: 7f689f20f1df192429ee315037fe3460, type: 3}
-      propertyPath: m_Name
-      value: Splatter_t3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4259238392134119510, guid: 7f689f20f1df192429ee315037fe3460, type: 3}
-      propertyPath: m_Name
-      value: GlideTrail-R_t3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4573649734713907310, guid: 7f689f20f1df192429ee315037fe3460, type: 3}
-      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[1].m_Value
-      value: 0.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 4573649734713907310, guid: 7f689f20f1df192429ee315037fe3460, type: 3}
-      propertyPath: m_PropertySheet.m_Vector3f.m_Array.Array.data[0].m_Value.x
-      value: -5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4573649734713907310, guid: 7f689f20f1df192429ee315037fe3460, type: 3}
-      propertyPath: m_PropertySheet.m_Vector3f.m_Array.Array.data[1].m_Value.x
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4573649734713907310, guid: 7f689f20f1df192429ee315037fe3460, type: 3}
-      propertyPath: m_PropertySheet.m_Vector3f.m_Array.Array.data[1].m_Value.y
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4573649734713907310, guid: 7f689f20f1df192429ee315037fe3460, type: 3}
-      propertyPath: m_PropertySheet.m_Vector3f.m_Array.Array.data[1].m_Value.z
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6148014002432199822, guid: 7f689f20f1df192429ee315037fe3460, type: 3}
-      propertyPath: m_Name
-      value: Foam_t3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6314120294311084820, guid: 7f689f20f1df192429ee315037fe3460, type: 3}
-      propertyPath: m_Name
-      value: Wind_t3
-      objectReference: {fileID: 0}
     - target: {fileID: 6718407012609081800, guid: 7f689f20f1df192429ee315037fe3460, type: 3}
       propertyPath: m_Name
       value: Tier 3
@@ -810,10 +838,6 @@ PrefabInstance:
       propertyPath: kcc
       value: 
       objectReference: {fileID: 6474271278695556671}
-    - target: {fileID: 8983650795637558494, guid: 7f689f20f1df192429ee315037fe3460, type: 3}
-      propertyPath: m_Name
-      value: Ripple_t3
-      objectReference: {fileID: 0}
     - target: {fileID: 9108342555869850737, guid: 7f689f20f1df192429ee315037fe3460, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -853,10 +877,6 @@ PrefabInstance:
     - target: {fileID: 9108342555869850737, guid: 7f689f20f1df192429ee315037fe3460, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9207581512447302839, guid: 7f689f20f1df192429ee315037fe3460, type: 3}
-      propertyPath: m_Name
-      value: Dust_t3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -887,50 +907,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8424160829868703464}
     m_Modifications:
-    - target: {fileID: 2087829139689984759, guid: 7f689f20f1df192429ee315037fe3460, type: 3}
-      propertyPath: m_Name
-      value: GlideTrail-L_t4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3118707988599154132, guid: 7f689f20f1df192429ee315037fe3460, type: 3}
-      propertyPath: m_Name
-      value: GlideFeathers_t4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3170070125402641860, guid: 7f689f20f1df192429ee315037fe3460, type: 3}
-      propertyPath: m_Name
-      value: Splatter_t4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4259238392134119510, guid: 7f689f20f1df192429ee315037fe3460, type: 3}
-      propertyPath: m_Name
-      value: GlideTrail-R_t4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4573649734713907310, guid: 7f689f20f1df192429ee315037fe3460, type: 3}
-      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[1].m_Value
-      value: 1.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4573649734713907310, guid: 7f689f20f1df192429ee315037fe3460, type: 3}
-      propertyPath: m_PropertySheet.m_Vector3f.m_Array.Array.data[0].m_Value.x
-      value: -6
-      objectReference: {fileID: 0}
-    - target: {fileID: 4573649734713907310, guid: 7f689f20f1df192429ee315037fe3460, type: 3}
-      propertyPath: m_PropertySheet.m_Vector3f.m_Array.Array.data[1].m_Value.x
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 4573649734713907310, guid: 7f689f20f1df192429ee315037fe3460, type: 3}
-      propertyPath: m_PropertySheet.m_Vector3f.m_Array.Array.data[1].m_Value.y
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4573649734713907310, guid: 7f689f20f1df192429ee315037fe3460, type: 3}
-      propertyPath: m_PropertySheet.m_Vector3f.m_Array.Array.data[1].m_Value.z
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 6148014002432199822, guid: 7f689f20f1df192429ee315037fe3460, type: 3}
-      propertyPath: m_Name
-      value: Foam_t4
-      objectReference: {fileID: 0}
-    - target: {fileID: 6314120294311084820, guid: 7f689f20f1df192429ee315037fe3460, type: 3}
-      propertyPath: m_Name
-      value: Wind_t4
-      objectReference: {fileID: 0}
     - target: {fileID: 6718407012609081800, guid: 7f689f20f1df192429ee315037fe3460, type: 3}
       propertyPath: m_Name
       value: Tier 4
@@ -939,22 +915,6 @@ PrefabInstance:
       propertyPath: kcc
       value: 
       objectReference: {fileID: 6474271278695556671}
-    - target: {fileID: 6785705525860245941, guid: 7f689f20f1df192429ee315037fe3460, type: 3}
-      propertyPath: thisTier
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 6785705525860245941, guid: 7f689f20f1df192429ee315037fe3460, type: 3}
-      propertyPath: rippleInterval
-      value: 0.0025
-      objectReference: {fileID: 0}
-    - target: {fileID: 8436288043449920786, guid: 7f689f20f1df192429ee315037fe3460, type: 3}
-      propertyPath: EmissionModule.rateOverTime.scalar
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8983650795637558494, guid: 7f689f20f1df192429ee315037fe3460, type: 3}
-      propertyPath: m_Name
-      value: Ripple_t4
-      objectReference: {fileID: 0}
     - target: {fileID: 9108342555869850737, guid: 7f689f20f1df192429ee315037fe3460, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -994,10 +954,6 @@ PrefabInstance:
     - target: {fileID: 9108342555869850737, guid: 7f689f20f1df192429ee315037fe3460, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9207581512447302839, guid: 7f689f20f1df192429ee315037fe3460, type: 3}
-      propertyPath: m_Name
-      value: Dust_t4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

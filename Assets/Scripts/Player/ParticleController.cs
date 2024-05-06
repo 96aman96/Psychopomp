@@ -37,6 +37,11 @@ public class ParticleController : MonoBehaviour{
     public float dustIntervalMultiplier = 1f;
     public float currentDust = 0;
 
+    // GROUND DIRT
+    [Header("Ground Dirt")]
+    public VisualEffect dirt;
+    private bool isDirtying = false;
+
     // GLIDE FEATHER
     [Header("Gliding")]
     public ParticleSystem feathers;
@@ -87,11 +92,14 @@ public class ParticleController : MonoBehaviour{
         if(onWater && isGrounded){
             TriggerRipple();
             StartFoam();
+            StopDirt();
         } else if (isGrounded){
             TriggerDust();
+            StartDirt();
             StopFoam();
         } else {
             StopFoam();
+            StopDirt();
         }
         
         if (isGliding){
@@ -126,6 +134,25 @@ public class ParticleController : MonoBehaviour{
         foam.enabled = false;
         foam.SendEvent("Stop");
     }
+
+    private void StartDirt(){
+        if(dirt == null) return;
+
+        if(!isDirtying){
+            isDirtying = true;
+            dirt.enabled = true;
+            dirt.SendEvent("Start");
+        }
+    }
+
+    private void StopDirt(){
+        if(dirt == null) return;
+
+        isDirtying = false;
+        dirt.enabled = false;
+        dirt.SendEvent("Stop");
+    }
+
 
     private void TriggerDust(){
         float dustInterval = baseDustInterval - dustIntervalMultiplier * speed;
