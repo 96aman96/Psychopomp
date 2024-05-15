@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class ReloadScene : MonoBehaviour
-{
-    public void RestartGame()
-    {
+public class ReloadScene : MonoBehaviour{
+    public void RestartGame(){
+        AkSoundEngine.StopAll();
         SceneManager.LoadScene(0);
     }
 }

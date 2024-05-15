@@ -8,28 +8,34 @@ public class ShowcaseHandler : MonoBehaviour
     public float IdleTime;
     public float idleInSeconds;
     public GameObject IdleAnimator;
+    
+    private bool isRestarting = false;
+    
     void Awake()
     {
         idleInSeconds = IdleTimeSetting * 60;
     }
         
-    private void Update()
-    {
-        if (IdleTime >= idleInSeconds-4)
-        {
-            IdleAnimator.gameObject.SetActive(true);
+    private void Update(){
+        if(isRestarting && Input.anyKey){
+            isRestarting = false;
+            IdleAnimator.gameObject.SetActive(false);
         }
-        else
-        {
-            IdleCheck();
-        }
-        if(Input.anyKey)
-        {
+
+        if(Input.anyKey) {
             IdleTime = 0;
         }
-        if(Input.GetKeyDown(KeyCode.Backslash))
-        {
-            IdleAnimator.gameObject.SetActive(!IdleAnimator.gameObject.activeSelf);
+
+        if (IdleTime >= idleInSeconds-4) {
+            isRestarting = true;
+            IdleAnimator.gameObject.SetActive(true);
+        } else {
+            IdleCheck();
+        }
+        
+        if(Input.GetKeyUp(KeyCode.Backslash)){
+            IdleAnimator.gameObject.SetActive(true);
+            isRestarting = true;
         }
         
     }
