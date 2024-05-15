@@ -82,11 +82,11 @@ public class DeliveryManager : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.B))
-        {
-            _letterReader.showStackView();
-        }
-    }
+    // private void Update()
+    // {
+    //     if (Input.GetKeyDown(KeyCode.B))
+    //     {
+    //         _letterReader.showStackView();
+    //     }
+    // }
 }

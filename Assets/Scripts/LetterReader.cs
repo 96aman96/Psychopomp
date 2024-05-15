@@ -24,7 +24,7 @@ public class LetterReader : MonoBehaviour
     public Image PanelImage;
     public Letter SingleLetter;
     public bool SingleLetterShown;
-    public bool bagOpen;
+    public bool bagOpen = false;
     private WwiseSoundManager wwiseSoundManager;
 
 
@@ -42,12 +42,14 @@ public class LetterReader : MonoBehaviour
         SingleLetterShown = true;
         anim.Play("Show Letter");
     }
+
     [Button("Hide Letter")]
     public void hideLetter()
     {
         gm.OnGameResume.Invoke();
         anim.Play("Hide Letter");
     }
+
     private void Update()
     {
         if (assignmentCounter == 0)
@@ -61,33 +63,22 @@ public class LetterReader : MonoBehaviour
         if (collectedLetterHolder.transform.childCount !=0)
         {
             GetTopAndBottom();
-            if (Input.GetKeyDown(KeyCode.A))
+            if (Input.GetAxis("UI Next") < 0)
             {
                 ReadPreviousLetter();
             }
-            if (Input.GetKeyDown(KeyCode.D))
+            if (Input.GetAxis("UI Next") > 0)
             {
                 ReadNextLetter();
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Return) && SingleLetterShown)
-        {
-            hideLetter();
-            SingleLetterShown = false;
-        }
-        if (Input.GetKeyDown(KeyCode.B) && bagOpen)
-        {
-            anim.Play("HideBag");
-            bagOpen = false;
-        }
-
-        if (Input.GetKeyDown(KeyCode.B) && !bagOpen)
-        {
-            anim.Play("ShowBag");
-            bagOpen = true;
-        }
+        // if (Input.GetKeyDown(KeyCode.Return) && SingleLetterShown){
+        //     hideLetter();
+        //     SingleLetterShown = false;
+        // }
     }
+
     [NaughtyAttributes.Button("Add Letter")]
     public void AddLetter()
     {
@@ -144,5 +135,24 @@ public class LetterReader : MonoBehaviour
         {
             Destroy(collectedLetterHolder.transform.GetChild(i).gameObject);
         }
+    }
+
+    public void OpenBag(){
+        if(bagOpen) return;
+
+        bagOpen = true;
+        anim.Play("ShowBag");
+    }
+
+    public void CloseBag(){
+        if(!bagOpen) return;
+
+        bagOpen = false;
+        anim.Play("HideBag");
+    }
+
+    public void DismissLetter(){
+        hideLetter();
+        SingleLetterShown = false;
     }
 }

@@ -15,11 +15,15 @@ public class CharacterVFX : MonoBehaviour{
     public float maxSpeed = 150;
     private bool onWater = true;
     private bool isGrounded = false;
+    private bool isBroadlyGrounded = false;
     private float speed = 0;
     private float previousSpeed = 0;
     private bool isGliding = false;
     private Vector2 input = Vector2.zero;
     private int tier = 0;
+
+    // Animator Variables for Pausing
+    private float prevSpeed = 0;
 
     // PARTICLE SYSTEMS
     [Header("Particle Systems")]
@@ -64,6 +68,7 @@ public class CharacterVFX : MonoBehaviour{
         previousSpeed = speed;
 
         isGrounded = kcc.GetIsGrounded();
+        isBroadlyGrounded = kcc.GetIsBroadlyGrounded();
         speed = kcc.GetSpeed();
         isGliding = kcc.GetIsGliding();
         onWater = kcc.GetIsOnWater();
@@ -73,7 +78,7 @@ public class CharacterVFX : MonoBehaviour{
     }
 
     private void SetAnimatorState(){ 
-        animator.SetBool("TouchingGround", isGrounded);
+        animator.SetBool("TouchingGround", isBroadlyGrounded);
         animator.SetFloat("Speed", speed);
         animator.SetBool("IsGliding", isGliding);
     }
@@ -178,6 +183,14 @@ public class CharacterVFX : MonoBehaviour{
         wwiseSoundManager.PlayRandomFeather();
     }
 
+    public void Pause(){
+        prevSpeed = animator.speed;
+        animator.speed = 0;
+    }
+
+    public void Unpause(){
+        animator.speed = prevSpeed;
+    }
 
 }
 

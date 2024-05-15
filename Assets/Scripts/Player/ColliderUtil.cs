@@ -11,6 +11,8 @@ public class ColliderUtil : MonoBehaviour{
     public float groundDistance = 0.005f;
     public int maxBounces = 4;
 
+    public float broadGroundDistance = 1f;
+
     private float radius = 0;
 
     void Start(){
@@ -54,6 +56,16 @@ public class ColliderUtil : MonoBehaviour{
 
         normal = Vector3.up;
         tag = null;
+        return false;
+    }
+
+    public bool BroaderIsGroundedCast(Vector3 pos){
+        List<Vector3> points = GetPointsFromPosition(pos);
+        RaycastHit hit;
+        if(Physics.CapsuleCast(points[0], points[1], radius, -capsule.transform.up, out hit, broadGroundDistance, groundMask)){
+            return true;
+        }
+
         return false;
     }
 

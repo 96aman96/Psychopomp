@@ -32,6 +32,10 @@ public class CameraController : MonoBehaviour{
     private int currentTier = 0;
     private Vector3 fwdVector = Vector3.zero;
 
+    // Pause Unpause variables
+    private bool isPaused = false;
+    private float prevAmp = 0f;
+
     void Start(){
         current = initialCamera;
         ActivateCamera(current);
@@ -110,8 +114,32 @@ public class CameraController : MonoBehaviour{
     }
 
     private void UpdateCameraNoise(CinemachineVirtualCamera _cam, float _freq, float _amp){
+        if(isPaused){
+            _freq = 0;
+            _amp = 0;
+        }
+
         _cam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_FrequencyGain = _freq;
         _cam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = _amp;
 
+    }
+
+    public void Pause(){
+        isPaused = true;
+
+        CinemachineBasicMultiChannelPerlin camNoise = current.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
+        if(camNoise == null) return;
+
+        prevAmp = camNoise.m_AmplitudeGain;
+        camNoise.m_AmplitudeGain = 0f;
+    }
+
+    public void Unpause(){
+        isPaused = false;
+
+        CinemachineBasicMultiChannelPerlin camNoise = current.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
+        if(camNoise == null) return;
+
+        camNoise.m_AmplitudeGain = prevAmp;
     }
 }

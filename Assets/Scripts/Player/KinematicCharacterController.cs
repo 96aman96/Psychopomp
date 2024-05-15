@@ -47,6 +47,7 @@ public class KinematicCharacterController : MonoBehaviour{
     public float acceleratedFallMultiplier = 5f;
     public float maxFallSpeed = 100f;
     private bool isGrounded = false;
+    private bool isBroadlyGrounded = false;
     public float fallingVelocity = 0;
 
     // ===== JUMPING =====
@@ -104,6 +105,7 @@ public class KinematicCharacterController : MonoBehaviour{
 
         // Check if grounded, and keeping track of coyote time timer to allow for delayed jumps
         isGrounded = CheckGrounded();
+        isBroadlyGrounded = CheckBroadlyGrounded();
         if(isGrounded){
             isJumping=false;
             isGliding=false;
@@ -285,7 +287,10 @@ public class KinematicCharacterController : MonoBehaviour{
 
         float yaxis = fwd.normalized.y;
         if(yaxis > 0f) return 1f;
-        return Mathf.Abs(yaxis)+1;      
+
+        // The lower the angle, the faster the gliding is.
+        // Gliding angle * extra sauce multiplier + 1 (base)
+        return (Mathf.Abs(yaxis)*1.5f)+1f;      
     }
 
     private float CalculateFallingVelocity(){
@@ -341,6 +346,10 @@ public class KinematicCharacterController : MonoBehaviour{
         return grd;
     }
 
+    private bool CheckBroadlyGrounded(){
+        return colUtil.BroaderIsGroundedCast(transform.position);
+    }
+
     private float GetRampMultiplier(){
         float dot = Vector3.Dot(Vector3.up, currentNormal);
         
@@ -368,6 +377,8 @@ public class KinematicCharacterController : MonoBehaviour{
     }
 
     private bool GetGlideInput(){
+        if(isBroadlyGrounded) return false;
+
         if(Input.GetButton("Glide")) return true;
 
         else if(Input.GetAxis("Glide") > 0) return true;
@@ -385,6 +396,10 @@ public class KinematicCharacterController : MonoBehaviour{
     
     public bool GetIsGrounded(){
         return isGrounded;
+    }
+
+    public bool GetIsBroadlyGrounded(){
+        return isBroadlyGrounded;
     }
 
     public bool GetIsGliding(){
@@ -406,9 +421,13 @@ public class KinematicCharacterController : MonoBehaviour{
 
     public void Pause(){
         isFrozen = true;
+        vfx.Pause();
+        cameraController.Pause();
     }
 
     public void Unpause(){
         isFrozen = false;
+        vfx.Unpause();
+        cameraController.Unpause();
     }
 }

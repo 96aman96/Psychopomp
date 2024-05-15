@@ -51,19 +51,19 @@ public class GameManager : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.B))
-        {
-            if (isPaused)
-            {
-                isPaused = false;
-                OnGameResume.Invoke();
-            }
-            else
-            {
-            isPaused = true;
-         onGamePause.Invoke();
-            }
-        }
+        // if (Input.GetKeyDown(KeyCode.B))
+        // {
+        //     if (isPaused)
+        //     {
+        //         isPaused = false;
+        //         OnGameResume.Invoke();
+        //     }
+        //     else
+        //     {
+        //         isPaused = true;
+        //         onGamePause.Invoke();
+        //     }
+        // }
     }
 
     public void ExitGame()

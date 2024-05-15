@@ -9,14 +9,22 @@ using UnityEngine.Events;
 public class UIManager : MonoBehaviour
 {
     // Start is called before the first frame update
-    public GameObject StartPanel, PausePanel,LetterPanel, InGamePanel;
+    public GameObject StartPanel, PausePanel, LetterPanel, InGamePanel;
     public GameObject DeliveryText;
     private GameManager gm;
     public UnityEvent PauseGame, ResumeGame;
-    public bool isPausedGame;
+    
+    public LetterReader letterUI;
 
-    private void LetterDeliveredToTrain()
-    {
+    public bool isPausedGame = false;
+    private bool isBagOpen = false;
+
+    void Start(){
+        Pause();
+    }
+
+
+    private void LetterDeliveredToTrain(){
         if(InGamePanel!=null)
         {
         InGamePanel.gameObject.SetActive(true);
@@ -28,20 +36,58 @@ public class UIManager : MonoBehaviour
     }
  
     // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            if (isPausedGame)
-            {
-                isPausedGame = false;
-                ResumeGame.Invoke();
-            }
-            else
-            {
-                isPausedGame = true;
-                PauseGame.Invoke();
-            }
+    void Update(){
+        if (Input.GetButtonDown("Pause")){
+            Pause();
         }
+
+        if(Input.GetButtonDown("Inventory")){
+            Inventory();
+        }
+
+        if(letterUI.SingleLetterShown && (Input.GetButtonDown("UI Accept") || Input.GetButtonDown("Inventory") || Input.GetButtonDown("Pause"))){
+            DismissLetter();
+        }
+    }
+
+    private void Pause(){
+        if(isBagOpen || letterUI.SingleLetterShown) return;
+        
+        if (isPausedGame){
+            isPausedGame = false;
+            ResumeGame.Invoke();
+            PausePanel.SetActive(false);
+
+            Time.timeScale = 1;
+        } else {
+            isPausedGame = true;
+            PauseGame.Invoke();
+            PausePanel.SetActive(true);
+
+            Time.timeScale = 0;
+        }
+    }
+
+    private void Inventory(){
+        if(isPausedGame || letterUI.SingleLetterShown) return;
+
+        if(isBagOpen){
+            isBagOpen = false;
+            ResumeGame.Invoke();
+            letterUI.CloseBag();
+
+            // Time.timeScale = 1;
+            
+        } else {
+            isBagOpen = true;
+            PauseGame.Invoke();
+            letterUI.OpenBag();
+
+            // Time.timeScale = 0;
+        }
+    }
+
+    private void DismissLetter(){
+        letterUI.DismissLetter();
     }
 }
