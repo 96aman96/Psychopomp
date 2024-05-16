@@ -192,5 +192,10 @@ public class CharacterVFX : MonoBehaviour{
         animator.speed = prevSpeed;
     }
 
+    public void PlayJump()
+    {
+        wwiseSoundManager.PlayJump();
+    }
+
 }
 

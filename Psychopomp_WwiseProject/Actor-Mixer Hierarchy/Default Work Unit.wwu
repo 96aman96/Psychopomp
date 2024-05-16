@@ -911,6 +911,39 @@
 								</Sound>
 							</ChildrenList>
 						</RandomSequenceContainer>
+						<Sound Name="collecting" ID="{375FA1DE-CB81-4976-9250-7341FC19FF41}" ShortID="1067782191">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>5</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2B7CC0FB-0949-49C5-8228-DCFA38A80237}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FAC89FD8-6922-4802-BE46-2764330B2318}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="collecting" ID="{06B18200-A4E5-439F-BB5F-E87DE1381340}">
+									<PropertyList>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimEnd" Type="Real64" Value="2.42601382284612"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>collecting.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="34982960"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="collecting" ID="{06B18200-A4E5-439F-BB5F-E87DE1381340}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
 					</ChildrenList>
 				</Folder>
 			</ChildrenList>

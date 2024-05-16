@@ -119,6 +119,7 @@ public class KinematicCharacterController : MonoBehaviour{
 
         // Jumping from air
         if(isJumping && currentJumpCount < maxJumpCount && Input.GetButtonDown("Jump")){
+            vfx.PlayJump();
             fallingVelocity += CalculateJumpVelocity();
             currentJumpBuffer = 0;
             currentJumpCount++;
@@ -132,6 +133,7 @@ public class KinematicCharacterController : MonoBehaviour{
         // Jumping from the ground
         if(currentCoyote > 0 && currentJumpBuffer > 0){
             isJumping = true;
+            vfx.PlayJump();
             currentCoyote = 0;
             currentJumpBuffer = 0;
             currentJumpCount = 1;

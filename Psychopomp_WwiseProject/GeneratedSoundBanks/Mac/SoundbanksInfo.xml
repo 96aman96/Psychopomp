@@ -27,13 +27,17 @@
 				<GameParameter Id="2453598386" Name="HighPass"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="3991942870" Type="User" Language="English(US)" Hash="{4C8F2A79-45A8-6A73-FEAC-6BB5E94B360D}">
+		<SoundBank Id="3991942870" Type="User" Language="English(US)" Hash="{CB5C1926-C496-A84C-D79F-C61E53B2511A}">
 			<ShortName>Music</ShortName>
 			<Path>English(US)/Music.bnk</Path>
 			<Media>
 				<File Id="30080899" Language="English(US)" Streaming="false" Location="Memory">
 					<ShortName>ItemPickUp.wav</ShortName>
 					<CachePath>Voices/English(US)/ItemPickUp_818F3B66.wem</CachePath>
+				</File>
+				<File Id="34982960" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>collecting.wav</ShortName>
+					<CachePath>SFX/collecting_A38D4DC4.wem</CachePath>
 				</File>
 				<File Id="75906182" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Theme.wav</ShortName>
@@ -42,6 +46,14 @@
 				<File Id="102383427" Language="English(US)" Streaming="false" Location="Memory">
 					<ShortName>accl_01.wav</ShortName>
 					<CachePath>Voices/English(US)/accl_01_9234E706.wem</CachePath>
+				</File>
+				<File Id="110427484" Language="English(US)" Streaming="false" Location="Memory">
+					<ShortName>Feather_Marker 08.wav</ShortName>
+					<CachePath>Voices/English(US)/Feather_Marker 08_43EC4193.wem</CachePath>
+				</File>
+				<File Id="129385874" Language="English(US)" Streaming="false" Location="Memory">
+					<ShortName>Feather_Marker 07.wav</ShortName>
+					<CachePath>Voices/English(US)/Feather_Marker 07_F2AC5DD6.wem</CachePath>
 				</File>
 				<File Id="152958283" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>BuildingSFX 3-Morphing Glass.wav</ShortName>
@@ -62,6 +74,10 @@
 				<File Id="255599716" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>BuildingSFX 2-Morphing Glass.wav</ShortName>
 					<CachePath>SFX/BuildingSFX 2-Morphing Glass_818F3B66.wem</CachePath>
+				</File>
+				<File Id="318005717" Language="English(US)" Streaming="false" Location="Memory">
+					<ShortName>Feather_Marker 08.wav</ShortName>
+					<CachePath>Voices/English(US)/Feather_Marker 08_3186B6AA.wem</CachePath>
 				</File>
 				<File Id="334818311" Language="English(US)" Streaming="false" Location="Memory">
 					<ShortName>Quit.wav</ShortName>
@@ -145,7 +161,12 @@
 						<MediaRef Id="773934798"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="1424865143" Name="Play_Feather_Random" DurationType="OneShot" DurationMin="0.25324693" DurationMax="0.30922803">
+				<Event Id="1479915328" Name="Play_collecting" DurationType="OneShot" DurationMin="2.4260137" DurationMax="2.4260137">
+					<MediaRefs>
+						<MediaRef Id="34982960"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1424865143" Name="Play_Feather_Random" DurationType="OneShot" DurationMin="0.26066762" DurationMax="0.3182891">
 					<MediaRefs>
 						<MediaRef Id="160845157"/>
 						<MediaRef Id="947433487"/>
@@ -167,6 +188,18 @@
 					<MediaRefs>
 						<MediaRef Id="30080899"/>
 					</MediaRefs>
+				</Event>
+				<Event Id="1810444738" Name="Play_Jump_Random_01" DurationType="OneShot" DurationMin="0.33629856" DurationMax="0.34805757">
+					<MediaRefs>
+						<MediaRef Id="110427484"/>
+						<MediaRef Id="129385874"/>
+						<MediaRef Id="318005717"/>
+					</MediaRefs>
+					<PluginRefs>
+						<ShareSets>
+							<PluginRef Id="3657550167"/>
+						</ShareSets>
+					</PluginRefs>
 				</Event>
 				<Event Id="1044785212" Name="Play_soundwave" DurationType="OneShot" DurationMin="1.6" DurationMax="1.6">
 					<MediaRefs>
@@ -228,5 +261,5 @@
 			</GameParameters>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{1AB675CA-46BD-2354-8A56-232F96AC406A}</FileHash>
+	<FileHash>{4A880102-D9EC-4D3C-D692-1C34DC36DB2F}</FileHash>
 </SoundBanksInfo>

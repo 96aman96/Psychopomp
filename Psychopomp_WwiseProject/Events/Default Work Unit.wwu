@@ -361,6 +361,17 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Play_collecting" ID="{21873362-8954-4950-BEF4-9A577E7A210B}">
+					<ChildrenList>
+						<Action Name="" ID="{03D253C4-8EF5-48FE-B94D-3D613A15CBA5}" ShortID="354580930">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="collecting" ID="{375FA1DE-CB81-4976-9250-7341FC19FF41}" WorkUnitID="{A35B15AE-516B-47E8-A3EB-9706F95E54A1}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

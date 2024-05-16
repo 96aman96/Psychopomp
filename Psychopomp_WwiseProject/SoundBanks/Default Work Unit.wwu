@@ -15,6 +15,7 @@
 						<ObjectRef Name="Play_wind" ID="{ABE66839-C897-47EC-99D0-8D691C60FE77}" WorkUnitID="{F200B06E-8FAE-423D-B158-38EC56AAF073}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Stop_waterSplash" ID="{3AFB9C6D-6B4E-4828-A982-5C9E064F1957}" WorkUnitID="{F200B06E-8FAE-423D-B158-38EC56AAF073}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_waterSplash_fast" ID="{867727D3-B163-48F0-B005-FF5A8357775B}" WorkUnitID="{F200B06E-8FAE-423D-B158-38EC56AAF073}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_collecting" ID="{21873362-8954-4950-BEF4-9A577E7A210B}" WorkUnitID="{F200B06E-8FAE-423D-B158-38EC56AAF073}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Pause_Fly" ID="{515A3601-FA36-497D-9295-1C7B6D12006C}" WorkUnitID="{F200B06E-8FAE-423D-B158-38EC56AAF073}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_UI_Start" ID="{7213B740-87F0-49A0-8041-CA413627DF90}" WorkUnitID="{F200B06E-8FAE-423D-B158-38EC56AAF073}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Stop_waterSplash_fast" ID="{FE12C8BE-F6A4-4A51-9DE1-AD8E8B5F428A}" WorkUnitID="{F200B06E-8FAE-423D-B158-38EC56AAF073}" Origin="Manual" Filter="7"/>

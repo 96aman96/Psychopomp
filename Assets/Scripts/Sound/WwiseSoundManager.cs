@@ -40,6 +40,8 @@ public class WwiseSoundManager : MonoBehaviour
     public AK.Wwise.Event ui_quit;
 
     public AK.Wwise.Event collecting;
+    public AK.Wwise.Event playJump;
+
 
     public void Start()
     {
@@ -146,6 +148,11 @@ public class WwiseSoundManager : MonoBehaviour
     public void CollectingBottles()
     {
         collecting.Post(gameObject);
+    }
+
+    public void PlayJump()
+    {
+        playJump.Post(gameObject);
     }
     
 }

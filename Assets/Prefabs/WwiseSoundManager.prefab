@@ -197,3 +197,7 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: caf02de006f5aa84baf2105e6845393f, type: 2}
+  playJump:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 5736b4368a7463d46bdd1584f7d7a721, type: 2}
