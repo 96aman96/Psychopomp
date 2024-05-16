@@ -7,13 +7,11 @@ Event	ID	Name			Wwise Object Path	Notes
 	1044785212	Play_soundwave			\Default Work Unit\SFX\Play_soundwave	
 	1057286634	Play_UI_Quit			\Default Work Unit\SFX\Play_UI_Quit	
 	1424865143	Play_Feather_Random			\Default Work Unit\SFX\Play_Feather_Random	
-	1479915328	Play_collecting			\Default Work Unit\Play_collecting	
 	1553341287	Pause_Theme			\Default Work Unit\InteractiveMusic\Theme\Pause_Theme	
 	1562304622	Play_Ambient			\Default Work Unit\SFX\Play_Ambient	
 	1910699640	Play_Building_Random			\Default Work Unit\Play_Building_Random	
 	1934545473	Play_TrainSound			\Default Work Unit\SFX\Play_TrainSound	
 	2479442773	Play_Theme			\Default Work Unit\InteractiveMusic\Theme\Play_Theme	
-	2807105238	Play_SwitchLetter			\Default Work Unit\SFX\Play_SwitchLetter	
 	2834225136	Resume_ThemePlaylist			\Default Work Unit\Resume_ThemePlaylist	
 	2941622701	Play_Fly			\Default Work Unit\InteractiveMusic\Fly\Play_Fly	
 	3173136834	Stop_wind			\Default Work Unit\SFX\Wind\Stop_wind	
@@ -38,7 +36,6 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	30080899	ItemPickUp	C:\Users\zymay\OneDrive\Documents\GitHub\Psychopomp\Psychopomp_WwiseProject\.cache\Windows\Voices\English(US)\ItemPickUp_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\ItemPickUp		463148
 	75906182	Theme	C:\Users\zymay\OneDrive\Documents\GitHub\Psychopomp\Psychopomp_WwiseProject\.cache\Windows\Voices\English(US)\Theme_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\New Work Unit\ThemePlaylist\Theme\Theme		33475076
 	102383427	waterSplash_fast	C:\Users\zymay\OneDrive\Documents\GitHub\Psychopomp\Psychopomp_WwiseProject\.cache\Windows\Voices\English(US)\accl_01_9234E706.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\waterSplash_fast		2856608
-	141811352	collecting	C:\Users\zymay\OneDrive\Documents\GitHub\Psychopomp\Psychopomp_WwiseProject\.cache\Windows\SFX\collecting_0406326B.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\collecting		208416
 	152958283	Building3	C:\Users\zymay\OneDrive\Documents\GitHub\Psychopomp\Psychopomp_WwiseProject\.cache\Windows\SFX\BuildingSFX 3-Morphing Glass_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Building\Building3		264696
 	154551227	wind	C:\Users\zymay\OneDrive\Documents\GitHub\Psychopomp\Psychopomp_WwiseProject\.cache\Windows\Voices\English(US)\wind_CADBA816.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\wind		4567136
 	160845157	Feather_4	C:\Users\zymay\OneDrive\Documents\GitHub\Psychopomp\Psychopomp_WwiseProject\.cache\Windows\Voices\English(US)\Feather_Marker 07_2C8DC4D6.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Feather\Feather_Random\Feather_4		53092
@@ -49,7 +46,6 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	384855880	UI_Start	C:\Users\zymay\OneDrive\Documents\GitHub\Psychopomp\Psychopomp_WwiseProject\.cache\Windows\Voices\English(US)\Start_7AFE0805.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\UI_Start		430344
 	489024773	ambient	C:\Users\zymay\OneDrive\Documents\GitHub\Psychopomp\Psychopomp_WwiseProject\.cache\Windows\Voices\English(US)\ambient_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\New Work Unit\Ambient\ambient		9558032
 	494051313	Building1	C:\Users\zymay\OneDrive\Documents\GitHub\Psychopomp\Psychopomp_WwiseProject\.cache\Windows\SFX\BuildingSFX 1-Morphing Glass_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Building\Building1		264696
-	562437963	SwitchLetter	C:\Users\zymay\OneDrive\Documents\GitHub\Psychopomp\Psychopomp_WwiseProject\.cache\Windows\SFX\SwitchLetter_69D016BF.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\SwitchLetter		37390
 	611478713	Building4	C:\Users\zymay\OneDrive\Documents\GitHub\Psychopomp\Psychopomp_WwiseProject\.cache\Windows\SFX\BuildingSFX 4-Morphing Glass_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Building\Building4		264696
 	631015966	Building6	C:\Users\zymay\OneDrive\Documents\GitHub\Psychopomp\Psychopomp_WwiseProject\.cache\Windows\SFX\BuildingSFX 6-Morphing Glass_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Building\Building6		264696
 	632742918	train_Final	C:\Users\zymay\OneDrive\Documents\GitHub\Psychopomp\Psychopomp_WwiseProject\.cache\Windows\Voices\English(US)\train_Final_7824F05D.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\train_Final		6484072
