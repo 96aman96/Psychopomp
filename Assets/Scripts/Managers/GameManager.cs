@@ -24,12 +24,15 @@ public class GameManager : MonoBehaviour
     public UIManager _UIManager;
     public bool isPaused;
     public delegate void GameStateHandler();
-    [SerializeField]
-    public UnityEvent onGameStart;
-    [SerializeField] 
-    public UnityEvent  onGamePause;
-    [SerializeField]
-    public UnityEvent  OnGameResume;
+    // [SerializeField]
+    // public UnityEvent onGameStart;
+    // [SerializeField] 
+    // public UnityEvent  onGamePause;
+    // [SerializeField]
+    // public UnityEvent  OnGameResume;
+
+    public float pressTime = 2f;
+    private float currentPress = 0f;
 
     private void Awake()
     {
@@ -45,25 +48,20 @@ public class GameManager : MonoBehaviour
     {
     }
     
-    public void StartGame()
-    {
-        onGameStart.Invoke();
-    }
-    private void Update()
-    {
-        // if (Input.GetKeyDown(KeyCode.B))
-        // {
-        //     if (isPaused)
-        //     {
-        //         isPaused = false;
-        //         OnGameResume.Invoke();
-        //     }
-        //     else
-        //     {
-        //         isPaused = true;
-        //         onGamePause.Invoke();
-        //     }
-        // }
+    // public void StartGame(){
+    //     onGameStart.Invoke();
+    // }
+
+    private void Update(){
+        if(Input.GetButton("Scene Changer")){
+            currentPress += Time.deltaTime;
+            if(currentPress > pressTime){
+                AkSoundEngine.StopAll();
+                SceneManager.LoadScene("Trailer");
+            }
+        } else {
+            currentPress = 0f;
+        }
     }
 
     public void ExitGame()

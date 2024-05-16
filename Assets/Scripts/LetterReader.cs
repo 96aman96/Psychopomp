@@ -23,9 +23,10 @@ public class LetterReader : MonoBehaviour
     public Transform Inventory;
     public Image PanelImage;
     public Letter SingleLetter;
-    public bool SingleLetterShown;
+    public bool SingleLetterShown = false;
     public bool bagOpen = false;
     private WwiseSoundManager wwiseSoundManager;
+    public UIManager uiManager;
 
 
     private void Start()
@@ -38,7 +39,8 @@ public class LetterReader : MonoBehaviour
     public void ShowLetter()
     {
         SingleLetter.contents.text = LetterContents[assignmentCounter];
-        gm.onGamePause.Invoke();
+        // gm.onGamePause.Invoke();
+        uiManager.InvokePause();
         SingleLetterShown = true;
         anim.Play("Show Letter");
     }
@@ -46,7 +48,8 @@ public class LetterReader : MonoBehaviour
     [Button("Hide Letter")]
     public void hideLetter()
     {
-        gm.OnGameResume.Invoke();
+        // gm.OnGameResume.Invoke();
+        uiManager.InvokeUnpause();
         anim.Play("Hide Letter");
     }
 
@@ -123,7 +126,7 @@ public class LetterReader : MonoBehaviour
 
     public void showStackView()
     {
-        gm.onGamePause.Invoke();
+        // gm.onGamePause.Invoke();
         PanelImage.enabled = true;
         Inventory.gameObject.SetActive(true);
         collectedLetterHolder.gameObject.SetActive(true);

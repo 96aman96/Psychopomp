@@ -28,7 +28,7 @@ public class ShowcaseHandler : MonoBehaviour
 
         if (IdleTime >= idleInSeconds-4) {
             isRestarting = true;
-            IdleAnimator.gameObject.SetActive(true);
+            IdleAnimator.gameObject.SetActive(true);  
         } else {
             IdleCheck();
         }

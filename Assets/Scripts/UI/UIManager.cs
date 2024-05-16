@@ -20,9 +20,13 @@ public class UIManager : MonoBehaviour
     private bool isBagOpen = false;
 
     void Start(){
-        Pause();
+        StartCoroutine(LateStart());
     }
 
+    IEnumerator LateStart(){
+        yield return new WaitForSeconds(0.05f);
+        Pause();
+    }
 
     private void LetterDeliveredToTrain(){
         if(InGamePanel!=null)
@@ -58,13 +62,13 @@ public class UIManager : MonoBehaviour
             ResumeGame.Invoke();
             PausePanel.SetActive(false);
 
-            Time.timeScale = 1;
+            // Time.timeScale = 1;
         } else {
             isPausedGame = true;
             PauseGame.Invoke();
             PausePanel.SetActive(true);
 
-            Time.timeScale = 0;
+            // Time.timeScale = 0;
         }
     }
 
@@ -85,6 +89,14 @@ public class UIManager : MonoBehaviour
 
             // Time.timeScale = 0;
         }
+    }
+
+    public void InvokePause(){
+        PauseGame.Invoke();
+    }
+
+    public void InvokeUnpause(){
+        ResumeGame.Invoke();
     }
 
     private void DismissLetter(){
